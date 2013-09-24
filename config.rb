@@ -2,7 +2,7 @@
 # Settings
 ###
 
-set :site_name, "Spriteowl"
+set :site_name, "Cssowl"
 set :site_description, "Edit your config.rb to set the global description."
 
 ###
