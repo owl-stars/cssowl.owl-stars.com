@@ -4,7 +4,7 @@ module SiteHelpers
     if data.page.title
       data.page.title + " | " + settings.site_name
     else
-      settings.site_title
+      settings.site_name
     end
   end
 
