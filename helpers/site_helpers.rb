@@ -16,4 +16,7 @@ module SiteHelpers
     end
   end
 
+  def nav_active(page)
+    current_page.url == "/" + page + ".html" ? {:class => "active"} : {}
+  end
 end

@@ -1,52 +1,21 @@
----
-title: Welcome to Middleman
----
+.bs-docs-section
+
+  .page-header
+    %h1#introduction Introduction
+
+  = partial "docs/introduction"
 
 .bs-docs-section
 
   .page-header
-    %h1#display Display
+    %h1#download Download Cssowl
 
-  = partial "docs/display/display"
-  = partial "docs/display/display-block"
-  = partial "docs/display/display-inline"
+  = partial "docs/download"
 
-  .page-header
-    %h1#replace Replace
 
-  = partial "docs/replace/replace"
-  = partial "docs/replace/replace-block"
-  = partial "docs/replace/replace-inline"
-
-  .page-header
-    %h1#absolute Absolute
-
-  = partial "docs/absolute/absolute"
-  = partial "docs/absolute/absolute-inside"
-  = partial "docs/absolute/absolute-outside"
-
-  .page-header
-    %h1#float Float
-
-  = partial "docs/float/float-left"
-  = partial "docs/float/float-right"
-
-  .page-header
-    %h1#before Before
-
-  = partial "docs/before/before"
-  = partial "docs/before/before-inline"
-  = partial "docs/before/before-float"
-  = partial "docs/before/before-absolute"
-  = partial "docs/before/before-absolute-inside"
-  = partial "docs/before/before-absolute-outside"
-
-  .page-header
-    %h1#after After
-
-  = partial "docs/after/after"
-  = partial "docs/after/after-inline"
-  = partial "docs/after/after-float"
-  = partial "docs/after/after-absolute"
-  = partial "docs/after/after-absolute-inside"
-  = partial "docs/after/after-absolute-outside"
+-content_for :nav do
+  %ul.nav.bs-sidenav
+    %li
+      %a{:href => "#introduction"} Introduction
+    %li
+      %a{:href => "#download"} Download

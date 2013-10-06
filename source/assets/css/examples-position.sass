@@ -1,0 +1,38 @@
+@import ../../../bower_components/cssowl/lib/sass/cssowl
+
+// --- absolute -----------------------------------------------------------------------------------
+
+.example-absolute
+  width: 10px
+  height: 10px
+  background: #59371f
+  &.top-right
+    +cssowl-position-absolute(5px, 5px, none, none)
+  &.bottom-left
+    +cssowl-position-absolute(none, none, 5px, 5px)
+
+.example-absolute-inside
+  width: 10px
+  height: 10px
+  background: #59371f
+  &.top-center
+    +cssowl-position-absolute-inside(10px, 10px, top, center)
+  &.middle-right
+    +cssowl-position-absolute-inside(10px, 10px, middle, right)
+  &.bottom-center
+    +cssowl-position-absolute-inside(10px, 10px, bottom, center)
+  &.middle-left
+    +cssowl-position-absolute-inside(10px, 10px, middle, left)
+
+.example-absolute-outside
+  width: 10px
+  height: 10px
+  background: #59371f
+  &.top-center
+    +cssowl-position-absolute-outside(10px, 10px, top, center)
+  &.middle-right
+    +cssowl-position-absolute-outside(10px, 10px, middle, right)
+  &.bottom-center
+    +cssowl-position-absolute-outside(10px, 10px, bottom, center)
+  &.middle-left
+    +cssowl-position-absolute-outside(10px, 10px, middle, left)

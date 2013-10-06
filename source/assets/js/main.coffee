@@ -8,15 +8,23 @@ jQuery ->
 
   $window = $(window)
   $body = $(document.body)
-  $sideBar = $(".bs-sidebar")
+  $sidebar = $(".bs-sidebar")
+  $docContainer = $(".bs-docs-container")
 
+  # --- scrollspy ---
+  $body.scrollspy
+    target: ".bs-sidebar"
+    offset: $docContainer.offset().top
+
+  $window.on "load", ->
+    $body.scrollspy "refresh"
+
+  # --- sidebar ---
+  $sidebar.affix
+    offset:
+      top: $sidebar.offset().top - parseInt($sidebar.children(0).css("margin-top"), 10) - 40
+
+  # --- tabs ---
   $(".nav.nav-tabs a").click (e) ->
     e.preventDefault()
     $(this).tab "show"
-
-  $sideBar.affix
-    offset:
-      top: parseInt($sideBar.children(0).css("margin-top"), 10)
-
-  $body.scrollspy
-    target: ".bs-sidebar"
