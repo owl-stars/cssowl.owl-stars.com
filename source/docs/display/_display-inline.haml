@@ -1,0 +1,76 @@
+%h2#cssowl-sprite-display-inline cssowl-sprite-display-inline <small>(x, y, width, height, src, yOffset, valign)</small>
+
+%p
+  :markdown
+    Displays a sprite element with the `display: inline-block` attribute.
+    You can vertically align it using `yOffset` and `valign`
+
+= preserve do
+  -code("sass") do
+    :plain
+      /*
+       * @param $y       x position of the element
+       * @param $y       y position of the element
+       * @param $width   element width
+       * @param $height  element height
+       * @param $src     background image source
+       * @param $yOffset (optional, default=0) top margin of the element
+       * @param $valign  (optional, default=middle) *vertical-align* attribute property
+       */
+      @mixin cssowl-sprite-display-block($x, $y, $width, $height, $src, $yOffset:0, $valign:middle)
+        line-height: $height
+        margin-top: $yOffset
+        display: inline-block
+        vertical-align: $valign
+        +cssowl-sprite-display($x, $y, $width, $height, $src)
+
+
+.bs-docs-example
+
+  .content
+    .example-display-inline
+
+  %ul.nav.nav-tabs
+    %li.active
+      = link_to 'Sass', '#example-display-inline-sass'
+    %li
+      = link_to 'Scss', '#example-display-inline-scss'
+    %li
+      = link_to 'Less', '#example-display-inline-less'
+    %li
+      = link_to 'Stylus', '#example-display-inline-stylus'
+    %li
+      = link_to 'Html', '#example-display-inline-html'
+
+  .tab-content
+    #example-display-inline-sass.tab-pane.active
+      = preserve do
+        -code("sass") do
+          :plain
+            .example-display-inline
+              +cssowl-sprite-display-inline(-10px, -10px, 91px, 95px, url("sprite.png"))
+    #example-display-inline-scss.tab-pane
+      = preserve do
+        -code("scss") do
+          :plain
+            .example-display-inline {
+              @include cssowl-sprite-display-inline(-10px, -10px, 91px, 95px, url("sprite.png"))
+            }
+    #example-display-inline-less.tab-pane
+      = preserve do
+        -code("less") do
+          :plain
+            .example-display-inline {
+              .cssowl-sprite-display-inline(-10px, -10px, 91px, 95px, url("sprite.png"));
+            }
+    #example-display-inline-stylus.tab-pane
+      = preserve do
+        -code("stylus") do
+          :plain
+            .example-display-inline
+              cssowl-sprite-display-inline(-10px, -10px, 91px, 95px, url("sprite.png"))
+    #example-display-inline-html.tab-pane
+      = preserve do
+        -code("html") do
+          .example-display-inline
+

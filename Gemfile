@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 
 gem "middleman", "~>3.1.5"
 gem "middleman-favicon-maker"
+gem "middleman-syntax", "~> 1.2.1"
 gem "middleman-livereload", "~> 3.1.0"
 
 # For faster file watcher updates on Windows:

@@ -1,0 +1,74 @@
+%h2#cssowl-sprite-after-float cssowl-sprite-after-float <small>(x, y, width, height, src, xOffset, yOffset)</small>
+
+%p
+  :markdown
+    Adds the element with the `:after` pseudo selector and displays it with the `float: right;` attribute.
+
+= preserve do
+  -code("sass") do
+    :plain
+      /*
+       * @param $y       x position of the element
+       * @param $y       y position of the element
+       * @param $width   element width
+       * @param $height  element height
+       * @param $src     background image source
+       * @param $xOffset (optional, default=0) right margin of the element
+       * @param $yOffset (optional, default=0) top margin of the element
+       */
+      @mixin cssowl-sprite-after-float($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0)
+        &:after
+          content: ""
+          float: right
+          margin-top: $xOffset
+          margin-left: $xOffset
+          +cssowl-sprite-display-block($x, $y, $width, $height, $src)
+
+.bs-docs-example
+
+  .content
+    .example-after-float Quia sint quis nam et quia ducimus consequatur cumque.
+
+  %ul.nav.nav-tabs
+    %li.active
+      = link_to 'Sass', '#example-after-float-sass'
+    %li
+      = link_to 'Scss', '#example-after-float-scss'
+    %li
+      = link_to 'Less', '#example-after-float-less'
+    %li
+      = link_to 'Stylus', '#example-after-float-stylus'
+    %li
+      = link_to 'Html', '#example-after-float-html'
+
+  .tab-content
+    #example-after-float-sass.tab-pane.active
+      = preserve do
+        -code("sass") do
+          :plain
+            .example-after-float
+              +cssowl-sprite-after-float(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px)
+    #example-after-float-scss.tab-pane
+      = preserve do
+        -code("scss") do
+          :plain
+            .example-after-float {
+              @include cssowl-sprite-after-float(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px)
+            }
+    #example-after-float-less.tab-pane
+      = preserve do
+        -code("less") do
+          :plain
+            .example-after-float {
+              .cssowl-sprite-after-float(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px);
+            }
+    #example-after-float-stylus.tab-pane
+      = preserve do
+        -code("stylus") do
+          :plain
+            .example-after-float
+              cssowl-sprite-after-float(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px)
+    #example-after-float-html.tab-pane
+      = preserve do
+        -code("html") do
+          .example-after-float Quia sint quis nam et quia ducimus consequatur cumque.

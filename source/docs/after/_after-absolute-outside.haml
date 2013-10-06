@@ -1,0 +1,74 @@
+%h2#cssowl-sprite-after-absolute-outside cssowl-sprite-after-absolute-outside <small>(x, y, width, height, src, valign, halign, xOffset, yOffset)</small>
+
+%p
+  :markdown
+    Adds the element with the `:after` pseudo selector and displays it with `position: absolute;` outside the bounding box.
+
+= preserve do
+  -code("sass") do
+    :plain
+      /*
+       * @param $y       x position of the element
+       * @param $y       y position of the element
+       * @param $width   element width
+       * @param $height  element height
+       * @param $src     background image source
+       * @param $valign  (optional, default=top) vertical alignment top|middle|bottom
+       * @param $halign  (optional, default=left) horizontal alignment left|center|right
+       * @param $xOffset (optional, default=0) x position offset
+       * @param $yOffset (optional, default=0) y position offset
+       */
+      @mixin cssowl-sprite-after-absolute-outside($x, $y, $width, $height, $src, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
+        position: relative
+        &:after
+          content: ""
+          +cssowl-sprite-absolute-outside($x, $y, $width, $height, $src, $valign, $halign, $xOffset, $yOffset)
+
+.bs-docs-example
+
+  .content
+    .example-after-absolute-outside{:style => "display:inline-block;border-top:1px solid #59371f;padding-top: 5px;"} Quia sint quis
+
+  %ul.nav.nav-tabs
+    %li.active
+      = link_to 'Sass', '#example-after-absolute-outside-sass'
+    %li
+      = link_to 'Scss', '#example-after-absolute-outside-scss'
+    %li
+      = link_to 'Less', '#example-after-absolute-outside-less'
+    %li
+      = link_to 'Stylus', '#example-after-absolute-outside-stylus'
+    %li
+      = link_to 'Html', '#example-after-absolute-outside-html'
+
+  .tab-content
+    #example-after-absolute-outside-sass.tab-pane.active
+      = preserve do
+        -code("sass") do
+          :plain
+            .example-after-absolute-outside
+              +cssowl-sprite-after-absolute-outside(-110px, -20px, 7px, 4px, url("sprite.png"), top, center)
+    #example-after-absolute-outside-scss.tab-pane
+      = preserve do
+        -code("scss") do
+          :plain
+            .example-after-absolute-outside {
+              @include cssowl-sprite-after-absolute-outside(-110px, -20px, 7px, 4px, url("sprite.png"), top, center)
+            }
+    #example-after-absolute-outside-less.tab-pane
+      = preserve do
+        -code("less") do
+          :plain
+            .example-after-absolute-outside {
+              .cssowl-sprite-after-absolute-outside(-110px, -20px, 7px, 4px, url("sprite.png"), top, center);
+            }
+    #example-after-absolute-outside-stylus.tab-pane
+      = preserve do
+        -code("stylus") do
+          :plain
+            .example-after-absolute-outside
+              cssowl-sprite-after-absolute-outside(-110px, -20px, 7px, 4px, url("sprite.png"), top, center)
+    #example-after-absolute-outside-html.tab-pane
+      = preserve do
+        -code("html") do
+          .example-after-absolute-outside{:style => "display:inline-block;border-top:1px solid #59371f;padding-top: 5px;"} Quia sint quis

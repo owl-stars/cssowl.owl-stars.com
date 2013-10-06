@@ -1,0 +1,73 @@
+%h2#cssowl-sprite-before-inline cssowl-sprite-before-inline <small>(x, y, width, height, src, xOffset, yOffset, valign)</small>
+
+%p
+  :markdown
+    Adds the element with the `:before` pseudo selector and displays it *inline*.
+
+= preserve do
+  -code("sass") do
+    :plain
+      /*
+       * @param $y       x position of the element
+       * @param $y       y position of the element
+       * @param $width   element width
+       * @param $height  element height
+       * @param $src     background image source
+       * @param $xOffset (optional, default=0) right margin of the element
+       * @param $yOffset (optional, default=0) top margin of the element
+       * @param $valign  (optional, default=middle) *vertical-align* attribute property
+       */
+      @mixin cssowl-sprite-before-inline($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0, $valign:middle)
+        &:before
+          content: ""
+          margin-right: $xOffset
+          +cssowl-sprite-display-inline($x, $y, $width, $height, $src, $yOffset, $valign)
+
+.bs-docs-example
+
+  .content
+    .example-before-inline Quia sint quis nam et quia ducimus consequatur cumque.
+
+  %ul.nav.nav-tabs
+    %li.active
+      = link_to 'Sass', '#example-before-inline-sass'
+    %li
+      = link_to 'Scss', '#example-before-inline-scss'
+    %li
+      = link_to 'Less', '#example-before-inline-less'
+    %li
+      = link_to 'Stylus', '#example-before-inline-stylus'
+    %li
+      = link_to 'Html', '#example-before-inline-html'
+
+  .tab-content
+    #example-before-inline-sass.tab-pane.active
+      = preserve do
+        -code("sass") do
+          :plain
+            .example-before-inline
+              +cssowl-sprite-before-inline(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px, top)
+    #example-before-inline-scss.tab-pane
+      = preserve do
+        -code("scss") do
+          :plain
+            .example-before-inline {
+              @include cssowl-sprite-before-inline(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px, top)
+            }
+    #example-before-inline-less.tab-pane
+      = preserve do
+        -code("less") do
+          :plain
+            .example-before-inline {
+              .cssowl-sprite-before-inline(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px, top);
+            }
+    #example-before-inline-stylus.tab-pane
+      = preserve do
+        -code("stylus") do
+          :plain
+            .example-before-inline
+              cssowl-sprite-before-inline(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px, top)
+    #example-before-inline-html.tab-pane
+      = preserve do
+        -code("html") do
+          .example-before-inline Quia sint quis nam et quia ducimus consequatur cumque.

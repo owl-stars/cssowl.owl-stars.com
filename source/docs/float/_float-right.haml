@@ -1,0 +1,75 @@
+%h2#cssowl-sprite-float-right cssowl-sprite-float-right <small>(x, y, width, height, src, xOffset, yOffset)</small>
+
+%p
+  :markdown
+    Displays a sprite element with the `float: right;` attribute with optional offset.
+
+= preserve do
+  -code("sass") do
+    :plain
+      /*
+       * @param $y       x position of the element
+       * @param $y       y position of the element
+       * @param $width   element width
+       * @param $height  element height
+       * @param $src     background image source
+       * @param $xOffset (optional, default=0) x position offset
+       * @param $yOffset (optional, default=0) y position offset
+       */
+      @mixin cssowl-sprite-float-right($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0)
+        float: right
+        margin-top: $yOffset
+        margin-left: $xOffset
+        +cssowl-sprite-display-block($x, $y, $width, $height, $src)
+
+.bs-docs-example
+
+  .content
+    .example-float-right
+    %p Dolores inventore quasi et molestias aut voluptas eligendi maiores ipsum. quidem nostrum officia optio vel consequatur autem ea totam.
+
+  %ul.nav.nav-tabs
+    %li.active
+      = link_to 'Sass', '#example-float-right-sass'
+    %li
+      = link_to 'Scss', '#example-float-right-scss'
+    %li
+      = link_to 'Less', '#example-float-right-less'
+    %li
+      = link_to 'Stylus', '#example-float-right-stylus'
+    %li
+      = link_to 'Html', '#example-float-right-html'
+
+  .tab-content
+    #example-float-right-sass.tab-pane.active
+      = preserve do
+        -code("sass") do
+          :plain
+            .example-float-right
+              +cssowl-sprite-float-right(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 11px)
+    #example-float-right-scss.tab-pane
+      = preserve do
+        -code("scss") do
+          :plain
+            .example-float-right {
+              @include cssowl-sprite-float-right(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 11px)
+            }
+    #example-float-right-less.tab-pane
+      = preserve do
+        -code("less") do
+          :plain
+            .example-float-right {
+              .cssowl-sprite-float-right(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 11px)
+            }
+    #example-float-right-stylus.tab-pane
+      = preserve do
+        -code("stylus") do
+          :plain
+            .example-float-right
+              cssowl-sprite-float-right(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 11px)
+    #example-float-right-html.tab-pane
+      = preserve do
+        -code("html") do
+          .example-float-right
+          %p Dolores inventore quasi et molestias aut voluptas eligendi maiores ipsum. quidem nostrum officia optio vel consequatur autem ea totam.
+

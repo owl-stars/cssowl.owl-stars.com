@@ -2,7 +2,51 @@
 title: Welcome to Middleman
 ---
 
-.welcome
-  %h1 Middleman is Watching :)
-  %p.doc
-    = link_to "Read Online Documentation", "http://middlemanapp.com/"
+.bs-docs-section
+
+  .page-header
+    %h1#display Display
+
+  = partial "docs/display/display"
+  = partial "docs/display/display-block"
+  = partial "docs/display/display-inline"
+
+  .page-header
+    %h1#replace Replace
+
+  = partial "docs/replace/replace"
+  = partial "docs/replace/replace-block"
+  = partial "docs/replace/replace-inline"
+
+  .page-header
+    %h1#absolute Absolute
+
+  = partial "docs/absolute/absolute"
+  = partial "docs/absolute/absolute-inside"
+  = partial "docs/absolute/absolute-outside"
+
+  .page-header
+    %h1#float Float
+
+  = partial "docs/float/float-left"
+  = partial "docs/float/float-right"
+
+  .page-header
+    %h1#before Before
+
+  = partial "docs/before/before"
+  = partial "docs/before/before-inline"
+  = partial "docs/before/before-float"
+  = partial "docs/before/before-absolute"
+  = partial "docs/before/before-absolute-inside"
+  = partial "docs/before/before-absolute-outside"
+
+  .page-header
+    %h1#after After
+
+  = partial "docs/after/after"
+  = partial "docs/after/after-inline"
+  = partial "docs/after/after-float"
+  = partial "docs/after/after-absolute"
+  = partial "docs/after/after-absolute-inside"
+  = partial "docs/after/after-absolute-outside"

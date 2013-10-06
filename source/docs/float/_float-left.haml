@@ -1,0 +1,76 @@
+%h2#cssowl-sprite-float-left cssowl-sprite-float-left <small>(x, y, width, height, src, xOffset, yOffset)</small>
+
+%p
+  :markdown
+    Displays a sprite element with the `float: left;` attribute with optional offset.
+
+= preserve do
+  -code("sass") do
+    :plain
+      /*
+       * @param $y       x position of the element
+       * @param $y       y position of the element
+       * @param $width   element width
+       * @param $height  element height
+       * @param $src     background image source
+       * @param $xOffset (optional, default=0) x position offset
+       * @param $yOffset (optional, default=0) y position offset
+       */
+      @mixin cssowl-sprite-float-left($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0)
+        float: left
+        margin-top: $yOffset
+        margin-right: $xOffset
+        +cssowl-sprite-display-block($x, $y, $width, $height, $src)
+
+.bs-docs-example
+
+  .content
+    .example-float-left
+    %p
+      = lorem.paragraph
+
+  %ul.nav.nav-tabs
+    %li.active
+      = link_to 'Sass', '#example-float-left-sass'
+    %li
+      = link_to 'Scss', '#example-float-left-scss'
+    %li
+      = link_to 'Less', '#example-float-left-less'
+    %li
+      = link_to 'Stylus', '#example-float-left-stylus'
+    %li
+      = link_to 'Html', '#example-float-left-html'
+
+  .tab-content
+    #example-float-left-sass.tab-pane.active
+      = preserve do
+        -code("sass") do
+          :plain
+            .example-float-left
+              +cssowl-sprite-float-left(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 11px)
+    #example-float-left-scss.tab-pane
+      = preserve do
+        -code("scss") do
+          :plain
+            .example-float-left {
+              @include cssowl-sprite-float-left(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 11px)
+            }
+    #example-float-left-less.tab-pane
+      = preserve do
+        -code("less") do
+          :plain
+            .example-float-left {
+              .cssowl-sprite-float-left(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 11px)
+            }
+    #example-float-left-stylus.tab-pane
+      = preserve do
+        -code("stylus") do
+          :plain
+            .example-float-left
+              cssowl-sprite-float-left(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 11px)
+    #example-float-left-html.tab-pane
+      = preserve do
+        -code("html") do
+          .example-float-left
+          %p
+            = lorem.paragraph

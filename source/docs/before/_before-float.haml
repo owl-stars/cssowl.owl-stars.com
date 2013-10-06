@@ -1,0 +1,74 @@
+%h2#cssowl-sprite-before-float cssowl-sprite-before-float <small>(x, y, width, height, src, xOffset, yOffset)</small>
+
+%p
+  :markdown
+    Adds the element with the `:before` pseudo selector and displays it with the `float: left;` attribute.
+
+= preserve do
+  -code("sass") do
+    :plain
+      /*
+       * @param $y       x position of the element
+       * @param $y       y position of the element
+       * @param $width   element width
+       * @param $height  element height
+       * @param $src     background image source
+       * @param $xOffset (optional, default=0) right margin of the element
+       * @param $yOffset (optional, default=0) top margin of the element
+       */
+      @mixin cssowl-sprite-before-float($x, $y, $width, $height, $src, $xOffset:0, $yOffset:0)
+        &:before
+          content: ""
+          float: left
+          margin-top: $yOffset
+          margin-right: $xOffset
+          +cssowl-sprite-display-block($x, $y, $width, $height, $src)
+
+.bs-docs-example
+
+  .content
+    .example-before-float Quia sint quis nam et quia ducimus consequatur cumque.
+
+  %ul.nav.nav-tabs
+    %li.active
+      = link_to 'Sass', '#example-before-float-sass'
+    %li
+      = link_to 'Scss', '#example-before-float-scss'
+    %li
+      = link_to 'Less', '#example-before-float-less'
+    %li
+      = link_to 'Stylus', '#example-before-float-stylus'
+    %li
+      = link_to 'Html', '#example-before-float-html'
+
+  .tab-content
+    #example-before-float-sass.tab-pane.active
+      = preserve do
+        -code("sass") do
+          :plain
+            .example-before-float
+              +cssowl-sprite-before-float(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px)
+    #example-before-float-scss.tab-pane
+      = preserve do
+        -code("scss") do
+          :plain
+            .example-before-float {
+              @include cssowl-sprite-before-float(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px)
+            }
+    #example-before-float-less.tab-pane
+      = preserve do
+        -code("less") do
+          :plain
+            .example-before-float {
+              .cssowl-sprite-before-float(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px);
+            }
+    #example-before-float-stylus.tab-pane
+      = preserve do
+        -code("stylus") do
+          :plain
+            .example-before-float
+              cssowl-sprite-before-float(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px)
+    #example-before-float-html.tab-pane
+      = preserve do
+        -code("html") do
+          .example-before-float Quia sint quis nam et quia ducimus consequatur cumque.

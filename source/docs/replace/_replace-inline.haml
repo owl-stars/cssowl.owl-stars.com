@@ -1,0 +1,74 @@
+%h2#cssowl-sprite-replace-inline cssowl-sprite-replace-inline <small>(x, y, width, height, src, yOffset, valign)</small>
+
+%p
+  :markdown
+    Displays a sprite element with the `display: inline-block` attribute. and uses `text-indent: -9999px;` to hide the text.
+    You can vertically align it using `yOffset` and `valign`
+
+= preserve do
+  -code("sass") do
+    :plain
+      /*
+       * @param $y       x position of the element
+       * @param $y       y position of the element
+       * @param $width   element width
+       * @param $height  element height
+       * @param $src     background image source
+       * @param $yOffset (optional, default=0) top margin of the element
+       * @param $valign  (optional, default=middle) vertical-align attribute property
+       */
+      @mixin cssowl-sprite-replace-inline($x, $y, $width, $height, $src, $yOffset:0, $valign:middle)
+        direction: ltr
+        text-indent: -9999px
+        +cssowl-sprite-display-inline($x, $y, $width, $height, $src, $yOffset, $valign)
+
+
+.bs-docs-example
+
+  .content
+    %p Lorem ipsum dolor <span class="example-replace-inline">cssowl</span> sit atem
+
+  %ul.nav.nav-tabs
+    %li.active
+      = link_to 'Sass', '#example-replace-inline-sass'
+    %li
+      = link_to 'Scss', '#example-replace-inline-scss'
+    %li
+      = link_to 'Less', '#example-replace-inline-less'
+    %li
+      = link_to 'Stylus', '#example-replace-inline-stylus'
+    %li
+      = link_to 'Html', '#example-replace-inline-html'
+
+  .tab-content
+    #example-replace-inline-sass.tab-pane.active
+      = preserve do
+        -code("sass") do
+          :plain
+            .example-replace-inline
+              +cssowl-sprite-replace-inline(-10px, -10px, 91px, 95px, url("sprite.png"), 0, text-top)
+    #example-replace-inline-scss.tab-pane
+      = preserve do
+        -code("scss") do
+          :plain
+            .example-replace-inline {
+              @include cssowl-sprite-replace-inline(-10px, -10px, 91px, 95px, url("sprite.png"), 0, text-top)
+            }
+    #example-replace-inline-less.tab-pane
+      = preserve do
+        -code("less") do
+          :plain
+            .example-replace-inline {
+              .cssowl-sprite-replace-inline(-10px, -10px, 91px, 95px, url("sprite.png"), 0, text-top);
+            }
+    #example-replace-inline-stylus.tab-pane
+      = preserve do
+        -code("stylus") do
+          :plain
+            .example-replace-inline
+              cssowl-sprite-replace-inline(-10px, -10px, 91px, 95px, url("sprite.png"), 0, text-top)
+    #example-replace-inline-html.tab-pane
+      = preserve do
+        -code("html") do
+          %p Lorem ipsum dolor <span class="example-replace-inline">cssowl</span> sit atem
+

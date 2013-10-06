@@ -45,12 +45,7 @@ page "/404.html", :layout => false
 # Reload the browser automatically whenever files change
 activate :livereload
 
-# Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+activate :syntax, :line_numbers => false
 
 ###
 # Assets
