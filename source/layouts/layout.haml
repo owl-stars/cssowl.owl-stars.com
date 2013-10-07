@@ -9,10 +9,14 @@
     %meta{:content => "width=device-width", :name => "viewport"}
     %title= page_title
     %meta{:content => page_description, :name => "description"}
-
-    -#Favicon Options:
-    -#Update favicon_base.png in /source and middleman-favicon-maker will generate all the versions you need on 'middleman build'
-    -#OR, place favicon.ico and apple-touch-icon.png in /source and deactivate :favicon_maker in config.rb
+    %link{ rel: "apple-touch-icon", sizes: "144x144", href: "/apple-touch-icon-144x144-precomposed.png" }
+    %link{ rel: "apple-touch-icon", sizes: "120x120", href: "/apple-touch-icon-120x120-precomposed.png" }
+    %link{ rel: "apple-touch-icon", sizes: "114x114", href: "/apple-touch-icon-114x114-precomposed.png" }
+    %link{ rel: "apple-touch-icon", sizes: "72x72", href: "/apple-touch-icon-72x72-precomposed.png" }
+    %link{ rel: "apple-touch-icon", sizes: "57x57", href: "/apple-touch-icon-57x57-precomposed.png" }
+    %link{ rel: "apple-touch-icon", href: "apple-touch-icon-precomposed.png" }
+    %link{ rel: "shortcut icon", href: "favicon.png" }
+    %link{ rel: "icon", type: "image/ico", href: "favicon.ico" }
 
     = stylesheet_link_tag "all"
     = javascript_include_tag  "modernizr"
@@ -39,10 +43,14 @@
             %li{nav_active("sprite")}
               = link_to 'sprite', 'sprite.html'
 
+
     .bs-header
       .container
-        %h1 Cssowl
-        %p Lorem ipsum
+        %h1.title Cssowl
+
+        %p.lead Owl-Stars mixins library for faster and easier web development.
+
+        %a.btn.btn-lg.btn-download{:href => "https://github.com/owl-stars/cssowl/archive/v#{data.cssowl.version}.zip"} Download Cssowl <small>v#{data.cssowl.version}</small>
 
     .container.bs-docs-container
       .row
@@ -54,5 +62,20 @@
           = find_and_preserve do
             = yield
 
+  %footer.bs-footer{role: "contentinfo"}
+    .container
+      .bs-social
+        %ul.bs-social-buttons
+          %li
+            %iframe.github-btn{height: "20", src: "http://ghbtns.com/github-btn.html?user=owl-stars&repo=cssowl&type=watch&count=true", title: "Star on GitHub", width: "100"}
+          %li
+            %iframe.github-btn{height: "20", src: "http://ghbtns.com/github-btn.html?user=owl-stars&repo=cssowl&type=fork&count=true", title: "Fork on GitHub", width: "102"}
+          %li.tweet-btn
+            %a.twitter-share-button{:href => "https://twitter.com/share", :data => {:count => "horizontal", :text => "Cssowl", :via => "Owl_Stars", :url => "http://cssowl.owl-stars.com/"}} Tweet
+
+      %p
+        Proudly built using #{link_to 'Middleman', "http://middlemanapp.com/", target: "_blank"} and #{link_to 'Twitter Bootstrap', "http://getbootstrap.com/", target: "_blank"}.<br/>
+        Copyright &copy; 2013 We Just Do Stuff, Kim & Pollak GbR
 
     = javascript_include_tag  "main"
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>

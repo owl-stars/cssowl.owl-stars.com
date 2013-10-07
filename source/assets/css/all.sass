@@ -1,24 +1,89 @@
 //--- IMPORTS -------------------------------------------------------------------------------------
 
-@import "../../../bower_components/sass-bootstrap/lib/_normalize.scss"
 @import "../../../bower_components/sass-bootstrap/lib/_variables.scss"
+
+$brand-primary: #1097b3
+
+@import "../../../bower_components/sass-bootstrap/lib/_normalize.scss"
 @import "../../../bower_components/sass-bootstrap/lib/_mixins.scss"
 @import "../../../bower_components/sass-bootstrap/lib/_type.scss"
 @import "../../../bower_components/sass-bootstrap/lib/_navs.scss"
 @import "../../../bower_components/sass-bootstrap/lib/_navbar.scss"
 @import "../../../bower_components/sass-bootstrap/lib/_forms.scss"
+@import "../../../bower_components/sass-bootstrap/lib/_buttons.scss"
 @import "../../../bower_components/sass-bootstrap/lib/_grid.scss"
 @import "../../../bower_components/sass-bootstrap/lib/_code.scss"
 @import "../../../bower_components/sass-bootstrap/lib/_scaffolding.scss"
-@import "pygments.github"
+@import "../../../bower_components/sass-bootstrap/lib/_component-animations.scss"
+@import "all/pygments.github"
 
 //--- STYLES --------------------------------------------------------------------------------------
 
 body
   padding-top: 50px
 
+.bs-docs-nav
+  border-color: $brand-primary
+  background-color: lighten($brand-primary, 5%)
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15)
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1)
+
+  .navbar-collapse
+    border-color: $brand-primary
+
+  .navbar-brand
+    color: #fff
+
+  .navbar-nav
+    li > a
+      color: darken(#fff, 10%)
+      &:hover
+        color: #fff
+    .active > a
+      color: #fff
+      background-color: $brand-primary
+      &:hover
+        color: #fff
+        background-color: $brand-primary
+
+  .navbar-toggle
+    border-color: lighten($brand-primary, 5%)
+    &:hover
+      background-color: $brand-primary
+      border-color: #463265
+
 .bs-header
-  background: yellow
+  color: #fff
+  font-size: 2em
+  padding: 30px 0
+  position: relative
+  text-align: center
+  background: lighten($brand-primary, 5%)
+
+  .title
+    font-size: 1.5em
+    letter-spacing: 1px
+    text-transform: uppercase
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15)
+
+  .lead
+    font-size: 0.6em
+    margin-bottom: 2em
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15)
+
+  .btn-download
+    @extend .btn-default
+    color: #fff
+    font-weight: bold
+    border-color: #fff
+    background: transparent
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15)
+
+    small
+      font-weight: normal
+
+    &:hover
+      color: $brand-primary
 
 .bs-sidebar
 
@@ -48,10 +113,10 @@ body
       &.active:hover,
       &.active:focus
         > a
-          color: #563d7c
+          color: $brand-primary
           font-weight: bold
           background-color: transparent
-          border-right: 1px solid #563d7c
+          border-right: 1px solid $brand-primary
 
     .nav
       display: none
@@ -112,8 +177,36 @@ body
       display: inline-block
       background: url("/assets/img/transbg.gif")
 
+.bs-footer
+  color: #777
+  margin-top: 100px
+  padding-top: 40px
+  text-align: center
+  padding-bottom: 30px
+  border-top: 1px solid #e5e5e5
+
+  .bs-social-buttons
+    display: inline-block
+    margin-bottom: 20px
+    padding-left: 0
+    list-style: none
+    li
+      display: inline-block
+      line-height: 1
+      padding: 5px 8px
+    .twitter-follow-button
+      width: 225px !important
+    .twitter-share-button
+      width: 98px !important
+
+  /* Style the GitHub buttons via CSS instead of inline attributes
+
+  .github-btn
+    border: 0
+    overflow: hidden
 
 //--- MEDIA QUERIES -------------------------------------------------------------------------------
 
-@import "all-992"
-@import "all-1200"
+@import "all/min-768"
+@import "all/min-992"
+@import "all/min-1200"

@@ -3,7 +3,7 @@
 ###
 
 set :site_name, "Cssowl"
-set :site_description, "Edit your config.rb to set the global description."
+set :site_description, "Owl-Stars Less, Sass, Scss & Stylus mixins library for faster and easier web development."
 
 ###
 # Compass
@@ -45,6 +45,7 @@ page "/404.html", :layout => false
 # Reload the browser automatically whenever files change
 activate :livereload
 
+# Cody syntax highlightning
 activate :syntax, :line_numbers => false
 
 ###
@@ -74,4 +75,12 @@ configure :build do
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
+end
+
+# Deploy-specific configuration
+activate :deploy do |deploy|
+  deploy.build_before = true
+  deploy.method = :rsync
+  deploy.host   = "cssowl.owl-stars.com"
+  deploy.path   = "/var/www/cssowl.owl-stars.com/htdocs"
 end

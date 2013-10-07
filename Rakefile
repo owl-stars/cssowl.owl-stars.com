@@ -16,5 +16,10 @@ task :build do
   system "bundle exec middleman build"
 end
 
+desc "Generate build and deploy to server"
+task :deploy do
+  system "bundle exec middleman deploy"
+end
+
 desc "Build and start server"
 task :default => [:server]
