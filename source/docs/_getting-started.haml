@@ -1,0 +1,67 @@
+%p.lead After downloading just import Cssowl into your Less, Sass, Scss or Stylus stylesheet file and your good to go.
+
+%p Within the download you'll find the following directories and files, grouping each syntax into it's own directory.
+
+= preserve do
+  -code("shell") do
+    :plain
+      cssowl/
+        └── lib/
+            ├── less/
+            │   ├── cssowl/
+            │   │   ├── position.less
+            │   │   └── sprite.less
+            │   └── cssowl.less
+            ├── sass/
+            │   ├── cssowl/
+            │   │   ├── position.sass
+            │   │   └── sprite.sass
+            │   └── cssowl.sass
+            ├── scss/
+            │   ├── cssowl/
+            │   │   ├── position.scss
+            │   │   └── sprite.scss
+            │   └── cssowl.scss
+            └── stylus/
+                ├── cssowl/
+                │   ├── position.styl
+                │   └── sprite.styl
+                └── cssowl.styl
+
+%p Depending on your syntax import the correct version into your stylesheet file.
+
+.bs-docs-example
+
+  .content
+
+  %ul.nav.nav-tabs
+    %li.active
+      = link_to 'Sass', '#example-import-sass'
+    %li
+      = link_to 'Scss', '#example-import-scss'
+    %li
+      = link_to 'Less', '#example-import-less'
+    %li
+      = link_to 'Stylus', '#example-import-stylus'
+
+  .tab-content
+    #example-import-sass.tab-pane.active
+      = preserve do
+        -code("sass") do
+          :plain
+            @import "path/to/cssowl/lib/sass/cssowl"
+    #example-import-scss.tab-pane
+      = preserve do
+        -code("scss") do
+          :plain
+            @import "path/to/cssowl/lib/scss/cssowl"
+    #example-import-less.tab-pane
+      = preserve do
+        -code("less") do
+          :plain
+            @import "path/to/cssowl/lib/less/cssowl";
+    #example-import-stylus.tab-pane
+      = preserve do
+        -code("stylus") do
+          :plain
+            @import "path/to/cssowl/lib/stylus/cssowl"

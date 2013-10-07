@@ -12,10 +12,37 @@
 
   = partial "docs/download"
 
+.bs-docs-section
+
+  .page-header
+    %h1#getting-started Getting started
+
+  = partial "docs/getting-started"
+
+.bs-docs-section
+
+  .page-header
+    %h1#feedback Feedback
+
+  = partial "docs/feedback"
+
+.bs-docs-section
+
+  .page-header
+    %h1#license License
+
+  = partial "docs/license"
+
 
 -content_for :nav do
   %ul.nav.bs-sidenav
     %li
       %a{:href => "#introduction"} Introduction
     %li
-      %a{:href => "#download"} Download
+      %a{:href => "#download"} Download Cssowl
+    %li
+      %a{:href => "#getting-started"} Gettings started
+    %li
+      %a{:href => "#feedback"} Feedback
+    %li
+      %a{:href => "#license"} License

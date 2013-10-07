@@ -1,6 +1,7 @@
 ruby "1.9.3"
 source 'http://rubygems.org'
 
+gem "redcarpet"
 gem "middleman", "~>3.1.5"
 gem "middleman-favicon-maker"
 gem "middleman-syntax", "~> 1.2.1"

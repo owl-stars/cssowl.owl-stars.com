@@ -56,6 +56,9 @@ set :css_dir, 'assets/css'
 set :images_dir, 'assets/img'
 set :fonts_dir, 'assets/fonts'
 
+set :markdown_engine, :redcarpet
+set :markdown, :fenced_code_blocks => true
+
 sprockets.append_path File.join "#{root}", "bower_components"
 
 # Build-specific configuration

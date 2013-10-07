@@ -51,7 +51,8 @@
             = yield_content :nav
 
         .col-md-9.bs-docs-content
-          = yield
+          = find_and_preserve do
+            = yield
 
 
     = javascript_include_tag  "main"
