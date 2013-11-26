@@ -20,6 +20,7 @@
 
     = stylesheet_link_tag "all"
     = javascript_include_tag  "modernizr"
+    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Patua+One", "all"
 
     = if content_for?(:head)
       -yield_content :head
@@ -37,31 +38,22 @@
       
   %body{:class => page_classes}
 
-    %header.navbar.navbar-inverse.navbar-fixed-top.bs-docs-nav
+    %header
+      = partial "docs/topbar"
+      = partial "docs/head"
+
+    .bs-header{:class => page_classes}
       .container
-        .navbar-header
-          %button.navbar-toggle{:type => "button", :data => {:toggle => "collapse", :target => ".bs-navbar-collapse"}}
-            %span.sr-only Toggle navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a{:href => "../", :class => "navbar-brand"} Cssowl
+        - if (page_classes == 'index')
+          %p.lead Faster and easier web development!
+          %h2.title Cssowl is a mixins library with support for Less, Sass/Scss and Stylus
+          = partial "docs/downloadbutton"
 
-        %nav.collapse.navbar-collapse.bs-navbar-collapse
-          %ul.nav.navbar-nav
-            %li{nav_active("position")}
-              = link_to 'position', 'position.html'
-            %li{nav_active("sprite")}
-              = link_to 'sprite', 'sprite.html'
+        - if (page_classes == 'position')
+          %h2.title Cssowl Position
 
-
-    .bs-header
-      .container
-        %h1.title Cssowl
-
-        %p.lead Owl-Stars mixins library for faster and easier web development.
-
-        %a.btn.btn-lg.btn-download{:href => "https://github.com/owl-stars/cssowl/archive/v#{data.cssowl.version}.zip"} Download Cssowl <small>v#{data.cssowl.version}</small>
+        - if (page_classes == 'sprite')
+          %h2.title Cssowl Sprite
 
     .container.bs-docs-container
       .row
@@ -73,20 +65,38 @@
           = find_and_preserve do
             = yield
 
-  %footer.bs-footer{role: "contentinfo"}
-    .container
-      .bs-social
-        %ul.bs-social-buttons
-          %li
-            %iframe.github-btn{height: "20", src: "http://ghbtns.com/github-btn.html?user=owl-stars&repo=cssowl&type=watch&count=true", title: "Star on GitHub", width: "100"}
-          %li
-            %iframe.github-btn{height: "20", src: "http://ghbtns.com/github-btn.html?user=owl-stars&repo=cssowl&type=fork&count=true", title: "Fork on GitHub", width: "102"}
-          %li.tweet-btn
-            %a.twitter-share-button{:href => "https://twitter.com/share", :data => {:count => "horizontal", :text => "Cssowl", :via => "Owl_Stars", :url => "http://cssowl.owl-stars.com/"}} Tweet
 
-      %p
-        Proudly built using #{link_to 'Middleman', "http://middlemanapp.com/", target: "_blank"} and #{link_to 'Twitter Bootstrap', "http://getbootstrap.com/", target: "_blank"}.<br/>
-        Copyright &copy; 2013 We Just Do Stuff, Kim & Pollak GbR
+    %footer
+      .container
+        .row
+          .col-sm-6.col-md-7.col-xs-12.download
+            = partial "docs/downloadbutton"
+            .title.hidden-xs.hidden-sm.hidden-md
+              Save time, work faster!
+
+          .col-sm-6.col-md-5.col-xs-12.newsletter
+            .title
+              Never miss an update again!
+            %form#mailchimpform
+              %input#mc-email{placeholder: "Your E-Mail adress", type: "email"}
+              %button{type: "submit"} Subscribe
+              %br
+              %label{for: "mc-email"}
+
+        .row.info
+          .col-xs-12.col-sm-6
+            %ul.bs-social-buttons
+              %li
+                %iframe.github-btn{height: "20", src: "http://ghbtns.com/github-btn.html?user=owl-stars&repo=cssowl&type=watch&count=true", title: "Star on GitHub", width: "100"}
+              %li
+                %iframe.github-btn{height: "20", src: "http://ghbtns.com/github-btn.html?user=owl-stars&repo=cssowl&type=fork&count=true", title: "Fork on GitHub", width: "102"}
+              %li.tweet-btn
+                %a.twitter-share-button{:href => "https://twitter.com/share", :data => {:count => "horizontal", :text => "Cssowl", :via => "Owl_Stars", :url => "http://cssowl.owl-stars.com/"}} Tweet
+
+          .col-xs-12.col-sm-6
+            .madeby
+              Owl-Stars is made by
+              %a{title: "We Just Do Stuff", href: "http://www.wejustdostuff.com", target: "_blank", class: "wjds"} We Just Do Stuff
 
     = javascript_include_tag  "main"
 

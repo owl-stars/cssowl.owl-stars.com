@@ -2,7 +2,7 @@
 
 @import "../../../bower_components/sass-bootstrap/lib/_variables.scss"
 
-$brand-primary: #1097b3
+$brand-primary: #14b0d1
 
 @import "../../../bower_components/sass-bootstrap/lib/_normalize.scss"
 @import "../../../bower_components/sass-bootstrap/lib/_mixins.scss"
@@ -14,109 +14,306 @@ $brand-primary: #1097b3
 @import "../../../bower_components/sass-bootstrap/lib/_grid.scss"
 @import "../../../bower_components/sass-bootstrap/lib/_code.scss"
 @import "../../../bower_components/sass-bootstrap/lib/_scaffolding.scss"
+@import "../../../bower_components/sass-bootstrap/lib/responsive-utilities.scss"
 @import "../../../bower_components/sass-bootstrap/lib/_component-animations.scss"
-@import "all/pygments.github"
 
-//--- STYLES --------------------------------------------------------------------------------------
+// Cssowl
+@import cssowl/lib/sass/cssowl.sass
+
+@import "all/pygments.github"
+@import "all/variables"
+@import "all/font"
+@import "all/mixins"
+@import "all/pagesprite"
+
+
+
+/* --------------------------------------------
+/* ---- Global
+/* --------------------------------------------
+
 
 body
-  padding-top: 50px
+  @include fontDefaultRegular
+  font-size: $fontSizeBase
+  background: $bgImg
+  color: $colorFontDefault
 
-.bs-docs-nav
-  border-color: $brand-primary
-  background-color: lighten($brand-primary, 5%)
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15)
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1)
+a
+  outline: none
+  color: $colorFontDefault
+  text-decoration: underline
+  &:active
+    outline: none
+  &:focus
+    -moz-outline-style: none
+  &:hover
+    color: $colorFontGrey
 
-  .navbar-collapse
-    border-color: $brand-primary
+\:-moz-any-link:focus
+  outline: none
 
-  .navbar-brand
-    color: #fff
+h1, h2, h3, h4, .lead
+  @include fontSpecialRegular
 
-  .navbar-nav
-    li > a
-      color: darken(#fff, 10%)
-      &:hover
-        color: #fff
-    .active > a
-      color: #fff
-      background-color: $brand-primary
-      &:hover
-        color: #fff
-        background-color: $brand-primary
+h1, h2
+  font-size: $fontSizeSuperBig
 
-  .navbar-toggle
-    border-color: lighten($brand-primary, 5%)
-    &:hover
-      background-color: $brand-primary
-      border-color: #463265
+h3
+  font-size: $fontSizeTitle
+
+h4, .lead
+  font-size: $fontSizeTitle
+
+p
+  margin: 0
+  line-height: 21px
+
+input, button
+  @include roundedBox($cornerRaduis)
+  border: 1px solid $colorBorder
+  box-shadow: none
+  height: 28px
+  padding: 0 8px
+
+
+
+
+
+
+/* --------------------------------------------
+/* ---- Components
+/* --------------------------------------------
+
+.downloadButton
+  font-size: $fontSizeBase
+  display: inline-block
+  @include roundedBox($cornerRaduis)
+  border: 1px solid $colorCssowlLight
+  color: $colorCssowlLight
+  text-decoration: none
+
+  &:hover
+    background: $colorCssowlLight
+    color: $colorFontWhite
+
+    > .downloadButtonInfo
+      border-right: 1px dashed $colorBgLight
+
+  > .downloadButtonInfo
+    float: left
+    text-align: center
+    padding: 8px 20px 12px
+    border-right: 1px dashed $colorCssowlLight
+
+    > .downloadButtonHead
+      @include fontSpecialRegular
+      font-size: $fontSizeTitle
+      margin-bottom: 2px
+
+  > .downloadButtonPrice
+    @include fontSpecialRegular
+    font-size: $fontSizeTitle
+    float: left
+    padding: 11px 20px 0
+    font-size: $fontSizeSuperBig
+
+
+
+
+/* --------------------------------------------
+/* ---- Site
+/* --------------------------------------------
+
+header
+  background: $bgImg
+
+  #topbar
+    height: 40px
+    background: $colorBadge
+
+    .sitenavi
+      float: left
+      margin: 0
+      padding: 0
+      text-align: center
+
+      li
+        float: left
+        list-style-type: none
+        margin: 0 18px
+        padding-top: 7px
+        min-height: 40px
+        @include fontSpecialRegular
+        font-size: $fontSizeTitle
+
+        &:hover
+          border-bottom: 3px solid $colorFontGreyDark
+          &.spriteowl
+            border-color: $colorSpriteowlLight
+            a
+              color: $colorSpriteowlLight
+          &.cssowl
+            border-color: $colorCssowlLight
+            a
+              color: $colorCssowlLight
+        &.active
+          border-bottom: 3px solid $colorCssowlLight
+          a
+            color: $colorCssowlLight
+        a
+          color: $colorFontGreyDark
+          text-decoration: none
+          > .home
+            @include pagesprite-icon-home-replace-inline(-4px)
+
+    .madeby
+      color: $colorFontGreyDark
+      padding-top: 6px
+      line-height: 25px
+      float: right
+      > .wjds
+        margin-left: 5px
+        @include pagesprite-graphic-wjds-replace-inline(-5px)
+
+  >.navbar
+    background: none
+    border: none
+    font-size: $fontSizeBase
+    margin-bottom: 0
+
+    .navbar-header
+      height: 120px
+
+      .logo
+        font-size: $fontSizeBase
+        padding-top: 33px
+        @include pagesprite-logo-cssowl-before-absolute()
+        text-decoration: none
+        color: $colorFontDefault
+        h1
+          margin: 20px 0 0 90px
+        h2
+          color: $colorFontCssowl
+          margin: 0px 0 0 120px
+          font-size: $fontSizeSubTitle
+
+      .navbar-toggle
+        height: 40px
+        margin-top: 48px
+        border: 1px solid $colorFontDefault
+        @include roundedBox($cornerRaduis)
+
+        >.icon-bar
+          background: $colorFontDefault
+
+    nav
+
+      .nav
+        margin: 0
+        margin-top: 37px
+
+        li
+          list-style-type: none
+          margin: 10px 4px
+          padding-top: 1px
+          height: 34px
+          @include fontSpecialRegular
+          font-size: $fontSizeTitle
+
+          &:last-child
+            margin-right: 0
+
+          &.active
+            a
+              color: $colorCssowlLight
+              background: none
+
+              &:hover
+                background: none
+                color: $colorCssowlLight
+
+          a
+            height: auto
+            background: none
+            color: $colorFontDefault
+            text-decoration: none
+
+            &:hover
+              color: $colorCssowlLight
+
+            &.download
+              margin-top: 6px
+              padding: 8px 15px 10px
+              @include roundedBox($cornerRaduis)
+              border: 1px solid $colorCssowlLight
+              color: $colorCssowlLight
+
+              &:hover
+                color: $colorFontWhite
+                background: $colorCssowlLight
+
+
 
 .bs-header
+  font-size: $fontSizeBase !important
   color: #fff
-  font-size: 2em
-  padding: 30px 0
+  padding: 20px 0 0 0
   position: relative
-  text-align: center
-  background: lighten($brand-primary, 5%)
+  text-align: center  !important
+  height: 130px
+  background: url('/assets/img/cinema/bgsites.png') top center no-repeat $colorBgDark
 
-  .title
-    font-size: 1.5em
-    letter-spacing: 1px
-    text-transform: uppercase
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15)
+  &.index
+    padding-top: 30px
+    background: url('/assets/img/cinema/bghome.png') top center no-repeat $colorBgDark
+    height: 380px
 
   .lead
-    font-size: 0.6em
-    margin-bottom: 2em
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15)
+    font-size: $fontSizeTitle
 
-  .btn-download
-    @extend .btn-default
-    color: #fff
-    font-weight: bold
-    border-color: #fff
-    background: transparent
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15)
+  .title
+    line-height: 1.4em
+    font-size: $fontSizeSuperBig
 
-    small
-      font-weight: normal
+  .downloadButton
+    margin-top: 20px
 
-    &:hover
-      color: $brand-primary
+
 
 .bs-sidebar
 
   > .bs-sidenav
-    margin-top: 30px
+    margin-top: 40px
     padding-top: 10px
     border-radius: 5px
     margin-bottom: 30px
     padding-bottom: 10px
-    text-shadow: 0 1px 0 #fff
-    background-color: #f7f5fa
+    background-color: $colorBgLight
 
   .nav
     > li
       > a
+        @include fontSpecialRegular
+        font-size: $fontSizeTitle
+        text-decoration: none
         display: block
-        color: #716b7a
+        color: $colorFontDefault
         padding: 5px 20px
 
         &:hover,
         &:focus
-          text-decoration: none
-          background-color: #e5e3e9
-          border-right: 1px solid #dbd8e0
+          color: $brand-primary
+          background-color: transparent
+          border-right: 3px solid $brand-primary
 
       &.active,
       &.active:hover,
       &.active:focus
         > a
           color: $brand-primary
-          font-weight: bold
           background-color: transparent
-          border-right: 1px solid $brand-primary
+          border-right: 3px solid $brand-primary
 
     .nav
       display: none
@@ -124,33 +321,76 @@ body
       margin-bottom: 8px
       > li
         > a
-          font-size: 90%
+          font-size: $fontSizeDefault
           padding-top: 3px
           padding-left: 30px
           padding-bottom: 3px
 
   &.affix
+    top: 40px !important
     position: static
 
 .bs-docs-content
 
+  .nav-tabs
+    margin: 0
+    padding: 0
+    @include fontSpecialRegular
+    font-size: $fontSizeTitle
+    list-style-type: none
+
+    > li
+      margin-right: 4px
+
+      &.active
+        a
+          color: $colorFontDefault
+          border: 1px solid $colorBorder
+          border-bottom: 0
+
+      a
+        text-decoration: none
+        border-radius: 5px 5px 0 0
+        padding: 8px 15px 8px
+        border: 1px solid $colorBadge
+        border-bottom: 0
+        color: $colorFontDefault !important
+
+        &:hover
+          background: $colorBadge
+          color: $colorFontWhite !important
+
+
+  .page-header
+    border-bottom: 1px dashed $colorBorder
+    margin-bottom: -10px
+
   .bs-docs-section
     margin-bottom: 80px
 
-    h2
+    h2, .lead
       font-size: 20px
-      margin: 20px 0 15px
+      margin: 50px 0 20px
       small
         font-size: 0.7em
+
+    p
+      margin-bottom: 10px
+
+    a
+      color: $colorFontCssowl
+      &:hover
+        color: $colorFontDefault
 
     code,
     .highlight
       font-size: 12px
+      background: $colorBgLight
 
     .bs-docs-example
       position: relative
       padding: 15px 10px 0
-      border: 1px solid $table-border-color
+      border: 1px solid $colorBorder
       border-top-left-radius: $border-radius-large
       border-top-right-radius: $border-radius-large
 
@@ -159,6 +399,7 @@ body
         padding-bottom: 10px
 
       .highlight
+
         border-top: none
         border-top-left-radius: 0
         border-top-right-radius: 0
@@ -171,39 +412,97 @@ body
         font-weight: bold
         position: absolute
         letter-spacing: 1px
-        color: $table-border-color
+        color: $colorFontGrey
 
     .bs-docs-sprite
       display: inline-block
       background: url("/assets/img/transbg.gif")
 
-.bs-footer
-  color: #777
-  margin-top: 100px
-  padding-top: 40px
-  text-align: center
-  padding-bottom: 30px
-  border-top: 1px solid #e5e5e5
 
-  .bs-social-buttons
-    display: inline-block
-    margin-bottom: 20px
-    padding-left: 0
-    list-style: none
-    li
+
+/* ---- Footer
+
+footer
+  background: $colorBadge
+  color: $colorFontGreyDark
+
+  .download
+    text-align: center
+    margin-top: 30px
+    margin-bottom: 30px
+
+    >.title
+      @include fontSpecialRegular
+      font-size: $fontSizeBig
+      margin-left: 20px
+      margin-top: 15px
+      float: left
+
+  .newsletter
+    text-align: center
+    margin-bottom: 30px
+
+    input
+      width: 200px
+
+    button
+      color: $colorCssowlLight
+      border: none
+      height: 30px
+      padding: 0 10px
+      margin-left: 5px
+      border: 1px solid $colorCssowlLight
+      background: $colorBadge
+      text-transform: uppercase
+
+      &:hover
+        color: $colorFontWhite
+        background: $colorCssowlLight
+
+    label
+      width: 310px
+      text-align: center
+      margin-top: 5px
+      color: $colorFontWhite
+
+    > .title
+      margin-top: 10px
+      margin-bottom: 10px
+      @include fontSpecialRegular
+      font-size: $fontSizeBig
+
+  .info
+    border-top: 1px dashed #444444
+
+    .bs-social-buttons
+      width: 100%
       display: inline-block
-      line-height: 1
-      padding: 5px 8px
-    .twitter-follow-button
-      width: 225px !important
-    .twitter-share-button
-      width: 98px !important
+      margin-top: 16px
+      padding-left: 0
+      list-style: none
+      text-align: center
 
-  /* Style the GitHub buttons via CSS instead of inline attributes
+      li
+        display: inline-block
+        line-height: 1
+        padding: 5px 5px
+        .twitter-follow-button
+          width: 225px !important
+        .twitter-share-button
+          width: 98px !important
+        .github-btn
+          border: 0
+          overflow: hidden
 
-  .github-btn
-    border: 0
-    overflow: hidden
+    .madeby
+      text-align: center
+      padding-top: 20px
+      margin-bottom: 40px
+      > .wjds
+        margin-left: 5px
+        @include pagesprite-graphic-wjds-replace-inline(-5px)
+
+
 
 //--- MEDIA QUERIES -------------------------------------------------------------------------------
 

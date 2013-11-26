@@ -1,0 +1,23 @@
+.navbar.navbar-default{role:"navigation"}
+  .container
+    .navbar-header
+      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+
+      %a.navbar-brand.logo{title: "Spriteowl", href: "/"}
+        %h1.hidden-sm Cssowl
+        %h2.hidden-xs.hidden-sm Mixins Libary
+
+    %nav.collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li{nav_active("home")}
+          = link_to 'Home', 'index.html'
+        %li{nav_active("position")}
+          = link_to 'Position package', 'position.html'
+        %li{nav_active("sprite")}
+          = link_to 'Sprite package', 'sprite.html'
+        %li
+          %a.download{:href => "https://github.com/owl-stars/cssowl/archive/v#{data.cssowl.version}.zip"} Download
