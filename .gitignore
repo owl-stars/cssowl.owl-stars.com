@@ -1,5 +1,7 @@
 .*
 *~
-/build
-/bower_components
+/tmp/
+/build/
+/bower_components/
+!.htaccess
 !.git*

@@ -30,6 +30,36 @@
     &.affix .bs-sidenav
       margin-top: 0
       margin-bottom: 0
-        // Widen the fixed sidebar
+
+@media screen and (min-width: 768px)
+
+  .bs-header
+    &.index
+      padding-top: 50px
+
+  footer
+    .download
+      text-align: left
+      .downloadButton
+        float: left
+
+    .newsletter
+      text-align: right
+      margin-top: 10px
+      margin-bottom: 0
+      .title
+        margin-right: 2px
+
+    .info
+      .bs-social-buttons
+        li
+          float: left
+      .madeby
+        float: right
 
 
+@media screen and (min-width: 1200px)
+  // Widen the fixed sidebar again
+  .bs-sidebar
+    &.affix-bottom, &.affix
+      width: 263px

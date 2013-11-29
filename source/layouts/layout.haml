@@ -8,46 +8,36 @@
     %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
     %meta{:content => "width=device-width", :name => "viewport"}
     %title= page_title
+    %meta{:content => data.site.version, :name => "version"}
     %meta{:content => page_description, :name => "description"}
-    %link{ rel: "apple-touch-icon", sizes: "144x144", href: "/apple-touch-icon-144x144-precomposed.png" }
-    %link{ rel: "apple-touch-icon", sizes: "120x120", href: "/apple-touch-icon-120x120-precomposed.png" }
-    %link{ rel: "apple-touch-icon", sizes: "114x114", href: "/apple-touch-icon-114x114-precomposed.png" }
-    %link{ rel: "apple-touch-icon", sizes: "72x72", href: "/apple-touch-icon-72x72-precomposed.png" }
-    %link{ rel: "apple-touch-icon", sizes: "57x57", href: "/apple-touch-icon-57x57-precomposed.png" }
-    %link{ rel: "apple-touch-icon", href: "apple-touch-icon-precomposed.png" }
+    %link{ rel: "apple-touch-icon-precomposed", sizes: "144x144", href: "apple-touch-icon-144x144-precomposed.png" }
+    %link{ rel: "apple-touch-icon-precomposed", sizes: "120x120", href: "apple-touch-icon-120x120-precomposed.png" }
+    %link{ rel: "apple-touch-icon-precomposed", sizes: "114x114", href: "apple-touch-icon-114x114-precomposed.png" }
+    %link{ rel: "apple-touch-icon-precomposed", sizes: "72x72", href: "apple-touch-icon-72x72-precomposed.png" }
+    %link{ rel: "apple-touch-icon-precomposed", sizes: "57x57", href: "apple-touch-icon-57x57-precomposed.png" }
+    %link{ rel: "apple-touch-icon-precomposed", href: "apple-touch-icon-precomposed.png" }
     %link{ rel: "shortcut icon", href: "favicon.png" }
     %link{ rel: "icon", type: "image/ico", href: "favicon.ico" }
 
-    = stylesheet_link_tag "all"
+    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Patua+One", "site"
     = javascript_include_tag  "modernizr"
-    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Patua+One", "all"
+    = google_analytics_tag
 
     = if content_for?(:head)
       -yield_content :head
 
-    :javascript
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-23550216-3']);
-      _gaq.push(['_gat._anonymizeIp', true]);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-      
   %body{:class => page_classes}
 
     %header
-      = partial "docs/topbar"
-      = partial "docs/head"
+      = partial "partials/topbar"
+      = partial "partials/head"
 
-    .bs-header{:class => page_classes}
+    .bs-header
       .container
         - if (page_classes == 'index')
           %p.lead Faster and easier web development!
-          %h2.title Cssowl is a mixins library with support for Less, Sass/Scss and Stylus
-          = partial "docs/downloadbutton"
+          %h2.title Cssowl is a mixins library with support for Less, Sass/Scss & Stylus
+          = partial "partials/downloadbutton"
 
         - if (page_classes == 'position')
           %h2.title Cssowl Position
@@ -65,12 +55,11 @@
           = find_and_preserve do
             = yield
 
-
     %footer
       .container
         .row
           .col-sm-6.col-md-7.col-xs-12.download
-            = partial "docs/downloadbutton"
+            = partial "partials/downloadbutton"
             .title.hidden-xs.hidden-sm.hidden-md
               Save time, work faster!
 
@@ -78,7 +67,7 @@
             .title
               Never miss an update again!
             %form#mailchimpform
-              %input#mc-email{placeholder: "Your E-Mail adress", type: "email"}
+              %input#mc-email{placeholder: "Your E-Mail address", type: "email"}
               %button{type: "submit"} Subscribe
               %br
               %label{for: "mc-email"}
@@ -99,6 +88,5 @@
               %a{title: "We Just Do Stuff", href: "http://www.wejustdostuff.com", target: "_blank", class: "wjds"} We Just Do Stuff
 
     = javascript_include_tag  "main"
-
     :javascript
       !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');

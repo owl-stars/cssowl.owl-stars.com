@@ -2,11 +2,12 @@ ruby "1.9.3"
 source 'http://rubygems.org'
 
 gem "redcarpet"
-gem "middleman", "~>3.1.5"
-gem "middleman-deploy"
-gem "middleman-favicon-maker"
+gem "middleman", "~>3.2.0"
+gem "middleman-deploy", "~>0.1.4"
 gem "middleman-syntax", "~> 1.2.1"
-gem "middleman-livereload", "~> 3.1.0"
+gem "middleman-livereload", "~>3.1.0"
+gem "middleman-favicon-maker", "~>3.3"
+gem "middleman-google-analytics", "~>0.0.2"
 
 # For faster file watcher updates on Windows:
 gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]

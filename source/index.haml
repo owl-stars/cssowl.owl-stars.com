@@ -1,37 +1,126 @@
 ---
-title:
+title: Home
 nav: home
 ---
-
 
 .bs-docs-section
 
   .page-header
     %h1#introduction Introduction
 
-  = partial "docs/introduction"
+    %p.lead Cssowl is #{link_to "Owl-Stars", "http://www.owl-stars.com"} mixins library with support for #{link_to "Less", "http://lesscss.org"}, #{link_to "Sass/Scss", "http://sass-lang.com"} and #{link_to "Stylus", "http://learnboost.github.io/stylus/"}.
+
+    %p It's been created to work with Owl-Stars Extensions like #{link_to "Spriteowl", "http://spriteowl.owl-stars.com"} but of cause it can also be used by itself.
+
+    %p This library contains the following packages:
+
+    %ul
+      %li #{link_to "cssowl-sprite", "/sprite.html"}: Mixins for common tasks working with sprite images
+      %li #{link_to "cssowl-position", "/position.html"}: Mixins to position html elements
 
 .bs-docs-section
 
   .page-header
     %h1#download Download Cssowl
 
-  = partial "docs/download"
+    %p.lead Depending on your demands and skills there are three download options available:
+
+    %h4 #{link_to "Download the latest release", "https://github.com/owl-stars/cssowl/archive/v#{data.cssowl.version}.zip"}
+    %p Get the latest release files by downloading the latest version directly from GitHub.
+
+    %h4 #{link_to "Clone or fork via GitHub", "https://github.com/owl-stars/cssowl"}
+    %p Make your own version of Cssowl and clone or fork the project by visiting us on GitHub.
+
+    %h4 Install with #{link_to "Bower", "http://bower.io"}
+    %p Install and manage the original files for all Css and JavaScript files, along with a local copy of the docs, using #{link_to "Bower", "http://bower.io"}.
+
+    = preserve do
+      -code("shell") do
+        $ bower install cssowl --save
 
 .bs-docs-section
 
   .page-header
     %h1#getting-started Getting started
 
-  = partial "docs/getting-started"
+    %p.lead After downloading just import Cssowl into your Less, Sass/Scss or Stylus file and off you go.
+
+    %p Within the download you'll find the following directories and files, grouping each syntax into it's own directory.
+
+    = preserve do
+      -code("shell") do
+        :plain
+          cssowl/
+            └── lib/
+                ├── less/
+                │   ├── cssowl/
+                │   │   ├── position.less
+                │   │   └── sprite.less
+                │   └── cssowl.less
+                ├── sass/
+                │   ├── cssowl/
+                │   │   ├── position.sass
+                │   │   └── sprite.sass
+                │   └── cssowl.sass
+                ├── scss/
+                │   ├── cssowl/
+                │   │   ├── position.scss
+                │   │   └── sprite.scss
+                │   └── cssowl.scss
+                └── stylus/
+                    ├── cssowl/
+                    │   ├── position.styl
+                    │   └── sprite.styl
+                    └── cssowl.styl
+
+    %p Depending on your syntax import the correct version into your stylesheet file.
+
+    .bs-docs-example
+
+      .content
+
+      %ul.nav.nav-tabs
+        %li.active
+          = link_to "Sass", "#example-import-sass"
+        %li
+          = link_to "Scss", "#example-import-scss"
+        %li
+          = link_to "Less", "#example-import-less"
+        %li
+          = link_to "Stylus", "#example-import-stylus"
+
+      .tab-content
+        #example-import-sass.tab-pane.active
+          = preserve do
+            -code("sass") do
+              :plain
+                @import "path/to/cssowl/lib/sass/cssowl"
+        #example-import-scss.tab-pane
+          = preserve do
+            -code("scss") do
+              :plain
+                @import "path/to/cssowl/lib/scss/cssowl"
+        #example-import-less.tab-pane
+          = preserve do
+            -code("less") do
+              :plain
+                @import "path/to/cssowl/lib/less/cssowl";
+        #example-import-stylus.tab-pane
+          = preserve do
+            -code("stylus") do
+              :plain
+                @import "path/to/cssowl/lib/stylus/cssowl"
 
 .bs-docs-section
 
   .page-header
     %h1#feedback Feedback
 
-  = partial "docs/feedback"
+    %p.lead Have a bug or a feature request?
 
+    %p Please open a #{link_to "new issue", "https://github.com/owl-stars/cssowl/issues"} if you find any bugs or have a new feature request.
+
+    %p You may use #{link_to "this JSFIDDLE", "http://jsfiddle.net/vmBXP/1/"} if you need to test something.
 
 -content_for :nav do
   %ul.nav.bs-sidenav

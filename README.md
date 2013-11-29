@@ -1,6 +1,6 @@
-# Cssowl
+# middleman-site-cssowl
 
-The cssowl.owl-stars.com website powered by Middleman.
+> The cssowl.owl-stars.com website powered by Middleman.
 
 ## Requirements
 
@@ -8,31 +8,25 @@ To build, run and deploy this project you need the following tools:
 
 * [Rvm](https://rvm.io/)
 * [Rake](http://rake.rubyforge.org/)
-* [Middleman](http://middlemanapp.com)
+* [Node & Npm](http://nodejs.org/)
 * [Bower](http://twitter.github.com/bower/)
+* [Middleman](http://middlemanapp.com)
 
 ### Rvm
 
-To install `rvm` run:
+To install `rvm` on your system run:
 
 ```
-\curl -L https://get.rvm.io | bash -s stable
+$ curl -L https://get.rvm.io | bash -s stable --ruby=1.9.3
 ```
 
 To update `rvm` run:
 
 ```
-rvm get stable
+$ rvm get stable
 ```
 
-*Install [Jewelybox](http://jewelrybox.unfiniti.com/) to see installed Rubys and Gems.*
-
-### Middleman
-
-To install `middleman` run:
-
-```
-gem install middleman
+*Install [Jewelybox](http://jewelrybox.unfiniti.com/) to see installed Rubys and Gems through a nice GUI.*
 ```
 
 ### Rake
@@ -40,37 +34,66 @@ gem install middleman
 To install `rake` run:
 
 ```
-gem install rake
+$ gem install rake
 ```
+
+### Node & Npm
+
+Download and run the latest installer at [nodejs.org](http://nodejs.org/).
 
 ### Bower
 
 To install `bower` run:
 
 ```
-npm install bower -g
+$ sudo npm install bower -g
 ```
 
-If you need npm you can install it with:
+### Middleman
+
+To install `middleman` run:
 
 ```
-sudo port install npm
+$ gem install middleman
 ```
 
 ## Workspace
 
+### Setup
+
 To setup your workspace checkout the repository:
 
 ```
-git clone ssh://git@bitbucket.org/owl-stars/middleman-project_owlstars.git
+$ git clone ssh://git@bitbucket.org/owl-stars/middleman-site-cssowl.git
 ```
 
-To load the dependencies run `rake init`:
+To install all the dependencies run:
 
 ```
-cd middleman-project_spriteowl
-rake init
+$ rake init
+```
+
+### Development
+
+You can start the development server with:
+
+```
+$ rake server
+```
+
+If you want to build all the files run:
+
+```
+$ rake build
+```
+
+### Deployment
+
+If you want to deploy all the changes to the server run:
+
+```
+$ rake deploy
 ```
 
 ## License
-Copyright (c) 2013 [www.wejustdostuff.com](http://www.wejustdostuff.com)
+Copyright (c) 2013 Owl-Stars.

@@ -1,101 +1,16 @@
-//--- IMPORTS -------------------------------------------------------------------------------------
-
-@import "../../../bower_components/sass-bootstrap/lib/_variables.scss"
-
-$brand-primary: #14b0d1
-
-@import "../../../bower_components/sass-bootstrap/lib/_normalize.scss"
-@import "../../../bower_components/sass-bootstrap/lib/_mixins.scss"
-@import "../../../bower_components/sass-bootstrap/lib/_type.scss"
-@import "../../../bower_components/sass-bootstrap/lib/_navs.scss"
-@import "../../../bower_components/sass-bootstrap/lib/_navbar.scss"
-@import "../../../bower_components/sass-bootstrap/lib/_forms.scss"
-@import "../../../bower_components/sass-bootstrap/lib/_buttons.scss"
-@import "../../../bower_components/sass-bootstrap/lib/_grid.scss"
-@import "../../../bower_components/sass-bootstrap/lib/_code.scss"
-@import "../../../bower_components/sass-bootstrap/lib/_scaffolding.scss"
-@import "../../../bower_components/sass-bootstrap/lib/responsive-utilities.scss"
-@import "../../../bower_components/sass-bootstrap/lib/_component-animations.scss"
-
-// Cssowl
-@import cssowl/lib/sass/cssowl.sass
-
-@import "all/pygments.github"
-@import "all/variables"
-@import "all/font"
-@import "all/mixins"
-@import "all/pagesprite"
-
-
-
-/* --------------------------------------------
-/* ---- Global
-/* --------------------------------------------
-
-
-body
-  @include fontDefaultRegular
-  font-size: $fontSizeBase
-  background: $bgImg
-  color: $colorFontDefault
-
-a
-  outline: none
-  color: $colorFontDefault
-  text-decoration: underline
-  &:active
-    outline: none
-  &:focus
-    -moz-outline-style: none
-  &:hover
-    color: $colorFontGrey
-
-\:-moz-any-link:focus
-  outline: none
-
-h1, h2, h3, h4, .lead
-  @include fontSpecialRegular
-
-h1, h2
-  font-size: $fontSizeSuperBig
-
-h3
-  font-size: $fontSizeTitle
-
-h4, .lead
-  font-size: $fontSizeTitle
-
-p
-  margin: 0
-  line-height: 21px
-
-input, button
-  @include roundedBox($cornerRaduis)
-  border: 1px solid $colorBorder
-  box-shadow: none
-  height: 28px
-  padding: 0 8px
-
-
-
-
-
-
-/* --------------------------------------------
-/* ---- Components
-/* --------------------------------------------
+// --- Components ---------------------------------------------------------------------------------
 
 .downloadButton
-  font-size: $fontSizeBase
   display: inline-block
-  @include roundedBox($cornerRaduis)
-  border: 1px solid $colorCssowlLight
-  color: $colorCssowlLight
   text-decoration: none
+  color: $colorCssowlLight
+  font-size: $fontSizeBase
+  +border-radius($cornerRaduis)
+  border: 1px solid $colorCssowlLight
 
   &:hover
-    background: $colorCssowlLight
     color: $colorFontWhite
+    background: $colorCssowlLight
 
     > .downloadButtonInfo
       border-right: 1px dashed $colorBgLight
@@ -107,23 +22,19 @@ input, button
     border-right: 1px dashed $colorCssowlLight
 
     > .downloadButtonHead
-      @include fontSpecialRegular
-      font-size: $fontSizeTitle
       margin-bottom: 2px
+      font-size: $fontSizeTitle
+      +fontSpecialRegular
 
   > .downloadButtonPrice
-    @include fontSpecialRegular
-    font-size: $fontSizeTitle
     float: left
     padding: 11px 20px 0
+    font-size: $fontSizeTitle
+    +fontSpecialRegular
     font-size: $fontSizeSuperBig
 
 
-
-
-/* --------------------------------------------
-/* ---- Site
-/* --------------------------------------------
+// --- Site ---------------------------------------------------------------------------------------
 
 header
   background: $bgImg
@@ -140,11 +51,11 @@ header
 
       li
         float: left
-        list-style-type: none
         margin: 0 18px
         padding-top: 7px
         min-height: 40px
-        @include fontSpecialRegular
+        list-style-type: none
+        +fontSpecialRegular
         font-size: $fontSizeTitle
 
         &:hover
@@ -165,7 +76,7 @@ header
           color: $colorFontGreyDark
           text-decoration: none
           > .home
-            @include pagesprite-icon-home-replace-inline(-4px)
+            +pagesprite-icon-home-replace-inline(-4px)
 
     .madeby
       color: $colorFontGreyDark
@@ -174,7 +85,7 @@ header
       float: right
       > .wjds
         margin-left: 5px
-        @include pagesprite-graphic-wjds-replace-inline(-5px)
+        +pagesprite-graphic-wjds-replace-inline(-5px)
 
   >.navbar
     background: none
@@ -188,7 +99,7 @@ header
       .logo
         font-size: $fontSizeBase
         padding-top: 33px
-        @include pagesprite-logo-cssowl-before-absolute()
+        +pagesprite-logo-cssowl-before-absolute()
         text-decoration: none
         color: $colorFontDefault
         h1
@@ -202,7 +113,7 @@ header
         height: 40px
         margin-top: 48px
         border: 1px solid $colorFontDefault
-        @include roundedBox($cornerRaduis)
+        +border-radius($cornerRaduis)
 
         >.icon-bar
           background: $colorFontDefault
@@ -218,7 +129,7 @@ header
           margin: 10px 4px
           padding-top: 1px
           height: 34px
-          @include fontSpecialRegular
+          +fontSpecialRegular
           font-size: $fontSizeTitle
 
           &:last-child
@@ -245,9 +156,9 @@ header
             &.download
               margin-top: 6px
               padding: 8px 15px 10px
-              @include roundedBox($cornerRaduis)
-              border: 1px solid $colorCssowlLight
               color: $colorCssowlLight
+              +border-radius($cornerRaduis)
+              border: 1px solid $colorCssowlLight
 
               &:hover
                 color: $colorFontWhite
@@ -264,7 +175,7 @@ header
   height: 130px
   background: url('/assets/img/cinema/bgsites.png') top center no-repeat $colorBgDark
 
-  &.index
+  body.index &
     padding-top: 30px
     background: url('/assets/img/cinema/bghome.png') top center no-repeat $colorBgDark
     height: 380px
@@ -294,7 +205,7 @@ header
   .nav
     > li
       > a
-        @include fontSpecialRegular
+        +fontSpecialRegular
         font-size: $fontSizeTitle
         text-decoration: none
         display: block
@@ -335,7 +246,7 @@ header
   .nav-tabs
     margin: 0
     padding: 0
-    @include fontSpecialRegular
+    +fontSpecialRegular
     font-size: $fontSizeTitle
     list-style-type: none
 
@@ -418,9 +329,7 @@ header
       display: inline-block
       background: url("/assets/img/transbg.gif")
 
-
-
-/* ---- Footer
+// --- Footer -------------------------------------------------------------------------------------
 
 footer
   background: $colorBadge
@@ -432,7 +341,7 @@ footer
     margin-bottom: 30px
 
     >.title
-      @include fontSpecialRegular
+      +fontSpecialRegular
       font-size: $fontSizeBig
       margin-left: 20px
       margin-top: 15px
@@ -468,7 +377,7 @@ footer
     > .title
       margin-top: 10px
       margin-bottom: 10px
-      @include fontSpecialRegular
+      +fontSpecialRegular
       font-size: $fontSizeBig
 
   .info
@@ -500,12 +409,6 @@ footer
       margin-bottom: 40px
       > .wjds
         margin-left: 5px
-        @include pagesprite-graphic-wjds-replace-inline(-5px)
+        +pagesprite-graphic-wjds-replace-inline(-5px)
 
 
-
-//--- MEDIA QUERIES -------------------------------------------------------------------------------
-
-@import "all/min-768"
-@import "all/min-992"
-@import "all/min-1200"
