@@ -1,8 +1,8 @@
-%h2#cssowl-sprite-display cssowl-sprite-display <small>(x, y, width, height, src)</small>
+%h3#cssowl-sprite-display cssowl-sprite-display <small>(x, y, width, height, src)</small>
 
 %p
   :markdown
-    Displays a sprite element with it's `width`, `height`, `background-image` and `background-position`.
+    Add a sprite element with its `width`, `height`, `background-image` and `background-position`.
 
 = preserve do
   -code("sass") do
@@ -27,19 +27,20 @@
     .example-display
 
   %ul.nav.nav-tabs
-    %li.active
-      = link_to 'Sass', '#example-display-sass'
+    %li.active.htmltab
+      = link_to 'HTML', '#example-display-html'
     %li
-      = link_to 'Scss', '#example-display-scss'
+      = link_to 'LESS', '#example-display-less'
     %li
-      = link_to 'Less', '#example-display-less'
+      = link_to 'SASS', '#example-display-sass'
+    %li
+      = link_to 'SCSS', '#example-display-scss'
     %li
       = link_to 'Stylus', '#example-display-stylus'
-    %li
-      = link_to 'Html', '#example-display-html'
+
 
   .tab-content
-    #example-display-sass.tab-pane.active
+    #example-display-sass.tab-pane
       = preserve do
         -code("sass") do
           :plain
@@ -65,7 +66,7 @@
           :plain
             .example-display
               cssowl-sprite-display(-10px, -10px, 91px, 95px, url("sprite.png"))
-    #example-display-html.tab-pane
+    #example-display-html.tab-pane.active
       = preserve do
         -code("html") do
           .example-display

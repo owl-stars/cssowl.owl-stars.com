@@ -36,24 +36,18 @@
       .container
         - if (page_classes == 'index')
           %p.lead Faster and easier web development!
-          %h2.title Cssowl is a mixins library with support for Less, Sass/Scss & Stylus
+          %h2.title Cssowl is a mixin library with support for LESS, SASS/SCSS & Stylus
           = partial "partials/downloadbutton"
 
         - if (page_classes == 'position')
-          %h2.title Cssowl Position
+          %h2.title Cssowl position mixins
 
         - if (page_classes == 'sprite')
-          %h2.title Cssowl Sprite
+          %h2.title Cssowl sprite mixins
 
-    .container.bs-docs-container
-      .row
-        .col-md-3
-          .bs-sidebar.hidden-print
-            = yield_content :nav
 
-        .col-md-9.bs-docs-content
-          = find_and_preserve do
-            = yield
+    = yield
+
 
     %footer
       .container
@@ -65,9 +59,9 @@
 
           .col-sm-6.col-md-5.col-xs-12.newsletter
             .title
-              Never miss an update again!
+              Don't miss our software updates!
             %form#mailchimpform
-              %input#mc-email{placeholder: "Your E-Mail address", type: "email"}
+              %input#mc-email{placeholder: "Your email address", type: "email"}
               %button{type: "submit"} Subscribe
               %br
               %label{for: "mc-email"}

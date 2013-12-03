@@ -1,8 +1,8 @@
-%h2#cssowl-sprite-before-float cssowl-sprite-before-float <small>(x, y, width, height, src, xOffset, yOffset)</small>
+%h3#cssowl-sprite-before-float cssowl-sprite-before-float <small>(x, y, width, height, src, xOffset, yOffset)</small>
 
 %p
   :markdown
-    Adds the element with the `:before` pseudo selector and displays it with the `float: left;` attribute.
+    Add a sprite element with the `:before` pseudo selector and place it with the `float: left;` attribute.
 
 = preserve do
   -code("sass") do
@@ -30,19 +30,20 @@
     .example-before-float Quia sint quis nam et quia ducimus consequatur cumque.
 
   %ul.nav.nav-tabs
-    %li.active
-      = link_to 'Sass', '#example-before-float-sass'
+    %li.active.htmltab
+      = link_to 'HTML', '#example-before-float-html'
     %li
-      = link_to 'Scss', '#example-before-float-scss'
+      = link_to 'LESS', '#example-before-float-less'
     %li
-      = link_to 'Less', '#example-before-float-less'
+      = link_to 'SASS', '#example-before-float-sass'
+    %li
+      = link_to 'SCSS', '#example-before-float-scss'
     %li
       = link_to 'Stylus', '#example-before-float-stylus'
-    %li
-      = link_to 'Html', '#example-before-float-html'
+
 
   .tab-content
-    #example-before-float-sass.tab-pane.active
+    #example-before-float-sass.tab-pane
       = preserve do
         -code("sass") do
           :plain
@@ -68,7 +69,7 @@
           :plain
             .example-before-float
               cssowl-sprite-before-float(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px)
-    #example-before-float-html.tab-pane
+    #example-before-float-html.tab-pane.active
       = preserve do
         -code("html") do
           .example-before-float Quia sint quis nam et quia ducimus consequatur cumque.

@@ -1,8 +1,8 @@
-%h2#cssowl-sprite-display-block cssowl-sprite-display-block <small>(x, y, width, height, src)</small>
+%h3#cssowl-sprite-display-block cssowl-sprite-display-block <small>(x, y, width, height, src)</small>
 
 %p
   :markdown
-    Displays a sprite element with the `display: block;` attribute.
+    Add a sprite element with the `display: block;` attribute.
 
 = preserve do
   -code("sass") do
@@ -25,19 +25,20 @@
     .example-display-block
 
   %ul.nav.nav-tabs
-    %li.active
-      = link_to 'Sass', '#example-display-block-sass'
+    %li.active.htmltab
+      = link_to 'HTML', '#example-display-block-html'
     %li
-      = link_to 'Scss', '#example-display-block-scss'
+      = link_to 'LESS', '#example-display-block-less'
     %li
-      = link_to 'Less', '#example-display-block-less'
+      = link_to 'SASS', '#example-display-block-sass'
+    %li
+      = link_to 'SCSS', '#example-display-block-scss'
     %li
       = link_to 'Stylus', '#example-display-block-stylus'
-    %li
-      = link_to 'Html', '#example-display-block-html'
+
 
   .tab-content
-    #example-display-block-sass.tab-pane.active
+    #example-display-block-sass.tab-pane
       = preserve do
         -code("sass") do
           :plain
@@ -63,7 +64,7 @@
           :plain
             .example-display-block
               cssowl-sprite-display-block(-10px, -10px, 91px, 95px, url("sprite.png"))
-    #example-display-block-html.tab-pane
+    #example-display-block-html.tab-pane.active
       = preserve do
         -code("html") do
           .example-display-block

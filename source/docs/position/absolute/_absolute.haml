@@ -1,8 +1,8 @@
-%h2#cssowl-position-absolute cssowl-position-absolute <small>(top, right, bottom, left)</small>
+%h3#cssowl-position-absolute cssowl-position-absolute <small>(top, right, bottom, left)</small>
 
 %p
   :markdown
-    Positions a element with `position: absolute;` and sets the `top`, `left`, `right` and `bottom` attributes if not `none`.
+    Place a sprite element with `position: absolute;` and set the `top`, `left`, `right` and `bottom` attributes (if not `none`).
 
 = preserve do
   -code("sass") do
@@ -32,19 +32,20 @@
       .example-absolute.bottom-left
 
   %ul.nav.nav-tabs
-    %li.active
-      = link_to 'Sass', '#example-absolute-sass'
+    %li.active.htmltab
+      = link_to 'HTML', '#example-absolute-html'
     %li
-      = link_to 'Scss', '#example-absolute-scss'
+      = link_to 'LESS', '#example-absolute-less'
     %li
-      = link_to 'Less', '#example-absolute-less'
+      = link_to 'SASS', '#example-absolute-sass'
+    %li
+      = link_to 'SCSS', '#example-absolute-scss'
     %li
       = link_to 'Stylus', '#example-absolute-stylus'
-    %li
-      = link_to 'Html', '#example-absolute-html'
+
 
   .tab-content
-    #example-absolute-sass.tab-pane.active
+    #example-absolute-sass.tab-pane
       = preserve do
         -code("sass") do
           :plain
@@ -98,7 +99,7 @@
                 cssowl-position-absolute(5px, 5px, none, none)
               &.bottom-left
                 cssowl-position-absolute(none, none, 5px, 5px)
-    #example-absolute-html.tab-pane
+    #example-absolute-html.tab-pane.active
       = preserve do
         -code("html") do
           .wrapper{:style => "position:relative;width:50px;height:50px;border:1px solid #59371f;"}

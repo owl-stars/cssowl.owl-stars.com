@@ -1,9 +1,8 @@
-%h2#cssowl-sprite-replace-inline cssowl-sprite-replace-inline <small>(x, y, width, height, src, yOffset, valign)</small>
+%h3#cssowl-sprite-replace-inline cssowl-sprite-replace-inline <small>(x, y, width, height, src, yOffset, valign)</small>
 
 %p
   :markdown
-    Displays a sprite element with the `display: inline-block` attribute. and uses `text-indent: -9999px;` to hide the text.
-    You can vertically align it using `yOffset` and `valign`
+    Add a sprite element with the `display: inline-block` attribute, use `text-indent: -9999px;` to hide the text and place it with the `display: inline;` attribute.
 
 = preserve do
   -code("sass") do
@@ -29,19 +28,20 @@
     %p Lorem ipsum dolor <span class="example-replace-inline">cssowl</span> sit atem
 
   %ul.nav.nav-tabs
-    %li.active
-      = link_to 'Sass', '#example-replace-inline-sass'
+    %li.active.htmltab
+      = link_to 'HTML', '#example-replace-inline-html'
     %li
-      = link_to 'Scss', '#example-replace-inline-scss'
+      = link_to 'LESS', '#example-replace-inline-less'
     %li
-      = link_to 'Less', '#example-replace-inline-less'
+      = link_to 'SASS', '#example-replace-inline-sass'
+    %li
+      = link_to 'SCSS', '#example-replace-inline-scss'
     %li
       = link_to 'Stylus', '#example-replace-inline-stylus'
-    %li
-      = link_to 'Html', '#example-replace-inline-html'
+
 
   .tab-content
-    #example-replace-inline-sass.tab-pane.active
+    #example-replace-inline-sass.tab-pane
       = preserve do
         -code("sass") do
           :plain
@@ -67,7 +67,7 @@
           :plain
             .example-replace-inline
               cssowl-sprite-replace-inline(-10px, -10px, 91px, 95px, url("sprite.png"), 0, text-top)
-    #example-replace-inline-html.tab-pane
+    #example-replace-inline-html.tab-pane.active
       = preserve do
         -code("html") do
           %p Lorem ipsum dolor <span class="example-replace-inline">cssowl</span> sit atem

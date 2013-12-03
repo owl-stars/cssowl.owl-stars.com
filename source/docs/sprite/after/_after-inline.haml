@@ -1,8 +1,8 @@
-%h2#cssowl-sprite-after-inline cssowl-sprite-after-inline <small>(x, y, width, height, src, xOffset, yOffset, valign)</small>
+%h3#cssowl-sprite-after-inline cssowl-sprite-after-inline <small>(x, y, width, height, src, xOffset, yOffset, valign)</small>
 
 %p
   :markdown
-    Adds the element with the `:after` pseudo selector and displays it *inline*.
+    Add a sprite element with the `:after` pseudo selector and place it with the `display: inline;` attribute.
 
 = preserve do
   -code("sass") do
@@ -29,19 +29,20 @@
     .example-after-inline Quia sint quis nam et quia ducimus consequatur cumque.
 
   %ul.nav.nav-tabs
-    %li.active
-      = link_to 'Sass', '#example-after-inline-sass'
+    %li.active.htmltab
+      = link_to 'HTML', '#example-after-inline-html'
     %li
-      = link_to 'Scss', '#example-after-inline-scss'
+      = link_to 'LESS', '#example-after-inline-less'
     %li
-      = link_to 'Less', '#example-after-inline-less'
+      = link_to 'SASS', '#example-after-inline-sass'
+    %li
+      = link_to 'SCSS', '#example-after-inline-scss'
     %li
       = link_to 'Stylus', '#example-after-inline-stylus'
-    %li
-      = link_to 'Html', '#example-after-inline-html'
+
 
   .tab-content
-    #example-after-inline-sass.tab-pane.active
+    #example-after-inline-sass.tab-pane
       = preserve do
         -code("sass") do
           :plain
@@ -67,7 +68,7 @@
           :plain
             .example-after-inline
               cssowl-sprite-after-inline(-110px, -30px, 15px, 15px, url("sprite.png"), 5px, 1px, top)
-    #example-after-inline-html.tab-pane
+    #example-after-inline-html.tab-pane.active
       = preserve do
         -code("html") do
           .example-after-inline Quia sint quis nam et quia ducimus consequatur cumque.

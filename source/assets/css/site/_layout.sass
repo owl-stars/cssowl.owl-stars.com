@@ -253,6 +253,9 @@ header
     > li
       margin-right: 4px
 
+      &.htmltab
+        margin-right: 34px
+
       &.active
         a
           color: $colorFontDefault
@@ -276,22 +279,77 @@ header
     border-bottom: 1px dashed $colorBorder
     margin-bottom: -10px
 
-  .bs-docs-section
-    margin-bottom: 80px
 
-    h2, .lead
-      font-size: 20px
-      margin: 50px 0 20px
+  .bs-docs-section
+    padding-bottom: 80px
+
+    .owlbtn
+      display: inline-block
+      text-decoration: none
+      +fontSpecialRegular
+      font-size: $fontSizeTitle
+      padding: 8px 15px 10px
+      color: $colorCssowlLight
+      +border-radius($cornerRaduis)
+      border: 1px solid $colorCssowlLight
+
+      &:hover
+        color: $colorFontWhite
+        background: $colorCssowlLight
+
+    &.bgDark
+      background: $bgImgDark
+
+    &.download
+      .box
+        background: $colorBgLight
+        +border-radius($cornerRaduis)
+        padding: 20px
+        margin-bottom: 20px
+        min-height: 200px
+
+    &.explain, &.feedback
+      .info
+        text-align: center
+        .box
+          display: inline-block
+          +fontSpecialRegular
+          font-size: $fontSizeTitle
+          margin-top: 20px
+          background: $colorBgLight
+          +border-radius($cornerRaduis)
+          padding: 10px 20px
+
+    &.feedback
+      padding-bottom: 100px
+      .info
+        .box
+          margin-top: 0
+          margin-bottom: 20px
+
+
+    h3, .lead
+      padding: 60px 0 15px
       small
         font-size: 0.7em
 
+    .lead
+      font-size: $fontSizeTitle
+
     p
-      margin-bottom: 10px
+      margin-bottom: 15px
 
     a
       color: $colorFontCssowl
       &:hover
         color: $colorFontDefault
+
+    .intro
+      margin-top: 40px
+      font-size: $fontSizeBase
+      text-align: center
+      >.introText
+        margin-bottom: 40px
 
     code,
     .highlight
@@ -378,7 +436,7 @@ footer
       margin-top: 10px
       margin-bottom: 10px
       +fontSpecialRegular
-      font-size: $fontSizeBig
+      font-size: $fontSizeTitle
 
   .info
     border-top: 1px dashed #444444

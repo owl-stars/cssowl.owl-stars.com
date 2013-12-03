@@ -3,33 +3,39 @@ title: Position
 nav: position
 ---
 
-.bs-docs-section
+.container.bs-docs-container
+  .row
+    .col-md-3
+      .bs-sidebar.hidden-print
+        %ul.nav.bs-sidenav
+          %li
+            %a{:href => "#absolute"} Absolute
+            %ul.nav
+              %li
+                %a{:href => "#cssowl-position-absolute"} absolute
+              %li
+                %a{:href => "#cssowl-position-absolute-inside"} absolute-inside
+              %li
+                %a{:href => "#cssowl-position-absolute-outside"} absolute-outside
 
-  .page-header
-    %h1#overview Overview
-  %h2
-  = partial "docs/position/overview"
+    .col-md-9.bs-docs-content
 
-.bs-docs-section
+      .bs-docs-section
 
-  .page-header
-    %h1#absolute Absolute
+        .page-header
+          %h1#overview Overview
+        %h2
+        = partial "docs/position/overview"
 
-  = partial "docs/position/absolute/absolute"
-  = partial "docs/position/absolute/absolute-inside"
-  = partial "docs/position/absolute/absolute-outside"
+      .bs-docs-section
 
--content_for :nav do
-  %ul.nav.bs-sidenav
-    %li
-      %a{:href => "#absolute"} Absolute
-      %ul.nav
-        %li
-          %a{:href => "#cssowl-position-absolute"} absolute
-        %li
-          %a{:href => "#cssowl-position-absolute-inside"} absolute-inside
-        %li
-          %a{:href => "#cssowl-position-absolute-outside"} absolute-outside
+        .page-header
+          %h1#absolute Absolute
 
--content_for :head do
-  -stylesheet_link_tag "examples-position"
+        = partial "docs/position/absolute/absolute"
+        = partial "docs/position/absolute/absolute-inside"
+        = partial "docs/position/absolute/absolute-outside"
+
+
+      -content_for :head do
+        -stylesheet_link_tag "examples-position"

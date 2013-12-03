@@ -1,8 +1,8 @@
-%h2#cssowl-sprite-before-absolute-inside cssowl-sprite-before-absolute-inside <small>(x, y, width, height, src, valign, halign, xOffset, yOffset)</small>
+%h3#cssowl-sprite-before-absolute-inside cssowl-sprite-before-absolute-inside <small>(x, y, width, height, src, valign, halign, xOffset, yOffset)</small>
 
 %p
   :markdown
-    Adds the element with the `:before` pseudo selector and displays it with `position: absolute;` inside the bounding box.
+    Add a sprite element with the `:before` pseudo selector and place it with `position: absolute;` inside the bounding box.
 
 = preserve do
   -code("sass") do
@@ -30,19 +30,20 @@
     .example-before-absolute-inside{:style => "display:inline-block;border-top:1px solid #59371f;padding-top: 5px;"} Quia sint quis
 
   %ul.nav.nav-tabs
-    %li.active
-      = link_to 'Sass', '#example-before-absolute-inside-sass'
+    %li.active.htmltab
+      = link_to 'HTML', '#example-before-absolute-inside-html'
     %li
-      = link_to 'Scss', '#example-before-absolute-inside-scss'
+      = link_to 'LESS', '#example-before-absolute-inside-less'
     %li
-      = link_to 'Less', '#example-before-absolute-inside-less'
+      = link_to 'SASS', '#example-before-absolute-inside-sass'
+    %li
+      = link_to 'SCSS', '#example-before-absolute-inside-scss'
     %li
       = link_to 'Stylus', '#example-before-absolute-inside-stylus'
-    %li
-      = link_to 'Html', '#example-before-absolute-inside-html'
+
 
   .tab-content
-    #example-before-absolute-inside-sass.tab-pane.active
+    #example-before-absolute-inside-sass.tab-pane
       = preserve do
         -code("sass") do
           :plain
@@ -68,7 +69,7 @@
           :plain
             .example-before-absolute-inside
               cssowl-sprite-before-absolute-inside(-110px, -20px, 7px, 4px, url("sprite.png"), top, center)
-    #example-before-absolute-inside-html.tab-pane
+    #example-before-absolute-inside-html.tab-pane.active
       = preserve do
         -code("html") do
           .example-before-absolute-inside{:style => "display:inline-block;border-top:1px solid #59371f;padding-top: 5px;"} Quia sint quis

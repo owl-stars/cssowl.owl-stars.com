@@ -1,8 +1,8 @@
-%h2#cssowl-sprite-before-absolute cssowl-sprite-before-absolute <small>(x, y, width, height, src, top, right, bottom, left)</small>
+%h3#cssowl-sprite-before-absolute cssowl-sprite-before-absolute <small>(x, y, width, height, src, top, right, bottom, left)</small>
 
 %p
   :markdown
-    Adds the element with the `:before` pseudo selector and displays it with the `position: absolute;` attribute.
+    Add a sprite element with the `:before` pseudo selector and place it with the `position: absolute;` attribute.
 
 = preserve do
   -code("sass") do
@@ -30,19 +30,20 @@
     .example-before-absolute{:style => "margin-left:20px;"} Quia sint quis nam et quia ducimus consequatur cumque.
 
   %ul.nav.nav-tabs
-    %li.active
-      = link_to 'Sass', '#example-before-absolute-sass'
+    %li.active.htmltab
+      = link_to 'HTML', '#example-before-absolute-html'
     %li
-      = link_to 'Scss', '#example-before-absolute-scss'
+      = link_to 'LESS', '#example-before-absolute-less'
     %li
-      = link_to 'Less', '#example-before-absolute-less'
+      = link_to 'SASS', '#example-before-absolute-sass'
+    %li
+      = link_to 'SCSS', '#example-before-absolute-scss'
     %li
       = link_to 'Stylus', '#example-before-absolute-stylus'
-    %li
-      = link_to 'Html', '#example-before-absolute-html'
+
 
   .tab-content
-    #example-before-absolute-sass.tab-pane.active
+    #example-before-absolute-sass.tab-pane
       = preserve do
         -code("sass") do
           :plain
@@ -68,7 +69,7 @@
           :plain
             .example-before-absolute
               cssowl-sprite-before-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), 2px, none, none, -20px)
-    #example-before-absolute-html.tab-pane
+    #example-before-absolute-html.tab-pane.active
       = preserve do
         -code("html") do
           .example-before-absolute{:style => "margin-left:20px;"} Quia sint quis nam et quia ducimus consequatur cumque.
