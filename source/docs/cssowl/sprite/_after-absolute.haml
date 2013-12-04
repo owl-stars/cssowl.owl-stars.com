@@ -1,0 +1,74 @@
+%h2#cssowl-sprite-after-absolute cssowl-sprite-after-absolute <small>(x, y, width, height, src, top, right, bottom, left)</small>
+
+%p
+  :markdown
+    Adds an element with the `:after` pseudo selector and displays it with the `position: absolute;` attribute.
+
+= preserve do
+  -code("sass") do
+    :plain
+      /*
+       * @param $x x position of the element
+       * @param $y y position of the element
+       * @param $width element width
+       * @param $height element height
+       * @param $src background image source
+       * @param $top (optional, default=none) top position value
+       * @param $right (optional, default=none) right position value
+       * @param $bottom (optional, default=none) bottom position value
+       * @param $left (optional, default=none) left position value
+       */
+      @mixin cssowl-sprite-after-absolute($x, $y, $width, $height, $src, $top:none, $right:none, $bottom:none, $left:none)
+        position: relative
+        &:after
+          content: ""
+          +cssowl-sprite-absolute($x, $y, $width, $height, $src, $top, $right, $bottom, $left)
+
+.bs-docs-example
+
+  .content
+    .example-after-absolute{:style => "margin-right:20px;"} Quia sint quis nam et quia ducimus consequatur cumque.
+
+  %ul.nav.nav-tabs
+    %li.active
+      = link_to 'Sass', '#example-after-absolute-sass'
+    %li
+      = link_to 'Scss', '#example-after-absolute-scss'
+    %li
+      = link_to 'Less', '#example-after-absolute-less'
+    %li
+      = link_to 'Stylus', '#example-after-absolute-stylus'
+    %li
+      = link_to 'Html', '#example-after-absolute-html'
+
+  .tab-content
+    #example-after-absolute-sass.tab-pane.active
+      = preserve do
+        -code("sass") do
+          :plain
+            .example-after-absolute
+              +cssowl-sprite-after-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), 2px, -20px)
+    #example-after-absolute-scss.tab-pane
+      = preserve do
+        -code("scss") do
+          :plain
+            .example-after-absolute {
+              @include cssowl-sprite-after-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), 2px, -20px);
+            }
+    #example-after-absolute-less.tab-pane
+      = preserve do
+        -code("less") do
+          :plain
+            .example-after-absolute {
+              .cssowl-sprite-after-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), 2px, -20px);
+            }
+    #example-after-absolute-stylus.tab-pane
+      = preserve do
+        -code("stylus") do
+          :plain
+            .example-after-absolute
+              cssowl-sprite-after-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), 2px, -20px)
+    #example-after-absolute-html.tab-pane
+      = preserve do
+        -code("html") do
+          .example-after-absolute{:style => "margin-right:20px;"} Quia sint quis nam et quia ducimus consequatur cumque.

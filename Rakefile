@@ -11,6 +11,12 @@ task :server do
   system "bundle exec middleman server"
 end
 
+desc "Generate doc sources"
+task :docs do
+  system "npm link librarianowl" unless Dir.exists?("node_modules/librarianowl")
+  system "tools/docs-bin"
+end
+
 desc "Generate build from sources"
 task :build do
   system "bundle exec middleman build"

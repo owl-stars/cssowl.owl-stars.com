@@ -1,0 +1,71 @@
+%h2#cssowl-sprite-display cssowl-sprite-display <small>(x, y, width, height, src)</small>
+
+%p
+  :markdown
+    Displays an element with it's *width*, *height*, *background-image* and *background-position*.
+
+= preserve do
+  -code("sass") do
+    :plain
+      /*
+       * @param $x position of the element
+       * @param $y position of the element
+       * @param $width element width
+       * @param $height element height
+       * @param $src background image source
+       */
+      @mixin cssowl-sprite-display($x, $y, $width, $height, $src)
+        width: $width
+        height: $height
+        background-image: $src
+        background-position: $x $y
+        background-repeat: no-repeat
+
+.bs-docs-example
+
+  .content
+    .example-display
+
+  %ul.nav.nav-tabs
+    %li.active
+      = link_to 'Sass', '#example-display-sass'
+    %li
+      = link_to 'Scss', '#example-display-scss'
+    %li
+      = link_to 'Less', '#example-display-less'
+    %li
+      = link_to 'Stylus', '#example-display-stylus'
+    %li
+      = link_to 'Html', '#example-display-html'
+
+  .tab-content
+    #example-display-sass.tab-pane.active
+      = preserve do
+        -code("sass") do
+          :plain
+            .example-display
+              +cssowl-sprite-display(-10px, -10px, 91px, 95px, url("sprite.png"));
+    #example-display-scss.tab-pane
+      = preserve do
+        -code("scss") do
+          :plain
+            .example-display {
+              @include cssowl-sprite-display(-10px, -10px, 91px, 95px, url("sprite.png"));
+            }
+    #example-display-less.tab-pane
+      = preserve do
+        -code("less") do
+          :plain
+            .example-display {
+              .cssowl-sprite-display(-10px, -10px, 91px, 95px, url("sprite.png"));
+            }
+    #example-display-stylus.tab-pane
+      = preserve do
+        -code("stylus") do
+          :plain
+            .example-display
+              cssowl-sprite-display(-10px, -10px, 91px, 95px, url("sprite.png"))
+    #example-display-html.tab-pane
+      = preserve do
+        -code("html") do
+          .example-display

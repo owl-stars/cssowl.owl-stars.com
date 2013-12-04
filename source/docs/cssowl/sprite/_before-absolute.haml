@@ -1,0 +1,74 @@
+%h2#cssowl-sprite-before-absolute cssowl-sprite-before-absolute <small>(x, y, width, height, src, top, right, bottom, left)</small>
+
+%p
+  :markdown
+    Adds an element with the `:before` pseudo selector and displays it with the `position: absolute;` attribute.
+
+= preserve do
+  -code("sass") do
+    :plain
+      /*
+       * @param $x x position of the element
+       * @param $y y position of the element
+       * @param $width element width
+       * @param $height element height
+       * @param $src background image source
+       * @param $top (optional, default=none) top position value
+       * @param $right (optional, default=none) right position value
+       * @param $bottom (optional, default=none) bottom position value
+       * @param $left (optional, default=none) left position value
+       */
+      @mixin cssowl-sprite-before-absolute($x, $y, $width, $height, $src, $top:none, $right:none, $bottom:none, $left:none)
+        position: relative
+        &:before
+          content: ""
+          +cssowl-sprite-absolute($x, $y, $width, $height, $src, $top, $right, $bottom, $left)
+
+.bs-docs-example
+
+  .content
+    .example-before-absolute{:style => "margin-left:20px;"} Quia sint quis nam et quia ducimus consequatur cumque.
+
+  %ul.nav.nav-tabs
+    %li.active
+      = link_to 'Sass', '#example-before-absolute-sass'
+    %li
+      = link_to 'Scss', '#example-before-absolute-scss'
+    %li
+      = link_to 'Less', '#example-before-absolute-less'
+    %li
+      = link_to 'Stylus', '#example-before-absolute-stylus'
+    %li
+      = link_to 'Html', '#example-before-absolute-html'
+
+  .tab-content
+    #example-before-absolute-sass.tab-pane.active
+      = preserve do
+        -code("sass") do
+          :plain
+            .example-before-absolute
+              +cssowl-sprite-before-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), 2px, none, none, -20px)
+    #example-before-absolute-scss.tab-pane
+      = preserve do
+        -code("scss") do
+          :plain
+            .example-before-absolute {
+              @include cssowl-sprite-before-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), 2px, none, none, -20px);
+            }
+    #example-before-absolute-less.tab-pane
+      = preserve do
+        -code("less") do
+          :plain
+            .example-before-absolute {
+              .cssowl-sprite-before-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), 2px, none, none, -20px);
+            }
+    #example-before-absolute-stylus.tab-pane
+      = preserve do
+        -code("stylus") do
+          :plain
+            .example-before-absolute
+              cssowl-sprite-before-absolute(-110px, -30px, 15px, 15px, url("sprite.png"), 2px, none, none, -20px)
+    #example-before-absolute-html.tab-pane
+      = preserve do
+        -code("html") do
+          .example-before-absolute{:style => "margin-left:20px;"} Quia sint quis nam et quia ducimus consequatur cumque.

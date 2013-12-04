@@ -1,0 +1,68 @@
+%h2#cssowl-sprite-display-block cssowl-sprite-display-block <small>(x, y, width, height, src)</small>
+
+%p
+  :markdown
+    Displays an element with the `display: block;` attribute.
+
+= preserve do
+  -code("sass") do
+    :plain
+      /*
+       * @param $x x position of the element
+       * @param $y y position of the element
+       * @param $width element width
+       * @param $height element height
+       * @param $src background image source
+       */
+      @mixin cssowl-sprite-display-block($x, $y, $width, $height, $src)
+        display: block
+        +cssowl-sprite-display($x, $y, $width, $height, $src)
+
+.bs-docs-example
+
+  .content
+    .example-display-block
+
+  %ul.nav.nav-tabs
+    %li.active
+      = link_to 'Sass', '#example-display-block-sass'
+    %li
+      = link_to 'Scss', '#example-display-block-scss'
+    %li
+      = link_to 'Less', '#example-display-block-less'
+    %li
+      = link_to 'Stylus', '#example-display-block-stylus'
+    %li
+      = link_to 'Html', '#example-display-block-html'
+
+  .tab-content
+    #example-display-block-sass.tab-pane.active
+      = preserve do
+        -code("sass") do
+          :plain
+            .example-display-block
+              +cssowl-sprite-display-block(-10px, -10px, 91px, 95px, url("sprite.png"))
+    #example-display-block-scss.tab-pane
+      = preserve do
+        -code("scss") do
+          :plain
+            .example-display-block {
+              @include cssowl-sprite-display-block(-10px, -10px, 91px, 95px, url("sprite.png"));
+            }
+    #example-display-block-less.tab-pane
+      = preserve do
+        -code("less") do
+          :plain
+            .example-display-block {
+              .cssowl-sprite-display-block(-10px, -10px, 91px, 95px, url("sprite.png"));
+            }
+    #example-display-block-stylus.tab-pane
+      = preserve do
+        -code("stylus") do
+          :plain
+            .example-display-block
+              cssowl-sprite-display-block(-10px, -10px, 91px, 95px, url("sprite.png"))
+    #example-display-block-html.tab-pane
+      = preserve do
+        -code("html") do
+          .example-display-block

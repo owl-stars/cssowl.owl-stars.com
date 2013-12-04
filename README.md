@@ -87,6 +87,14 @@ If you want to build all the files run:
 $ rake build
 ```
 
+To update the documentations run:
+
+```
+$ rake docs
+```
+
+*Note: You need to have libriarianowl installed locally and prerun `npm link`*
+
 ### Deployment
 
 If you want to deploy all the changes to the server run:

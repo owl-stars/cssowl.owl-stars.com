@@ -1,0 +1,69 @@
+%h2#cssowl-sprite-replace cssowl-sprite-replace <small>(x, y, width, height, src)</small>
+
+%p
+  :markdown
+    Displays an element and uses `text-indent: -9999px;` to hide the text.
+
+= preserve do
+  -code("sass") do
+    :plain
+      /*
+       * @param $x x position of the element
+       * @param $y y position of the element
+       * @param $width element width
+       * @param $height element height
+       * @param $src background image source
+       */
+      @mixin cssowl-sprite-replace($x, $y, $width, $height, $src)
+        direction: ltr
+        text-indent: -9999px
+        +cssowl-sprite-display($x, $y, $width, $height, $src)
+
+.bs-docs-example
+
+  .content
+    %h1.example-replace Lorem ipsum dolor sit atem
+
+  %ul.nav.nav-tabs
+    %li.active
+      = link_to 'Sass', '#example-replace-sass'
+    %li
+      = link_to 'Scss', '#example-replace-scss'
+    %li
+      = link_to 'Less', '#example-replace-less'
+    %li
+      = link_to 'Stylus', '#example-replace-stylus'
+    %li
+      = link_to 'Html', '#example-replace-html'
+
+  .tab-content
+    #example-replace-sass.tab-pane.active
+      = preserve do
+        -code("sass") do
+          :plain
+            .example-replace
+              +cssowl-sprite-replace(-10px, -10px, 91px, 95px, url("sprite.png"))
+    #example-replace-scss.tab-pane
+      = preserve do
+        -code("scss") do
+          :plain
+            .example-replace {
+              @include cssowl-sprite-replace(-10px, -10px, 91px, 95px, url("sprite.png"));
+            }
+    #example-replace-less.tab-pane
+      = preserve do
+        -code("less") do
+          :plain
+            .example-replace {
+              .cssowl-sprite-replace(-10px, -10px, 91px, 95px, url("sprite.png"));
+            }
+    #example-replace-stylus.tab-pane
+      = preserve do
+        -code("stylus") do
+          :plain
+            .example-replace
+              cssowl-sprite-replace(-10px, -10px, 91px, 95px, url("sprite.png"))
+    #example-replace-html.tab-pane
+      = preserve do
+        -code("html") do
+          %h1.example-replace Lorem ipsum dolor sit atem
