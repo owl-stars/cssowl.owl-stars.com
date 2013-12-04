@@ -1,8 +1,8 @@
-%h2#cssowl-sprite-absolute-inside cssowl-sprite-absolute-inside <small>(x, y, width, height, src, valign, halign, xOffset, yOffset)</small>
+%h3#cssowl-sprite-absolute-inside cssowl-sprite-absolute-inside <small>(x, y, width, height, src, valign, halign, xOffset, yOffset)</small>
 
 %p
   :markdown
-    Positions the element with `position: absolute;` inside the bounding box.
+    Place a sprite element with `position: absolute;` inside the bounding box.
 
 = preserve do
   -code("sass") do
@@ -32,19 +32,20 @@
       .example-absolute-inside.middle-left
 
   %ul.nav.nav-tabs
-    %li.active
-      = link_to 'Sass', '#example-absolute-inside-sass'
+    %li.active.htmltab
+      = link_to 'HTML', '#example-absolute-inside-html'
     %li
-      = link_to 'Scss', '#example-absolute-inside-scss'
+      = link_to 'LESS', '#example-absolute-inside-less'
     %li
-      = link_to 'Less', '#example-absolute-inside-less'
+      = link_to 'SASS', '#example-absolute-inside-sass'
+    %li
+      = link_to 'SCSS', '#example-absolute-inside-scss'
     %li
       = link_to 'Stylus', '#example-absolute-inside-stylus'
-    %li
-      = link_to 'Html', '#example-absolute-inside-html'
+
 
   .tab-content
-    #example-absolute-inside-sass.tab-pane.active
+    #example-absolute-inside-sass.tab-pane
       = preserve do
         -code("sass") do
           :plain
@@ -106,7 +107,7 @@
                 cssowl-sprite-absolute-inside(-120px, -20px, 7px, 4px, url("sprite.png"), bottom, center)
               &.middle-left
                 cssowl-sprite-absolute-inside(-120px, -10px, 4px, 7px, url("sprite.png"), middle, left)
-    #example-absolute-inside-html.tab-pane
+    #example-absolute-inside-html.tab-pane.active
       = preserve do
         -code("html") do
           .wrapper{:style => "position:relative;width:50px;height:50px;border:1px solid #59371f;"}

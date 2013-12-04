@@ -1,8 +1,8 @@
-%h2#cssowl-sprite-after-absolute-outside cssowl-sprite-after-absolute-outside <small>(x, y, width, height, src, valign, halign, xOffset, yOffset)</small>
+%h3#cssowl-sprite-after-absolute-outside cssowl-sprite-after-absolute-outside <small>(x, y, width, height, src, valign, halign, xOffset, yOffset)</small>
 
 %p
   :markdown
-    Adds an element with the `:after` pseudo selector and displays it with `position: absolute;` outside the bounding box.
+    Add a sprite element with the `:after` pseudo selector and place it with `position: absolute;` outside the bounding box.
 
 = preserve do
   -code("sass") do
@@ -30,19 +30,20 @@
     .example-after-absolute-outside{:style => "display:inline-block;border-top:1px solid #59371f;padding-top: 5px;"} Quia sint quis
 
   %ul.nav.nav-tabs
-    %li.active
-      = link_to 'Sass', '#example-after-absolute-outside-sass'
+    %li.active.htmltab
+      = link_to 'HTML', '#example-after-absolute-outside-html'
     %li
-      = link_to 'Scss', '#example-after-absolute-outside-scss'
+      = link_to 'LESS', '#example-after-absolute-outside-less'
     %li
-      = link_to 'Less', '#example-after-absolute-outside-less'
+      = link_to 'SASS', '#example-after-absolute-outside-sass'
+    %li
+      = link_to 'SCSS', '#example-after-absolute-outside-scss'
     %li
       = link_to 'Stylus', '#example-after-absolute-outside-stylus'
-    %li
-      = link_to 'Html', '#example-after-absolute-outside-html'
+
 
   .tab-content
-    #example-after-absolute-outside-sass.tab-pane.active
+    #example-after-absolute-outside-sass.tab-pane
       = preserve do
         -code("sass") do
           :plain
@@ -68,7 +69,7 @@
           :plain
             .example-after-absolute-outside
               cssowl-sprite-after-absolute-outside(-110px, -20px, 7px, 4px, url("sprite.png"), top, center)
-    #example-after-absolute-outside-html.tab-pane
+    #example-after-absolute-outside-html.tab-pane.active
       = preserve do
         -code("html") do
           .example-after-absolute-outside{:style => "display:inline-block;border-top:1px solid #59371f;padding-top: 5px;"} Quia sint quis

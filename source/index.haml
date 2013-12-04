@@ -3,132 +3,151 @@ title: Home
 nav: home
 ---
 
-.bs-docs-section
+.bs-docs-content.bs-docs-container
+  .bs-docs-section.explain
+    .container
+      .row
+        .col-xs-12.col-md-8.col-md-offset-2.intro
+          %h2.introTitle What is Cssowl?
 
-  .page-header
-    %h1#introduction Introduction
+          %p.introText
+            <strong>Cssowl is a mixin library with support for #{link_to "LESS", "http://lesscss.org"}, #{link_to "SASS/SCSS", "http://sass-lang.com"} and #{link_to "Stylus", "http://learnboost.github.io/stylus/"}.</strong> We created the mixins for working with Owl-Stars extensions like #{link_to "Spriteowl", "http://spriteowl.owl-stars.com"}, but feel free to use it on its own.
 
-    %p.lead Cssowl is #{link_to "Owl-Stars", "http://www.owl-stars.com"} mixins library with support for #{link_to "Less", "http://lesscss.org"}, #{link_to "Sass/Scss", "http://sass-lang.com"} and #{link_to "Stylus", "http://learnboost.github.io/stylus/"}.
+      .row
+        .col-xs-12.col-md-8.col-md-offset-2.info
+          %strong
+            The library contains the following packages:
+          .box
+            #{link_to "Cssowl-sprite", "/sprite.html"}: mixins to add and place sprite elements
+          .box
+            #{link_to "Cssowl-position", "/position.html"}: mixins to place HTML elements
 
-    %p It's been created to work with Owl-Stars Extensions like #{link_to "Spriteowl", "http://spriteowl.owl-stars.com"} but of cause it can also be used by itself.
+  .bs-docs-section.bgDark.download
+    .container
+      .row
 
-    %p This library contains the following packages:
+        .col-xs-12.col-md-8.col-md-offset-2.intro
+          %h2.introTitle Download Cssowl
 
-    %ul
-      %li #{link_to "cssowl-sprite", "/sprite.html"}: Mixins for common tasks working with sprite images
-      %li #{link_to "cssowl-position", "/position.html"}: Mixins to position html elements
+          %p.introText
+            Depending on your demands and skills there are three download options available:
 
-.bs-docs-section
+      .row
+        .col-md-4
+          .box
+            %h4 Download the latest release
+            %p Get the latest release files by downloading directly from GitHub.
+            #{link_to "Download the latest release", "https://github.com/owl-stars/cssowl/archive/v#{data.cssowl.version}.zip", :class => "owlbtn"}
+        .col-md-4
+          .box
+            %h4 Clone or fork via GitHub
+            %p Make your own version of Cssowl and clone or fork the project by visiting us on GitHub.
+            #{link_to "Clone or fork via GitHub", "https://github.com/owl-stars/cssowl", :class => "owlbtn"}
+        .col-md-4
+          .box
+            %h4 Install with Bower
+            %p Install and manage the original Cssowl files with a local copy of the docs, using #{link_to "Bower", "http://bower.io"}.
 
-  .page-header
-    %h1#download Download Cssowl
+            = preserve do
+              -code("shell") do
+                $ bower install cssowl --save
 
-    %p.lead Depending on your demands and skills there are three download options available:
 
-    %h4 #{link_to "Download the latest release", "https://github.com/owl-stars/cssowl/archive/v#{data.cssowl.version}.zip"}
-    %p Get the latest release files by downloading the latest version directly from GitHub.
+  .bs-docs-section
+    .container
+      .row
 
-    %h4 #{link_to "Clone or fork via GitHub", "https://github.com/owl-stars/cssowl"}
-    %p Make your own version of Cssowl and clone or fork the project by visiting us on GitHub.
+        .col-xs-12.col-md-8.col-md-offset-2.intro
+          %h2.introTitle
+            Getting started
 
-    %h4 Install with #{link_to "Bower", "http://bower.io"}
-    %p Install and manage the original files for all Css and JavaScript files, along with a local copy of the docs, using #{link_to "Bower", "http://bower.io"}.
+          %p.introText
+            After downloading just import Cssowl into your LESS, SASS/SCSS or Stylus file and off you go.
 
-    = preserve do
-      -code("shell") do
-        $ bower install cssowl --save
+      .row
+        .col-md-6.bs-docs-content
+          %p Within the download you'll find the following directories and files. Each syntax is grouped in its own directory.
 
-.bs-docs-section
+          %p <strong>Depending on your preferred syntax import the correct version into your stylesheet file.</strong>
 
-  .page-header
-    %h1#getting-started Getting started
+          .bs-docs-example
 
-    %p.lead After downloading just import Cssowl into your Less, Sass/Scss or Stylus file and off you go.
+            .content
 
-    %p Within the download you'll find the following directories and files, grouping each syntax into it's own directory.
+            %ul.nav.nav-tabs
+              %li.active
+                = link_to "LESS", "#example-import-less"
+              %li
+                = link_to "SASS", "#example-import-sass"
+              %li
+                = link_to "SCSS", "#example-import-scss"
+              %li
+                = link_to "Stylus", "#example-import-stylus"
 
-    = preserve do
-      -code("shell") do
-        :plain
-          cssowl/
-            └── lib
-                ├── less
-                │   ├── cssowl
-                │   │   ├── position.less
-                │   │   └── sprite.less
-                │   └── cssowl.less
-                ├── sass
-                │   ├── cssowl
-                │   │   ├── position.sass
-                │   │   └── sprite.sass
-                │   └── cssowl.sass
-                ├── scss
-                │   ├── cssowl
-                │   │   ├── position.scss
-                │   │   └── sprite.scss
-                │   └── cssowl.scss
-                └── styl
-                    ├── cssowl
-                    │   ├── position.styl
-                    │   └── sprite.styl
-                    └── cssowl.styl
+            .tab-content
+              #example-import-sass.tab-pane
+                = preserve do
+                  -code("sass") do
+                    :plain
+                      @import "path/to/cssowl/lib/sass/cssowl"
+              #example-import-scss.tab-pane
+                = preserve do
+                  -code("scss") do
+                    :plain
+                      @import "path/to/cssowl/lib/scss/cssowl"
+              #example-import-less.tab-pane.active
+                = preserve do
+                  -code("less") do
+                    :plain
+                      @import "path/to/cssowl/lib/less/cssowl";
+              #example-import-stylus.tab-pane
+                = preserve do
+                  -code("stylus") do
+                    :plain
+                      @import "path/to/cssowl/lib/stylus/cssowl"
 
-    %p Depending on your syntax import the correct version into your stylesheet file.
-
-    .bs-docs-example
-
-      .content
-
-      %ul.nav.nav-tabs
-        %li.active
-          = link_to "Sass", "#example-import-sass"
-        %li
-          = link_to "Scss", "#example-import-scss"
-        %li
-          = link_to "Less", "#example-import-less"
-        %li
-          = link_to "Stylus", "#example-import-stylus"
-
-      .tab-content
-        #example-import-sass.tab-pane.active
+        .col-md-6
           = preserve do
-            -code("sass") do
+            -code("shell") do
               :plain
-                @import "path/to/cssowl/lib/sass/cssowl"
-        #example-import-scss.tab-pane
-          = preserve do
-            -code("scss") do
-              :plain
-                @import "path/to/cssowl/lib/scss/cssowl"
-        #example-import-less.tab-pane
-          = preserve do
-            -code("less") do
-              :plain
-                @import "path/to/cssowl/lib/less/cssowl";
-        #example-import-stylus.tab-pane
-          = preserve do
-            -code("stylus") do
-              :plain
-                @import "path/to/cssowl/lib/stylus/cssowl"
+                cssowl/
+                  └── lib/
+                      ├── less/
+                      │   ├── cssowl/
+                      │   │   ├── position.less
+                      │   │   └── sprite.less
+                      │   └── cssowl.less
+                      ├── sass/
+                      │   ├── cssowl/
+                      │   │   ├── position.sass
+                      │   │   └── sprite.sass
+                      │   └── cssowl.sass
+                      ├── scss/
+                      │   ├── cssowl/
+                      │   │   ├── position.scss
+                      │   │   └── sprite.scss
+                      │   └── cssowl.scss
+                      └── stylus/
+                          ├── cssowl/
+                          │   ├── position.styl
+                          │   └── sprite.styl
+                          └── cssowl.styl
 
-.bs-docs-section
+  .bs-docs-section.bgDark.feedback
+    .container
+      .row
 
-  .page-header
-    %h1#feedback Feedback
+        .col-xs-12.col-md-8.col-md-offset-2.intro
+          %h2.introTitle
+            Feedback
 
-    %p.lead Have a bug or a feature request?
+          %p.introText
+            Found a bug or want to suggest features?
 
-    %p Please open a #{link_to "new issue", "https://github.com/owl-stars/cssowl/issues"} if you find any bugs or have a new feature request.
+      .row
+        .col-xs-12.col-md-8.col-md-offset-2.info
+          .box
+            Please open a #{link_to "new issue", "https://github.com/owl-stars/cssowl/issues"} on GitHub.
+          .box
+            If you need to test something, feel free to use #{link_to "JSFIDDLE", "http://jsfiddle.net/vmBXP/1/"}.
 
-    %p You may use #{link_to "this JSFIDDLE", "http://jsfiddle.net/vmBXP/1/"} if you need to test something.
-
--content_for :nav do
-  %ul.nav.bs-sidenav
-    %li
-      %a{:href => "#introduction"} Introduction
-    %li
-      %a{:href => "#download"} Download Cssowl
-    %li
-      %a{:href => "#getting-started"} Gettings started
-    %li
-      %a{:href => "#feedback"} Feedback

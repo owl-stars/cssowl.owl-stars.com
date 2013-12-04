@@ -1,8 +1,8 @@
-%h2#cssowl-position-absolute-outside cssowl-position-absolute-outside <small>(width, height, valign, halign, xOffset, yOffset)</small>
+%h3#cssowl-position-absolute-outside cssowl-position-absolute-outside <small>(width, height, valign, halign, xOffset, yOffset)</small>
 
 %p
   :markdown
-    Positions a element with `position: absolute;` outside the bounding box.
+    Place a sprite element with `position: absolute;` outside the bounding box.
 
 = preserve do
   -code("sass") do
@@ -46,19 +46,20 @@
       .example-absolute-outside.middle-left
 
   %ul.nav.nav-tabs
-    %li.active
-      = link_to 'Sass', '#example-absolute-outside-sass'
+    %li.htmltab.active
+      = link_to 'HTML', '#example-absolute-outside-html'
     %li
-      = link_to 'Scss', '#example-absolute-outside-scss'
+      = link_to 'LESS', '#example-absolute-outside-less'
     %li
-      = link_to 'Less', '#example-absolute-outside-less'
+      = link_to 'SASS', '#example-absolute-outside-sass'
+    %li
+      = link_to 'SCSS', '#example-absolute-outside-scss'
     %li
       = link_to 'Stylus', '#example-absolute-outside-stylus'
-    %li
-      = link_to 'Html', '#example-absolute-outside-html'
+
 
   .tab-content
-    #example-absolute-outside-sass.tab-pane.active
+    #example-absolute-outside-sass.tab-pane
       = preserve do
         -code("sass") do
           :plain
@@ -132,7 +133,7 @@
                 cssowl-position-absolute-outside(10px, 10px, bottom, center)
               &.middle-left
                 cssowl-position-absolute-outside(10px, 10px, middle, left)
-    #example-absolute-outside-html.tab-pane
+    #example-absolute-outside-html.tab-pane.active
       = preserve do
         -code("html") do
           .wrapper{:style => "position:relative;width:50px;height:50px;border:1px solid #59371f;"}

@@ -3,153 +3,158 @@ title: Sprite Package
 nav: sprite
 ---
 
-.bs-docs-section
+.container.bs-docs-container
+  .row
+    .col-md-3
+      .bs-sidebar.hidden-print
+        %ul.nav.bs-sidenav
+          %li
+            %a{:href => "#display"} Display
+            %ul.nav
+              %li
+                %a{:href => "#cssowl-sprite-display"} display
+              %li
+                %a{:href => "#cssowl-sprite-display-block"} display-block
+              %li
+                %a{:href => "#cssowl-sprite-display-inline"} display-inline
+          %li
+            %a{:href => "#replace"} Replace
+            %ul.nav
+              %li
+                %a{:href => "#cssowl-sprite-replace"} replace
+              %li
+                %a{:href => "#cssowl-sprite-replace-block"} replace-block
+              %li
+                %a{:href => "#cssowl-sprite-replace-inline"} replace-inline
+          %li
+            %a{:href => "#absolute"} Absolute
+            %ul.nav
+              %li
+                %a{:href => "#cssowl-sprite-absolute"} absolute
+              %li
+                %a{:href => "#cssowl-sprite-absolute-inside"} absolute-inside
+              %li
+                %a{:href => "#cssowl-sprite-absolute-outside"} absolute-outside
+          %li
+            %a{:href => "#float"} Float
+            %ul.nav
+              %li
+                %a{:href => "#cssowl-sprite-float-left"} float-left
+              %li
+                %a{:href => "#cssowl-sprite-float-right"} float-right
+          %li
+            %a{:href => "#before"} Before
+            %ul.nav
+              %li
+                %a{:href => "#cssowl-sprite-before"} before
+              %li
+                %a{:href => "#cssowl-sprite-before-inline"} before-inline
+              %li
+                %a{:href => "#cssowl-sprite-before-float"} before-float
+              %li
+                %a{:href => "#cssowl-sprite-before-absolute"} before-absolute
+              %li
+                %a{:href => "#cssowl-sprite-before-absolute-inside"} before-absolute-inside
+              %li
+                %a{:href => "#cssowl-sprite-before-absolute-outside"} before-absolute-outside
+          %li
+            %a{:href => "#after"} After
+            %ul.nav
+              %li
+                %a{:href => "#cssowl-sprite-after"} after
+              %li
+                %a{:href => "#cssowl-sprite-after-inline"} after-inline
+              %li
+                %a{:href => "#cssowl-sprite-after-float"} after-float
+              %li
+                %a{:href => "#cssowl-sprite-after-absolute"} after-absolute
+              %li
+                %a{:href => "#cssowl-sprite-after-absolute-inside"} after-absolute-inside
+              %li
+                %a{:href => "#cssowl-sprite-after-absolute-outside"} after-absolute-outside
 
-  .page-header
-    %h1#overview Overview
-  %h2
-  %p The <strong>cssowl-sprite</strong> package contains mixins that help you do common tasks with sprite elements such as:
+    .col-md-9.bs-docs-content
 
-  %ul
-    %li Display a sprite element.
-    %li Display a sprite element and replace the html text.
-    %li Display and position a sprite element absolutely.
-    %li Display a sprite element absolutely and make it float.
-    %li Use the pseudo selector <code>:before</code> to display a sprite element.
-    %li Use the pseudo selector <code>:after</code> to display a sprite element.
+      .bs-docs-section
 
-  %p For the examples below we use this image as a sprite:
+        .page-header
+          %h1#overview Overview
 
-  .bs-docs-example
-    .content
-      %img{:src => "/assets/img/sprite.png", :class => "bs-docs-sprite"}
+          %p The <strong>cssowl-sprite</strong> package contains mixins that help you do common tasks with sprite elements such as:
 
-.bs-docs-section
+          %ul
+            %li Display a sprite element.
+            %li Display a sprite element and replace the html text.
+            %li Display and position a sprite element absolutely.
+            %li Display a sprite element absolutely and make it float.
+            %li Use the pseudo selector <code>:before</code> to display a sprite element.
+            %li Use the pseudo selector <code>:after</code> to display a sprite element.
 
-  .page-header
-    %h1#display Display
+          %p For the examples below we use this image as a sprite:
 
-  = partial "docs/cssowl/sprite/display"
-  = partial "docs/cssowl/sprite/display-block"
-  = partial "docs/cssowl/sprite/display-inline"
+          .bs-docs-example
+            .content
+              %img{:src => "/assets/img/sprite.png", :class => "bs-docs-sprite"}
 
-.bs-docs-section
+      .bs-docs-section
 
-  .page-header
-    %h1#replace Replace
+        .page-header
+          %h1#display Display
 
-  = partial "docs/cssowl/sprite/replace"
-  = partial "docs/cssowl/sprite/replace-block"
-  = partial "docs/cssowl/sprite/replace-inline"
+        = partial "docs/sprite/display/display"
+        = partial "docs/sprite/display/display-block"
+        = partial "docs/sprite/display/display-inline"
 
-.bs-docs-section
+      .bs-docs-section
 
-  .page-header
-    %h1#absolute Absolute
+        .page-header
+          %h1#replace Replace
 
-  = partial "docs/cssowl/sprite/absolute"
-  = partial "docs/cssowl/sprite/absolute-inside"
-  = partial "docs/cssowl/sprite/absolute-outside"
+        = partial "docs/sprite/replace/replace"
+        = partial "docs/sprite/replace/replace-block"
+        = partial "docs/sprite/replace/replace-inline"
 
-.bs-docs-section
+      .bs-docs-section
 
-  .page-header
-    %h1#float Float
+        .page-header
+          %h1#absolute Absolute
 
-  = partial "docs/cssowl/sprite/float-left"
-  = partial "docs/cssowl/sprite/float-right"
+        = partial "docs/sprite/absolute/absolute"
+        = partial "docs/sprite/absolute/absolute-inside"
+        = partial "docs/sprite/absolute/absolute-outside"
 
-.bs-docs-section
+      .bs-docs-section
 
-  .page-header
-    %h1#before Before
+        .page-header
+          %h1#float Float
 
-  = partial "docs/cssowl/sprite/before"
-  = partial "docs/cssowl/sprite/before-inline"
-  = partial "docs/cssowl/sprite/before-float"
-  = partial "docs/cssowl/sprite/before-absolute"
-  = partial "docs/cssowl/sprite/before-absolute-inside"
-  = partial "docs/cssowl/sprite/before-absolute-outside"
+        = partial "docs/sprite/float/float-left"
+        = partial "docs/sprite/float/float-right"
 
-.bs-docs-section
+      .bs-docs-section
 
-  .page-header
-    %h1#after After
+        .page-header
+          %h1#before Before
 
-  = partial "docs/cssowl/sprite/after"
-  = partial "docs/cssowl/sprite/after-inline"
-  = partial "docs/cssowl/sprite/after-float"
-  = partial "docs/cssowl/sprite/after-absolute"
-  = partial "docs/cssowl/sprite/after-absolute-inside"
-  = partial "docs/cssowl/sprite/after-absolute-outside"
+        = partial "docs/sprite/before/before"
+        = partial "docs/sprite/before/before-inline"
+        = partial "docs/sprite/before/before-float"
+        = partial "docs/sprite/before/before-absolute"
+        = partial "docs/sprite/before/before-absolute-inside"
+        = partial "docs/sprite/before/before-absolute-outside"
 
+      .bs-docs-section
 
--content_for :nav do
-  %ul.nav.bs-sidenav
-    %li
-      %a{:href => "#display"} Display
-      %ul.nav
-        %li
-          %a{:href => "#cssowl-sprite-display"} display
-        %li
-          %a{:href => "#cssowl-sprite-display-block"} display-block
-        %li
-          %a{:href => "#cssowl-sprite-display-inline"} display-inline
-    %li
-      %a{:href => "#replace"} Replace
-      %ul.nav
-        %li
-          %a{:href => "#cssowl-sprite-replace"} replace
-        %li
-          %a{:href => "#cssowl-sprite-replace-block"} replace-block
-        %li
-          %a{:href => "#cssowl-sprite-replace-inline"} replace-inline
-    %li
-      %a{:href => "#absolute"} Absolute
-      %ul.nav
-        %li
-          %a{:href => "#cssowl-sprite-absolute"} absolute
-        %li
-          %a{:href => "#cssowl-sprite-absolute-inside"} absolute-inside
-        %li
-          %a{:href => "#cssowl-sprite-absolute-outside"} absolute-outside
-    %li
-      %a{:href => "#float"} Float
-      %ul.nav
-        %li
-          %a{:href => "#cssowl-sprite-float-left"} float-left
-        %li
-          %a{:href => "#cssowl-sprite-float-right"} float-right
-    %li
-      %a{:href => "#before"} Before
-      %ul.nav
-        %li
-          %a{:href => "#cssowl-sprite-before"} before
-        %li
-          %a{:href => "#cssowl-sprite-before-inline"} before-inline
-        %li
-          %a{:href => "#cssowl-sprite-before-float"} before-float
-        %li
-          %a{:href => "#cssowl-sprite-before-absolute"} before-absolute
-        %li
-          %a{:href => "#cssowl-sprite-before-absolute-inside"} before-absolute-inside
-        %li
-          %a{:href => "#cssowl-sprite-before-absolute-outside"} before-absolute-outside
-    %li
-      %a{:href => "#after"} After
-      %ul.nav
-        %li
-          %a{:href => "#cssowl-sprite-after"} after
-        %li
-          %a{:href => "#cssowl-sprite-after-inline"} after-inline
-        %li
-          %a{:href => "#cssowl-sprite-after-float"} after-float
-        %li
-          %a{:href => "#cssowl-sprite-after-absolute"} after-absolute
-        %li
-          %a{:href => "#cssowl-sprite-after-absolute-inside"} after-absolute-inside
-        %li
-          %a{:href => "#cssowl-sprite-after-absolute-outside"} after-absolute-outside
+        .page-header
+          %h1#after After
+
+        = partial "docs/cssowl/sprite/after"
+        = partial "docs/cssowl/sprite/after-inline"
+        = partial "docs/cssowl/sprite/after-float"
+        = partial "docs/cssowl/sprite/after-absolute"
+        = partial "docs/cssowl/sprite/after-absolute-inside"
+        = partial "docs/cssowl/sprite/after-absolute-outside"
+
 
 -content_for :head do
   -stylesheet_link_tag "examples-sprite"

@@ -1,8 +1,8 @@
-%h2#cssowl-sprite-replace cssowl-sprite-replace <small>(x, y, width, height, src)</small>
+%h3#cssowl-sprite-replace cssowl-sprite-replace <small>(x, y, width, height, src)</small>
 
 %p
   :markdown
-    Displays an element and uses `text-indent: -9999px;` to hide the text.
+    Add a sprite element and use `text-indent: -9999px;` to hide the text.
 
 = preserve do
   -code("sass") do
@@ -25,19 +25,20 @@
     %h1.example-replace Lorem ipsum dolor sit atem
 
   %ul.nav.nav-tabs
-    %li.active
-      = link_to 'Sass', '#example-replace-sass'
+    %li.active.htmltab
+      = link_to 'HTML', '#example-replace-html'
     %li
-      = link_to 'Scss', '#example-replace-scss'
+      = link_to 'LESS', '#example-replace-less'
     %li
-      = link_to 'Less', '#example-replace-less'
+      = link_to 'SASS', '#example-replace-sass'
+    %li
+      = link_to 'SCSS', '#example-replace-scss'
     %li
       = link_to 'Stylus', '#example-replace-stylus'
-    %li
-      = link_to 'Html', '#example-replace-html'
+
 
   .tab-content
-    #example-replace-sass.tab-pane.active
+    #example-replace-sass.tab-pane
       = preserve do
         -code("sass") do
           :plain
@@ -63,7 +64,7 @@
           :plain
             .example-replace
               cssowl-sprite-replace(-10px, -10px, 91px, 95px, url("sprite.png"))
-    #example-replace-html.tab-pane
+    #example-replace-html.tab-pane.active
       = preserve do
         -code("html") do
           %h1.example-replace Lorem ipsum dolor sit atem
