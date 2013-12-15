@@ -24,6 +24,11 @@
   .content
     %h1.example-replace Lorem ipsum dolor sit atem
 
+    :sass
+      @import "bower_components/cssowl/lib/sass/cssowl"
+      .example-replace
+        +cssowl-sprite-replace(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"))
+
   %ul.nav.nav-tabs
     %li.active.htmltab
       = link_to 'HTML', '#example-replace-html'
@@ -34,37 +39,36 @@
     %li
       = link_to 'SCSS', '#example-replace-scss'
     %li
-      = link_to 'Stylus', '#example-replace-stylus'
-
+      = link_to 'Stylus', '#example-replace-styl'
 
   .tab-content
-    #example-replace-sass.tab-pane
+    #example-replace-html.tab-pane.active
       = preserve do
-        -code("sass") do
-          :plain
-            .example-replace
-              +cssowl-sprite-replace(-10px, -10px, 91px, 95px, url("sprite.png"))
-    #example-replace-scss.tab-pane
-      = preserve do
-        -code("scss") do
-          :plain
-            .example-replace {
-              @include cssowl-sprite-replace(-10px, -10px, 91px, 95px, url("sprite.png"));
-            }
+        -code("html") do
+          %h1.example-replace Lorem ipsum dolor sit atem
     #example-replace-less.tab-pane
       = preserve do
         -code("less") do
           :plain
             .example-replace {
-              .cssowl-sprite-replace(-10px, -10px, 91px, 95px, url("sprite.png"));
+              .cssowl-sprite-replace(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"));
             }
-    #example-replace-stylus.tab-pane
+    #example-replace-sass.tab-pane
       = preserve do
-        -code("stylus") do
+        -code("sass") do
           :plain
             .example-replace
-              cssowl-sprite-replace(-10px, -10px, 91px, 95px, url("sprite.png"))
-    #example-replace-html.tab-pane.active
+              +cssowl-sprite-replace(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"))
+    #example-replace-scss.tab-pane
       = preserve do
-        -code("html") do
-          %h1.example-replace Lorem ipsum dolor sit atem
+        -code("scss") do
+          :plain
+            .example-replace {
+              @include cssowl-sprite-replace(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"));
+            }
+    #example-replace-styl.tab-pane
+      = preserve do
+        -code("styl") do
+          :plain
+            .example-replace
+              cssowl-sprite-replace(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"))

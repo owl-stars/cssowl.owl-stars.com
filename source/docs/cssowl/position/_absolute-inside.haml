@@ -2,7 +2,7 @@
 
 %p
   :markdown
-    Place a sprite element with `position: absolute;` inside the bounding box.
+    Positions a element with `position: absolute;` inside the bounding box.
 
 = preserve do
   -code("sass") do
@@ -45,6 +45,21 @@
       .example-absolute-inside.bottom-center
       .example-absolute-inside.middle-left
 
+    :sass
+      @import "bower_components/cssowl/lib/sass/cssowl"
+      .example-absolute-inside
+        width: 10px
+        height: 10px
+        background: #59371f
+        &.top-center
+          +cssowl-position-absolute-inside(10px, 10px, top, center)
+        &.middle-right
+          +cssowl-position-absolute-inside(10px, 10px, middle, right)
+        &.bottom-center
+          +cssowl-position-absolute-inside(10px, 10px, bottom, center)
+        &.middle-left
+          +cssowl-position-absolute-inside(10px, 10px, middle, left)
+
   %ul.nav.nav-tabs
     %li.active.htmltab
       = link_to 'HTML', '#example-absolute-inside-html'
@@ -55,10 +70,38 @@
     %li
       = link_to 'SCSS', '#example-absolute-inside-scss'
     %li
-      = link_to 'Stylus', '#example-absolute-inside-stylus'
-
+      = link_to 'Stylus', '#example-absolute-inside-styl'
 
   .tab-content
+    #example-absolute-inside-html.tab-pane.active
+      = preserve do
+        -code("html") do
+          .wrapper{:style => "position:relative;width:50px;height:50px;border:1px solid #59371f;"}
+            .example-absolute-inside.top-center
+            .example-absolute-inside.middle-right
+            .example-absolute-inside.bottom-center
+            .example-absolute-inside.middle-left
+    #example-absolute-inside-less.tab-pane
+      = preserve do
+        -code("less") do
+          :plain
+            .example-absolute-inside {
+              width: 10px;
+              height: 10px;
+              background: #59371f;
+              &.top-center {
+                .cssowl-position-absolute-inside(10px, 10px, top, center);
+              }
+              &.middle-right {
+                .cssowl-position-absolute-inside(10px, 10px, middle, right);
+              }
+              &.bottom-center {
+                .cssowl-position-absolute-inside(10px, 10px, bottom, center);
+              }
+              &.middle-left {
+                .cssowl-position-absolute-inside(10px, 10px, middle, left);
+              }
+            }
     #example-absolute-inside-sass.tab-pane
       = preserve do
         -code("sass") do
@@ -80,10 +123,10 @@
         -code("scss") do
           :plain
             .example-absolute-inside {
-              width: 10px
-              height: 10px
-              background: #59371f
-              &.top-center
+              width: 10px;
+              height: 10px;
+              background: #59371f;
+              &.top-center {
                 @include cssowl-position-absolute-inside(10px, 10px, top, center);
               }
               &.middle-right {
@@ -96,30 +139,9 @@
                 @include cssowl-position-absolute-inside(10px, 10px, middle, left);
               }
             }
-    #example-absolute-inside-less.tab-pane
+    #example-absolute-inside-styl.tab-pane
       = preserve do
-        -code("less") do
-          :plain
-            .example-absolute-inside {
-              width: 10px;
-              height: 10px;
-              background: #59371f;
-              &.top-center
-                .cssowl-position-absolute-inside(10px, 10px, top, center);
-              }
-              &.middle-right {
-                .cssowl-position-absolute-inside(10px, 10px, middle, right);
-              }
-              &.bottom-center {
-                .cssowl-position-absolute-inside(10px, 10px, bottom, center);
-              }
-              &.middle-left {
-                .cssowl-position-absolute-inside(10px, 10px, middle, left);
-              }
-            }
-    #example-absolute-inside-stylus.tab-pane
-      = preserve do
-        -code("stylus") do
+        -code("styl") do
           :plain
             .example-absolute-inside
               width: 10px
@@ -133,11 +155,3 @@
                 cssowl-position-absolute-inside(10px, 10px, bottom, center)
               &.middle-left
                 cssowl-position-absolute-inside(10px, 10px, middle, left)
-    #example-absolute-inside-html.tab-pane.active
-      = preserve do
-        -code("html") do
-          .wrapper{:style => "position:relative;width:50px;height:50px;border:1px solid #59371f;"}
-            .example-absolute-inside.top-center
-            .example-absolute-inside.middle-right
-            .example-absolute-inside.bottom-center
-            .example-absolute-inside.middle-left

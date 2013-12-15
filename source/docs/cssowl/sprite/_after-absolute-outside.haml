@@ -29,6 +29,11 @@
   .content
     .example-after-absolute-outside{:style => "display:inline-block;border-top:1px solid #59371f;padding-top: 5px;"} Quia sint quis
 
+    :sass
+      @import "bower_components/cssowl/lib/sass/cssowl"
+      .example-after-absolute-outside
+        +cssowl-sprite-after-absolute-outside(-110px, -20px, 7px, 4px, url("/assets/img/sprite.png"), top, center)
+
   %ul.nav.nav-tabs
     %li.active.htmltab
       = link_to 'HTML', '#example-after-absolute-outside-html'
@@ -39,37 +44,36 @@
     %li
       = link_to 'SCSS', '#example-after-absolute-outside-scss'
     %li
-      = link_to 'Stylus', '#example-after-absolute-outside-stylus'
-
+      = link_to 'Stylus', '#example-after-absolute-outside-styl'
 
   .tab-content
-    #example-after-absolute-outside-sass.tab-pane
+    #example-after-absolute-outside-html.tab-pane.active
       = preserve do
-        -code("sass") do
-          :plain
-            .example-after-absolute-outside
-              +cssowl-sprite-after-absolute-outside(-110px, -20px, 7px, 4px, url("sprite.png"), top, center)
-    #example-after-absolute-outside-scss.tab-pane
-      = preserve do
-        -code("scss") do
-          :plain
-            .example-after-absolute-outside {
-              @include cssowl-sprite-after-absolute-outside(-110px, -20px, 7px, 4px, url("sprite.png"), top, center);
-            }
+        -code("html") do
+          .example-after-absolute-outside{:style => "display:inline-block;border-top:1px solid #59371f;padding-top: 5px;"} Quia sint quis
     #example-after-absolute-outside-less.tab-pane
       = preserve do
         -code("less") do
           :plain
             .example-after-absolute-outside {
-              .cssowl-sprite-after-absolute-outside(-110px, -20px, 7px, 4px, url("sprite.png"), top, center);
+              .cssowl-sprite-after-absolute-outside(-110px, -20px, 7px, 4px, url("/assets/img/sprite.png"), top, center);
             }
-    #example-after-absolute-outside-stylus.tab-pane
+    #example-after-absolute-outside-sass.tab-pane
       = preserve do
-        -code("stylus") do
+        -code("sass") do
           :plain
             .example-after-absolute-outside
-              cssowl-sprite-after-absolute-outside(-110px, -20px, 7px, 4px, url("sprite.png"), top, center)
-    #example-after-absolute-outside-html.tab-pane.active
+              +cssowl-sprite-after-absolute-outside(-110px, -20px, 7px, 4px, url("/assets/img/sprite.png"), top, center)
+    #example-after-absolute-outside-scss.tab-pane
       = preserve do
-        -code("html") do
-          .example-after-absolute-outside{:style => "display:inline-block;border-top:1px solid #59371f;padding-top: 5px;"} Quia sint quis
+        -code("scss") do
+          :plain
+            .example-after-absolute-outside {
+              @include cssowl-sprite-after-absolute-outside(-110px, -20px, 7px, 4px, url("/assets/img/sprite.png"), top, center);
+            }
+    #example-after-absolute-outside-styl.tab-pane
+      = preserve do
+        -code("styl") do
+          :plain
+            .example-after-absolute-outside
+              cssowl-sprite-after-absolute-outside(-110px, -20px, 7px, 4px, url("/assets/img/sprite.png"), top, center)

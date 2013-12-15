@@ -101,47 +101,47 @@ nav: sprite
         .page-header
           %h1#display Display
 
-        = partial "docs/sprite/display/display"
-        = partial "docs/sprite/display/display-block"
-        = partial "docs/sprite/display/display-inline"
+        = partial "docs/cssowl/sprite/display"
+        = partial "docs/cssowl/sprite/display-block"
+        = partial "docs/cssowl/sprite/display-inline"
 
       .bs-docs-section
 
         .page-header
           %h1#replace Replace
 
-        = partial "docs/sprite/replace/replace"
-        = partial "docs/sprite/replace/replace-block"
-        = partial "docs/sprite/replace/replace-inline"
+        = partial "docs/cssowl/sprite/replace"
+        = partial "docs/cssowl/sprite/replace-block"
+        = partial "docs/cssowl/sprite/replace-inline"
 
       .bs-docs-section
 
         .page-header
           %h1#absolute Absolute
 
-        = partial "docs/sprite/absolute/absolute"
-        = partial "docs/sprite/absolute/absolute-inside"
-        = partial "docs/sprite/absolute/absolute-outside"
+        = partial "docs/cssowl/sprite/absolute"
+        = partial "docs/cssowl/sprite/absolute-inside"
+        = partial "docs/cssowl/sprite/absolute-outside"
 
       .bs-docs-section
 
         .page-header
           %h1#float Float
 
-        = partial "docs/sprite/float/float-left"
-        = partial "docs/sprite/float/float-right"
+        = partial "docs/cssowl/sprite/float-left"
+        = partial "docs/cssowl/sprite/float-right"
 
       .bs-docs-section
 
         .page-header
           %h1#before Before
 
-        = partial "docs/sprite/before/before"
-        = partial "docs/sprite/before/before-inline"
-        = partial "docs/sprite/before/before-float"
-        = partial "docs/sprite/before/before-absolute"
-        = partial "docs/sprite/before/before-absolute-inside"
-        = partial "docs/sprite/before/before-absolute-outside"
+        = partial "docs/cssowl/sprite/before"
+        = partial "docs/cssowl/sprite/before-inline"
+        = partial "docs/cssowl/sprite/before-float"
+        = partial "docs/cssowl/sprite/before-absolute"
+        = partial "docs/cssowl/sprite/before-absolute-inside"
+        = partial "docs/cssowl/sprite/before-absolute-outside"
 
       .bs-docs-section
 
@@ -155,6 +155,3 @@ nav: sprite
         = partial "docs/cssowl/sprite/after-absolute-inside"
         = partial "docs/cssowl/sprite/after-absolute-outside"
 
-
--content_for :head do
-  -stylesheet_link_tag "examples-sprite"

@@ -1,4 +1,4 @@
-%h2#{{mixinName}} {{mixinName}} <small>({{join mixinParams ", "}})</small>
+%h3#{{mixinName}} {{mixinName}} <small>({{join mixinParams ", "}})</small>
 
 %p
   :markdown
@@ -17,20 +17,33 @@
   .content
     {{{indent examples.html 2}}}
 
+    :sass
+      @import "bower_components/cssowl/lib/sass/cssowl"
+      {{{indent examples.sass 3}}}
+
   %ul.nav.nav-tabs
-    %li.active
-      = link_to 'Sass', '#example-{{{basename}}}-sass'
+    %li.active.htmltab
+      = link_to 'HTML', '#example-{{{basename}}}-html'
     %li
-      = link_to 'Scss', '#example-{{{basename}}}-scss'
+      = link_to 'LESS', '#example-{{{basename}}}-less'
     %li
-      = link_to 'Less', '#example-{{{basename}}}-less'
+      = link_to 'SASS', '#example-{{{basename}}}-sass'
     %li
-      = link_to 'Stylus', '#example-{{{basename}}}-stylus'
+      = link_to 'SCSS', '#example-{{{basename}}}-scss'
     %li
-      = link_to 'Html', '#example-{{{basename}}}-html'
+      = link_to 'Stylus', '#example-{{{basename}}}-styl'
 
   .tab-content
-    #example-{{{basename}}}-sass.tab-pane.active
+    #example-{{{basename}}}-html.tab-pane.active
+      = preserve do
+        -code("html") do
+          {{{indent examples.html 5}}}
+    #example-{{{basename}}}-less.tab-pane
+      = preserve do
+        -code("less") do
+          :plain
+            {{{indent examples.less 6}}}
+    #example-{{{basename}}}-sass.tab-pane
       = preserve do
         -code("sass") do
           :plain
@@ -40,17 +53,8 @@
         -code("scss") do
           :plain
             {{{indent examples.scss 6}}}
-    #example-{{{basename}}}-less.tab-pane
+    #example-{{{basename}}}-styl.tab-pane
       = preserve do
-        -code("less") do
+        -code("styl") do
           :plain
-            {{{indent examples.less 6}}}
-    #example-{{{basename}}}-stylus.tab-pane
-      = preserve do
-        -code("stylus") do
-          :plain
-            {{{indent examples.stylus 6}}}
-    #example-{{{basename}}}-html.tab-pane
-      = preserve do
-        -code("html") do
-          {{{indent examples.html 5}}}
+            {{{indent examples.styl 6}}}

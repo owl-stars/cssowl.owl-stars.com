@@ -29,6 +29,11 @@
   .content
     .example-before-absolute-outside{:style => "display:inline-block;border-top:1px solid #59371f;padding-top: 5px;"} Quia sint quis
 
+    :sass
+      @import "bower_components/cssowl/lib/sass/cssowl"
+      .example-before-absolute-outside
+        +cssowl-sprite-before-absolute-outside(-110px, -20px, 7px, 4px, url("/assets/img/sprite.png"), top, center)
+
   %ul.nav.nav-tabs
     %li.active.htmltab
       = link_to 'HTML', '#example-before-absolute-outside-html'
@@ -39,37 +44,36 @@
     %li
       = link_to 'SCSS', '#example-before-absolute-outside-scss'
     %li
-      = link_to 'Stylus', '#example-before-absolute-outside-stylus'
-
+      = link_to 'Stylus', '#example-before-absolute-outside-styl'
 
   .tab-content
-    #example-before-absolute-outside-sass.tab-pane
+    #example-before-absolute-outside-html.tab-pane.active
       = preserve do
-        -code("sass") do
-          :plain
-            .example-before-absolute-outside
-              +cssowl-sprite-before-absolute-outside(-110px, -20px, 7px, 4px, url("sprite.png"), top, center)
-    #example-before-absolute-outside-scss.tab-pane
-      = preserve do
-        -code("scss") do
-          :plain
-            .example-before-absolute-outside {
-              @include cssowl-sprite-before-absolute-outside(-110px, -20px, 7px, 4px, url("sprite.png"), top, center);
-            }
+        -code("html") do
+          .example-before-absolute-outside{:style => "display:inline-block;border-top:1px solid #59371f;padding-top: 5px;"} Quia sint quis
     #example-before-absolute-outside-less.tab-pane
       = preserve do
         -code("less") do
           :plain
             .example-before-absolute-outside {
-              .cssowl-sprite-before-absolute-outside(-110px, -20px, 7px, 4px, url("sprite.png"), top, center);
+              .cssowl-sprite-before-absolute-outside(-110px, -20px, 7px, 4px, url("/assets/img/sprite.png"), top, center);
             }
-    #example-before-absolute-outside-stylus.tab-pane
+    #example-before-absolute-outside-sass.tab-pane
       = preserve do
-        -code("stylus") do
+        -code("sass") do
           :plain
             .example-before-absolute-outside
-              cssowl-sprite-before-absolute-outside(-110px, -20px, 7px, 4px, url("sprite.png"), top, center)
-    #example-before-absolute-outside-html.tab-pane.active
+              +cssowl-sprite-before-absolute-outside(-110px, -20px, 7px, 4px, url("/assets/img/sprite.png"), top, center)
+    #example-before-absolute-outside-scss.tab-pane
       = preserve do
-        -code("html") do
-          .example-before-absolute-outside{:style => "display:inline-block;border-top:1px solid #59371f;padding-top: 5px;"} Quia sint quis
+        -code("scss") do
+          :plain
+            .example-before-absolute-outside {
+              @include cssowl-sprite-before-absolute-outside(-110px, -20px, 7px, 4px, url("/assets/img/sprite.png"), top, center);
+            }
+    #example-before-absolute-outside-styl.tab-pane
+      = preserve do
+        -code("styl") do
+          :plain
+            .example-before-absolute-outside
+              cssowl-sprite-before-absolute-outside(-110px, -20px, 7px, 4px, url("/assets/img/sprite.png"), top, center)

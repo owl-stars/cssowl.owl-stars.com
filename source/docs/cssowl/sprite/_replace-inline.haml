@@ -26,6 +26,11 @@
   .content
     %p Lorem ipsum dolor <span class="example-replace-inline">cssowl</span> sit atem
 
+    :sass
+      @import "bower_components/cssowl/lib/sass/cssowl"
+      .example-replace-inline
+        +cssowl-sprite-replace-inline(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"), 0, text-top)
+
   %ul.nav.nav-tabs
     %li.active.htmltab
       = link_to 'HTML', '#example-replace-inline-html'
@@ -36,37 +41,36 @@
     %li
       = link_to 'SCSS', '#example-replace-inline-scss'
     %li
-      = link_to 'Stylus', '#example-replace-inline-stylus'
-
+      = link_to 'Stylus', '#example-replace-inline-styl'
 
   .tab-content
-    #example-replace-inline-sass.tab-pane
+    #example-replace-inline-html.tab-pane.active
       = preserve do
-        -code("sass") do
-          :plain
-            .example-replace-inline
-              +cssowl-sprite-replace-inline(-10px, -10px, 91px, 95px, url("sprite.png"), 0, text-top)
-    #example-replace-inline-scss.tab-pane
-      = preserve do
-        -code("scss") do
-          :plain
-            .example-replace-inline {
-              @include cssowl-sprite-replace-inline(-10px, -10px, 91px, 95px, url("sprite.png"), 0, text-top);
-            }
+        -code("html") do
+          %p Lorem ipsum dolor <span class="example-replace-inline">cssowl</span> sit atem
     #example-replace-inline-less.tab-pane
       = preserve do
         -code("less") do
           :plain
             .example-replace-inline {
-              .cssowl-sprite-replace-inline(-10px, -10px, 91px, 95px, url("sprite.png"), 0, text-top);
+              .cssowl-sprite-replace-inline(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"), 0, text-top);
             }
-    #example-replace-inline-stylus.tab-pane
+    #example-replace-inline-sass.tab-pane
       = preserve do
-        -code("stylus") do
+        -code("sass") do
           :plain
             .example-replace-inline
-              cssowl-sprite-replace-inline(-10px, -10px, 91px, 95px, url("sprite.png"), 0, text-top)
-    #example-replace-inline-html.tab-pane.active
+              +cssowl-sprite-replace-inline(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"), 0, text-top)
+    #example-replace-inline-scss.tab-pane
       = preserve do
-        -code("html") do
-          %p Lorem ipsum dolor <span class="example-replace-inline">cssowl</span> sit atem
+        -code("scss") do
+          :plain
+            .example-replace-inline {
+              @include cssowl-sprite-replace-inline(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"), 0, text-top);
+            }
+    #example-replace-inline-styl.tab-pane
+      = preserve do
+        -code("styl") do
+          :plain
+            .example-replace-inline
+              cssowl-sprite-replace-inline(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"), 0, text-top)

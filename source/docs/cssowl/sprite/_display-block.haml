@@ -23,6 +23,11 @@
   .content
     .example-display-block
 
+    :sass
+      @import "bower_components/cssowl/lib/sass/cssowl"
+      .example-display-block
+        +cssowl-sprite-display-block(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"))
+
   %ul.nav.nav-tabs
     %li.active.htmltab
       = link_to 'HTML', '#example-display-block-html'
@@ -33,37 +38,36 @@
     %li
       = link_to 'SCSS', '#example-display-block-scss'
     %li
-      = link_to 'Stylus', '#example-display-block-stylus'
-
+      = link_to 'Stylus', '#example-display-block-styl'
 
   .tab-content
-    #example-display-block-sass.tab-pane
+    #example-display-block-html.tab-pane.active
       = preserve do
-        -code("sass") do
-          :plain
-            .example-display-block
-              +cssowl-sprite-display-block(-10px, -10px, 91px, 95px, url("sprite.png"))
-    #example-display-block-scss.tab-pane
-      = preserve do
-        -code("scss") do
-          :plain
-            .example-display-block {
-              @include cssowl-sprite-display-block(-10px, -10px, 91px, 95px, url("sprite.png"));
-            }
+        -code("html") do
+          .example-display-block
     #example-display-block-less.tab-pane
       = preserve do
         -code("less") do
           :plain
             .example-display-block {
-              .cssowl-sprite-display-block(-10px, -10px, 91px, 95px, url("sprite.png"));
+              .cssowl-sprite-display-block(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"));
             }
-    #example-display-block-stylus.tab-pane
+    #example-display-block-sass.tab-pane
       = preserve do
-        -code("stylus") do
+        -code("sass") do
           :plain
             .example-display-block
-              cssowl-sprite-display-block(-10px, -10px, 91px, 95px, url("sprite.png"))
-    #example-display-block-html.tab-pane.active
+              +cssowl-sprite-display-block(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"))
+    #example-display-block-scss.tab-pane
       = preserve do
-        -code("html") do
-          .example-display-block
+        -code("scss") do
+          :plain
+            .example-display-block {
+              @include cssowl-sprite-display-block(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"));
+            }
+    #example-display-block-styl.tab-pane
+      = preserve do
+        -code("styl") do
+          :plain
+            .example-display-block
+              cssowl-sprite-display-block(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"))

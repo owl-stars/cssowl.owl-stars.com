@@ -2,12 +2,7 @@
 
 %p
   :markdown
-<<<<<<< HEAD:source/docs/cssowl/sprite/_display-inline.haml
-    Displays an element with the `display: inline-block` attribute.
-You can vertically align it using `yOffset` and `valign`.
-=======
     Add a sprite element with the `display: inline-block` attribute and place it with `yOffset` and `valign`.
->>>>>>> a5af3281c1e9847eaec5238dd9ce19b59f2c91f4:source/docs/sprite/display/_display-inline.haml
 
 = preserve do
   -code("sass") do
@@ -32,6 +27,11 @@ You can vertically align it using `yOffset` and `valign`.
   .content
     .example-display-inline
 
+    :sass
+      @import "bower_components/cssowl/lib/sass/cssowl"
+      .example-display-inline
+        +cssowl-sprite-display-inline(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"))
+
   %ul.nav.nav-tabs
     %li.active.htmltab
       = link_to 'HTML', '#example-display-inline-html'
@@ -42,37 +42,36 @@ You can vertically align it using `yOffset` and `valign`.
     %li
       = link_to 'SCSS', '#example-display-inline-scss'
     %li
-      = link_to 'Stylus', '#example-display-inline-stylus'
-
+      = link_to 'Stylus', '#example-display-inline-styl'
 
   .tab-content
-    #example-display-inline-sass.tab-pane
+    #example-display-inline-html.tab-pane.active
       = preserve do
-        -code("sass") do
-          :plain
-            .example-display-inline
-              +cssowl-sprite-display-inline(-10px, -10px, 91px, 95px, url("sprite.png"))
-    #example-display-inline-scss.tab-pane
-      = preserve do
-        -code("scss") do
-          :plain
-            .example-display-inline {
-              @include cssowl-sprite-display-inline(-10px, -10px, 91px, 95px, url("sprite.png"));
-            }
+        -code("html") do
+          .example-display-inline
     #example-display-inline-less.tab-pane
       = preserve do
         -code("less") do
           :plain
             .example-display-inline {
-              .cssowl-sprite-display-inline(-10px, -10px, 91px, 95px, url("sprite.png"));
+              .cssowl-sprite-display-inline(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"));
             }
-    #example-display-inline-stylus.tab-pane
+    #example-display-inline-sass.tab-pane
       = preserve do
-        -code("stylus") do
+        -code("sass") do
           :plain
             .example-display-inline
-              cssowl-sprite-display-inline(-10px, -10px, 91px, 95px, url("sprite.png"))
-    #example-display-inline-html.tab-pane.active
+              +cssowl-sprite-display-inline(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"))
+    #example-display-inline-scss.tab-pane
       = preserve do
-        -code("html") do
-          .example-display-inline
+        -code("scss") do
+          :plain
+            .example-display-inline {
+              @include cssowl-sprite-display-inline(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"));
+            }
+    #example-display-inline-styl.tab-pane
+      = preserve do
+        -code("styl") do
+          :plain
+            .example-display-inline
+              cssowl-sprite-display-inline(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"))

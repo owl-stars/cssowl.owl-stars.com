@@ -23,9 +23,6 @@
     = javascript_include_tag  "modernizr"
     = google_analytics_tag
 
-    = if content_for?(:head)
-      -yield_content :head
-
   %body{:class => page_classes}
 
     %header
