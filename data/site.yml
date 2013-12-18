@@ -1,6 +1,6 @@
 ---
 name: Cssowl
-description: "Cssowl is Owl-Stars mixins library with support for Less, Sass/Scss & Stylus for faster and easier web development."
-version: 0.1.0
-
+description: Cssowl is Owl-Stars mixins library with support for Less, Sass/Scss &
+  Stylus for faster and easier web development.
+version: 0.1.1
 ga_account: UA-23550216-3
