@@ -50,7 +50,7 @@ nav: home
 
             = preserve do
               -code("shell") do
-                $ bower install cssowl --save
+                $ bower install cssowl
 
 
   .bs-docs-section
@@ -85,6 +85,11 @@ nav: home
                 = link_to "Stylus", "#example-import-stylus"
 
             .tab-content
+              #example-import-less.tab-pane.active
+                = preserve do
+                  -code("less") do
+                    :plain
+                      @import "path/to/cssowl/lib/less/cssowl";
               #example-import-sass.tab-pane
                 = preserve do
                   -code("sass") do
@@ -95,11 +100,6 @@ nav: home
                   -code("scss") do
                     :plain
                       @import "path/to/cssowl/lib/scss/cssowl"
-              #example-import-less.tab-pane.active
-                = preserve do
-                  -code("less") do
-                    :plain
-                      @import "path/to/cssowl/lib/less/cssowl";
               #example-import-stylus.tab-pane
                 = preserve do
                   -code("stylus") do

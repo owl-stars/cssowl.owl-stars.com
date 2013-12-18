@@ -11,6 +11,7 @@ To build, run and deploy this project you need the following tools:
 * [Node & Npm](http://nodejs.org/)
 * [Bower](http://twitter.github.com/bower/)
 * [Middleman](http://middlemanapp.com)
+* [Middlesite](https://github.com/franklinkim/middlesite)
 
 ### Rvm
 
@@ -57,6 +58,14 @@ To install `middleman` run:
 $ gem install middleman
 ```
 
+### Middlesite
+
+To install `middlesite` run:
+
+```
+$ gem install middlesite
+```
+
 ## Workspace
 
 ### Setup
@@ -97,10 +106,16 @@ $ rake docs
 
 ### Deployment
 
-If you want to deploy all the changes to the server run:
+With `middlesite` you have the following commands:
 
 ```
-$ rake deploy
+Commands:
+  middlesite build           # Generate build from sources
+  middlesite bump [TYPE]     # Bump version (patch|minor|major), commit, tag, and push.
+  middlesite deploy          # Build and deploy to server
+  middlesite help [COMMAND]  # Describe available commands or one specific command
+  middlesite init            # Initialize the workspace.
+  middlesite server          # Build and start server
 ```
 
 ## License
