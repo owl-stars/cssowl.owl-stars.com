@@ -1,3 +1,5 @@
+require 'builder'
+
 ###
 # Page options, layouts, aliases and proxies
 ###
@@ -6,6 +8,7 @@
 #
 # With no layout
 page "/404.html", :layout => false
+page "/sitemap.xml", :layout => false
 
 ###
 # Helpers
