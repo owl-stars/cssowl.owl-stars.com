@@ -21,6 +21,7 @@ task :fiddle do
   contents = "// ------------------------------------\n" + contents
   contents = "\n" + contents
 
+
   contents = contents + "\n"
   contents = contents + "// ------------------------------------\n"
   contents = contents + "// Place your styles here\n"
