@@ -37,11 +37,11 @@
     %li.active.htmltab
       = link_to 'HTML', '#example-after-float-html'
     %li
-      = link_to 'LESS', '#example-after-float-less'
-    %li
       = link_to 'SASS', '#example-after-float-sass'
     %li
       = link_to 'SCSS', '#example-after-float-scss'
+    %li
+      = link_to 'LESS', '#example-after-float-less'
     %li
       = link_to 'Stylus', '#example-after-float-styl'
 
@@ -50,13 +50,6 @@
       = preserve do
         -code("html") do
           .example-after-float Quia sint quis nam et quia ducimus consequatur cumque.
-    #example-after-float-less.tab-pane
-      = preserve do
-        -code("less") do
-          :plain
-            .example-after-float {
-              .cssowl-sprite-after-float(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 5px, 1px);
-            }
     #example-after-float-sass.tab-pane
       = preserve do
         -code("sass") do
@@ -69,6 +62,13 @@
           :plain
             .example-after-float {
               @include cssowl-sprite-after-float(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 5px, 1px);
+            }
+    #example-after-float-less.tab-pane
+      = preserve do
+        -code("scss") do
+          :plain
+            .example-after-float {
+              .cssowl-sprite-after-float(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 5px, 1px);
             }
     #example-after-float-styl.tab-pane
       = preserve do

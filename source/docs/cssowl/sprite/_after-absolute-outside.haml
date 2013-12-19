@@ -37,11 +37,11 @@
     %li.active.htmltab
       = link_to 'HTML', '#example-after-absolute-outside-html'
     %li
-      = link_to 'LESS', '#example-after-absolute-outside-less'
-    %li
       = link_to 'SASS', '#example-after-absolute-outside-sass'
     %li
       = link_to 'SCSS', '#example-after-absolute-outside-scss'
+    %li
+      = link_to 'LESS', '#example-after-absolute-outside-less'
     %li
       = link_to 'Stylus', '#example-after-absolute-outside-styl'
 
@@ -50,13 +50,6 @@
       = preserve do
         -code("html") do
           .example-after-absolute-outside{:style => "display:inline-block;border-top:1px solid #59371f;padding-top: 5px;"} Quia sint quis
-    #example-after-absolute-outside-less.tab-pane
-      = preserve do
-        -code("less") do
-          :plain
-            .example-after-absolute-outside {
-              .cssowl-sprite-after-absolute-outside(-110px, -20px, 7px, 4px, url("/assets/img/sprite.png"), top, center);
-            }
     #example-after-absolute-outside-sass.tab-pane
       = preserve do
         -code("sass") do
@@ -69,6 +62,13 @@
           :plain
             .example-after-absolute-outside {
               @include cssowl-sprite-after-absolute-outside(-110px, -20px, 7px, 4px, url("/assets/img/sprite.png"), top, center);
+            }
+    #example-after-absolute-outside-less.tab-pane
+      = preserve do
+        -code("scss") do
+          :plain
+            .example-after-absolute-outside {
+              .cssowl-sprite-after-absolute-outside(-110px, -20px, 7px, 4px, url("/assets/img/sprite.png"), top, center);
             }
     #example-after-absolute-outside-styl.tab-pane
       = preserve do

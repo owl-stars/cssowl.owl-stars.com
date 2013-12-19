@@ -76,21 +76,16 @@ nav: home
 
             %ul.nav.nav-tabs
               %li.active
-                = link_to "LESS", "#example-import-less"
-              %li
                 = link_to "SASS", "#example-import-sass"
               %li
                 = link_to "SCSS", "#example-import-scss"
               %li
+                = link_to "LESS", "#example-import-less"
+              %li
                 = link_to "Stylus", "#example-import-stylus"
 
             .tab-content
-              #example-import-less.tab-pane.active
-                = preserve do
-                  -code("less") do
-                    :plain
-                      @import "path/to/cssowl/lib/less/cssowl";
-              #example-import-sass.tab-pane
+              #example-import-sass.tab-pane.active
                 = preserve do
                   -code("sass") do
                     :plain
@@ -99,10 +94,15 @@ nav: home
                 = preserve do
                   -code("scss") do
                     :plain
-                      @import "path/to/cssowl/lib/scss/cssowl"
+                      @import "path/to/cssowl/lib/scss/cssowl";
+              #example-import-less.tab-pane
+                = preserve do
+                  -code("scss") do
+                    :plain
+                      @import "path/to/cssowl/lib/less/cssowl";
               #example-import-stylus.tab-pane
                 = preserve do
-                  -code("stylus") do
+                  -code("sass") do
                     :plain
                       @import "path/to/cssowl/lib/stylus/cssowl"
 

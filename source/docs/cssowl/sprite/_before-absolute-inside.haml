@@ -37,11 +37,11 @@
     %li.active.htmltab
       = link_to 'HTML', '#example-before-absolute-inside-html'
     %li
-      = link_to 'LESS', '#example-before-absolute-inside-less'
-    %li
       = link_to 'SASS', '#example-before-absolute-inside-sass'
     %li
       = link_to 'SCSS', '#example-before-absolute-inside-scss'
+    %li
+      = link_to 'LESS', '#example-before-absolute-inside-less'
     %li
       = link_to 'Stylus', '#example-before-absolute-inside-styl'
 
@@ -50,13 +50,6 @@
       = preserve do
         -code("html") do
           .example-before-absolute-inside{:style => "display:inline-block;border-top:1px solid #59371f;padding-top: 5px;"} Quia sint quis
-    #example-before-absolute-inside-less.tab-pane
-      = preserve do
-        -code("less") do
-          :plain
-            .example-before-absolute-inside {
-              .cssowl-sprite-before-absolute-inside(-110px, -20px, 7px, 4px, url("/assets/img/sprite.png"), top, center);
-            }
     #example-before-absolute-inside-sass.tab-pane
       = preserve do
         -code("sass") do
@@ -69,6 +62,13 @@
           :plain
             .example-before-absolute-inside {
               @include cssowl-sprite-before-absolute-inside(-110px, -20px, 7px, 4px, url("/assets/img/sprite.png"), top, center);
+            }
+    #example-before-absolute-inside-less.tab-pane
+      = preserve do
+        -code("scss") do
+          :plain
+            .example-before-absolute-inside {
+              .cssowl-sprite-before-absolute-inside(-110px, -20px, 7px, 4px, url("/assets/img/sprite.png"), top, center);
             }
     #example-before-absolute-inside-styl.tab-pane
       = preserve do

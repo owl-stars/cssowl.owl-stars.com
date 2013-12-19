@@ -32,11 +32,11 @@
     %li.active.htmltab
       = link_to 'HTML', '#example-after-html'
     %li
-      = link_to 'LESS', '#example-after-less'
-    %li
       = link_to 'SASS', '#example-after-sass'
     %li
       = link_to 'SCSS', '#example-after-scss'
+    %li
+      = link_to 'LESS', '#example-after-less'
     %li
       = link_to 'Stylus', '#example-after-styl'
 
@@ -45,13 +45,6 @@
       = preserve do
         -code("html") do
           .example-after Quia sint quis nam et quia ducimus consequatur cumque.
-    #example-after-less.tab-pane
-      = preserve do
-        -code("less") do
-          :plain
-            .example-after {
-              .cssowl-sprite-after(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"));
-            }
     #example-after-sass.tab-pane
       = preserve do
         -code("sass") do
@@ -64,6 +57,13 @@
           :plain
             .example-after {
               @include cssowl-sprite-after(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"));
+            }
+    #example-after-less.tab-pane
+      = preserve do
+        -code("scss") do
+          :plain
+            .example-after {
+              .cssowl-sprite-after(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"));
             }
     #example-after-styl.tab-pane
       = preserve do

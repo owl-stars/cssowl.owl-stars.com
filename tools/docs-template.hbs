@@ -24,11 +24,11 @@
     %li.active.htmltab
       = link_to 'HTML', '#example-{{{basename}}}-html'
     %li
-      = link_to 'LESS', '#example-{{{basename}}}-less'
-    %li
       = link_to 'SASS', '#example-{{{basename}}}-sass'
     %li
       = link_to 'SCSS', '#example-{{{basename}}}-scss'
+    %li
+      = link_to 'LESS', '#example-{{{basename}}}-less'
     %li
       = link_to 'Stylus', '#example-{{{basename}}}-styl'
 
@@ -37,11 +37,6 @@
       = preserve do
         -code("html") do
           {{{indent examples.html 5}}}
-    #example-{{{basename}}}-less.tab-pane
-      = preserve do
-        -code("less") do
-          :plain
-            {{{indent examples.less 6}}}
     #example-{{{basename}}}-sass.tab-pane
       = preserve do
         -code("sass") do
@@ -52,6 +47,11 @@
         -code("scss") do
           :plain
             {{{indent examples.scss 6}}}
+    #example-{{{basename}}}-less.tab-pane
+      = preserve do
+        -code("scss") do
+          :plain
+            {{{indent examples.less 6}}}
     #example-{{{basename}}}-styl.tab-pane
       = preserve do
         -code("sass") do

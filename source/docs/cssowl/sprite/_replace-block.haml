@@ -32,11 +32,11 @@
     %li.active.htmltab
       = link_to 'HTML', '#example-replace-block-html'
     %li
-      = link_to 'LESS', '#example-replace-block-less'
-    %li
       = link_to 'SASS', '#example-replace-block-sass'
     %li
       = link_to 'SCSS', '#example-replace-block-scss'
+    %li
+      = link_to 'LESS', '#example-replace-block-less'
     %li
       = link_to 'Stylus', '#example-replace-block-styl'
 
@@ -45,13 +45,6 @@
       = preserve do
         -code("html") do
           %p Lorem ipsum dolor <span class="example-replace-block">cssowl</span> sit atem
-    #example-replace-block-less.tab-pane
-      = preserve do
-        -code("less") do
-          :plain
-            .example-replace-block {
-              .cssowl-sprite-replace-block(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"));
-            }
     #example-replace-block-sass.tab-pane
       = preserve do
         -code("sass") do
@@ -64,6 +57,13 @@
           :plain
             .example-replace-block {
               @include cssowl-sprite-replace-block(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"));
+            }
+    #example-replace-block-less.tab-pane
+      = preserve do
+        -code("scss") do
+          :plain
+            .example-replace-block {
+              .cssowl-sprite-replace-block(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"));
             }
     #example-replace-block-styl.tab-pane
       = preserve do

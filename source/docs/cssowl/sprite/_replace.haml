@@ -32,11 +32,11 @@
     %li.active.htmltab
       = link_to 'HTML', '#example-replace-html'
     %li
-      = link_to 'LESS', '#example-replace-less'
-    %li
       = link_to 'SASS', '#example-replace-sass'
     %li
       = link_to 'SCSS', '#example-replace-scss'
+    %li
+      = link_to 'LESS', '#example-replace-less'
     %li
       = link_to 'Stylus', '#example-replace-styl'
 
@@ -45,13 +45,6 @@
       = preserve do
         -code("html") do
           %h1.example-replace Lorem ipsum dolor sit atem
-    #example-replace-less.tab-pane
-      = preserve do
-        -code("less") do
-          :plain
-            .example-replace {
-              .cssowl-sprite-replace(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"));
-            }
     #example-replace-sass.tab-pane
       = preserve do
         -code("sass") do
@@ -64,6 +57,13 @@
           :plain
             .example-replace {
               @include cssowl-sprite-replace(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"));
+            }
+    #example-replace-less.tab-pane
+      = preserve do
+        -code("scss") do
+          :plain
+            .example-replace {
+              .cssowl-sprite-replace(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"));
             }
     #example-replace-styl.tab-pane
       = preserve do

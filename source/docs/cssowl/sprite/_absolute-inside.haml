@@ -46,11 +46,11 @@
     %li.active.htmltab
       = link_to 'HTML', '#example-absolute-inside-html'
     %li
-      = link_to 'LESS', '#example-absolute-inside-less'
-    %li
       = link_to 'SASS', '#example-absolute-inside-sass'
     %li
       = link_to 'SCSS', '#example-absolute-inside-scss'
+    %li
+      = link_to 'LESS', '#example-absolute-inside-less'
     %li
       = link_to 'Stylus', '#example-absolute-inside-styl'
 
@@ -63,24 +63,6 @@
             .example-absolute-inside.middle-right
             .example-absolute-inside.bottom-center
             .example-absolute-inside.middle-left
-    #example-absolute-inside-less.tab-pane
-      = preserve do
-        -code("less") do
-          :plain
-            .example-absolute-inside {
-              &.top-center {
-                .cssowl-sprite-absolute-inside(-110px, -20px, 7px, 4px, url("/assets/img/sprite.png"), top, center);
-              }
-              &.middle-right {
-                .cssowl-sprite-absolute-inside(-110px, -10px, 4px, 7px, url("/assets/img/sprite.png"), middle, right);
-              }
-              &.bottom-center {
-                .cssowl-sprite-absolute-inside(-120px, -20px, 7px, 4px, url("/assets/img/sprite.png"), bottom, center);
-              }
-              &.middle-left {
-                .cssowl-sprite-absolute-inside(-120px, -10px, 4px, 7px, url("/assets/img/sprite.png"), middle, left);
-              }
-            }
     #example-absolute-inside-sass.tab-pane
       = preserve do
         -code("sass") do
@@ -110,6 +92,24 @@
               }
               &.middle-left {
                 @include cssowl-sprite-absolute-inside(-120px, -10px, 4px, 7px, url("/assets/img/sprite.png"), middle, left);
+              }
+            }
+    #example-absolute-inside-less.tab-pane
+      = preserve do
+        -code("scss") do
+          :plain
+            .example-absolute-inside {
+              &.top-center {
+                .cssowl-sprite-absolute-inside(-110px, -20px, 7px, 4px, url("/assets/img/sprite.png"), top, center);
+              }
+              &.middle-right {
+                .cssowl-sprite-absolute-inside(-110px, -10px, 4px, 7px, url("/assets/img/sprite.png"), middle, right);
+              }
+              &.bottom-center {
+                .cssowl-sprite-absolute-inside(-120px, -20px, 7px, 4px, url("/assets/img/sprite.png"), bottom, center);
+              }
+              &.middle-left {
+                .cssowl-sprite-absolute-inside(-120px, -10px, 4px, 7px, url("/assets/img/sprite.png"), middle, left);
               }
             }
     #example-absolute-inside-styl.tab-pane

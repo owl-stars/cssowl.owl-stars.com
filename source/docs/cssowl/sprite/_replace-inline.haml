@@ -34,11 +34,11 @@
     %li.active.htmltab
       = link_to 'HTML', '#example-replace-inline-html'
     %li
-      = link_to 'LESS', '#example-replace-inline-less'
-    %li
       = link_to 'SASS', '#example-replace-inline-sass'
     %li
       = link_to 'SCSS', '#example-replace-inline-scss'
+    %li
+      = link_to 'LESS', '#example-replace-inline-less'
     %li
       = link_to 'Stylus', '#example-replace-inline-styl'
 
@@ -47,13 +47,6 @@
       = preserve do
         -code("html") do
           %p Lorem ipsum dolor <span class="example-replace-inline">cssowl</span> sit atem
-    #example-replace-inline-less.tab-pane
-      = preserve do
-        -code("less") do
-          :plain
-            .example-replace-inline {
-              .cssowl-sprite-replace-inline(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"), 0, text-top);
-            }
     #example-replace-inline-sass.tab-pane
       = preserve do
         -code("sass") do
@@ -66,6 +59,13 @@
           :plain
             .example-replace-inline {
               @include cssowl-sprite-replace-inline(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"), 0, text-top);
+            }
+    #example-replace-inline-less.tab-pane
+      = preserve do
+        -code("scss") do
+          :plain
+            .example-replace-inline {
+              .cssowl-sprite-replace-inline(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"), 0, text-top);
             }
     #example-replace-inline-styl.tab-pane
       = preserve do

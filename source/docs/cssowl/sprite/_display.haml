@@ -34,11 +34,11 @@
     %li.active.htmltab
       = link_to 'HTML', '#example-display-html'
     %li
-      = link_to 'LESS', '#example-display-less'
-    %li
       = link_to 'SASS', '#example-display-sass'
     %li
       = link_to 'SCSS', '#example-display-scss'
+    %li
+      = link_to 'LESS', '#example-display-less'
     %li
       = link_to 'Stylus', '#example-display-styl'
 
@@ -47,13 +47,6 @@
       = preserve do
         -code("html") do
           .example-display
-    #example-display-less.tab-pane
-      = preserve do
-        -code("less") do
-          :plain
-            .example-display {
-              .cssowl-sprite-display(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"));
-            }
     #example-display-sass.tab-pane
       = preserve do
         -code("sass") do
@@ -66,6 +59,13 @@
           :plain
             .example-display {
               @include cssowl-sprite-display(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"));
+            }
+    #example-display-less.tab-pane
+      = preserve do
+        -code("scss") do
+          :plain
+            .example-display {
+              .cssowl-sprite-display(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"));
             }
     #example-display-styl.tab-pane
       = preserve do

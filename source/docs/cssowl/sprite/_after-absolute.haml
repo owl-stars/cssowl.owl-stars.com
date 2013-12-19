@@ -37,11 +37,11 @@
     %li.active.htmltab
       = link_to 'HTML', '#example-after-absolute-html'
     %li
-      = link_to 'LESS', '#example-after-absolute-less'
-    %li
       = link_to 'SASS', '#example-after-absolute-sass'
     %li
       = link_to 'SCSS', '#example-after-absolute-scss'
+    %li
+      = link_to 'LESS', '#example-after-absolute-less'
     %li
       = link_to 'Stylus', '#example-after-absolute-styl'
 
@@ -50,13 +50,6 @@
       = preserve do
         -code("html") do
           .example-after-absolute{:style => "margin-right:20px;"} Quia sint quis nam et quia ducimus consequatur cumque.
-    #example-after-absolute-less.tab-pane
-      = preserve do
-        -code("less") do
-          :plain
-            .example-after-absolute {
-              .cssowl-sprite-after-absolute(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 2px, -20px);
-            }
     #example-after-absolute-sass.tab-pane
       = preserve do
         -code("sass") do
@@ -69,6 +62,13 @@
           :plain
             .example-after-absolute {
               @include cssowl-sprite-after-absolute(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 2px, -20px);
+            }
+    #example-after-absolute-less.tab-pane
+      = preserve do
+        -code("scss") do
+          :plain
+            .example-after-absolute {
+              .cssowl-sprite-after-absolute(-110px, -30px, 15px, 15px, url("/assets/img/sprite.png"), 2px, -20px);
             }
     #example-after-absolute-styl.tab-pane
       = preserve do

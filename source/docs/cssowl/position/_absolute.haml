@@ -45,11 +45,11 @@
     %li.active.htmltab
       = link_to 'HTML', '#example-absolute-html'
     %li
-      = link_to 'LESS', '#example-absolute-less'
-    %li
       = link_to 'SASS', '#example-absolute-sass'
     %li
       = link_to 'SCSS', '#example-absolute-scss'
+    %li
+      = link_to 'LESS', '#example-absolute-less'
     %li
       = link_to 'Stylus', '#example-absolute-styl'
 
@@ -60,21 +60,6 @@
           .wrapper{:style => "position:relative;width:50px;height:50px;border:1px solid #59371f;"}
             .example-absolute.top-right
             .example-absolute.bottom-left
-    #example-absolute-less.tab-pane
-      = preserve do
-        -code("less") do
-          :plain
-            .example-absolute {
-              width: 10px;
-              height: 10px;
-              background: #59371f;
-              &.top-right {
-                .cssowl-position-absolute(5px, 5px, none, none);
-              }
-              &.bottom-left {
-                .cssowl-position-absolute(none, none, 5px, 5px);
-              }
-            }
     #example-absolute-sass.tab-pane
       = preserve do
         -code("sass") do
@@ -100,6 +85,21 @@
               }
               &.bottom-left {
                 @include cssowl-position-absolute(none, none, 5px, 5px);
+              }
+            }
+    #example-absolute-less.tab-pane
+      = preserve do
+        -code("scss") do
+          :plain
+            .example-absolute {
+              width: 10px;
+              height: 10px;
+              background: #59371f;
+              &.top-right {
+                .cssowl-position-absolute(5px, 5px, none, none);
+              }
+              &.bottom-left {
+                .cssowl-position-absolute(none, none, 5px, 5px);
               }
             }
     #example-absolute-styl.tab-pane

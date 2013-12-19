@@ -35,11 +35,11 @@
     %li.active.htmltab
       = link_to 'HTML', '#example-display-inline-html'
     %li
-      = link_to 'LESS', '#example-display-inline-less'
-    %li
       = link_to 'SASS', '#example-display-inline-sass'
     %li
       = link_to 'SCSS', '#example-display-inline-scss'
+    %li
+      = link_to 'LESS', '#example-display-inline-less'
     %li
       = link_to 'Stylus', '#example-display-inline-styl'
 
@@ -48,13 +48,6 @@
       = preserve do
         -code("html") do
           .example-display-inline
-    #example-display-inline-less.tab-pane
-      = preserve do
-        -code("less") do
-          :plain
-            .example-display-inline {
-              .cssowl-sprite-display-inline(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"));
-            }
     #example-display-inline-sass.tab-pane
       = preserve do
         -code("sass") do
@@ -67,6 +60,13 @@
           :plain
             .example-display-inline {
               @include cssowl-sprite-display-inline(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"));
+            }
+    #example-display-inline-less.tab-pane
+      = preserve do
+        -code("scss") do
+          :plain
+            .example-display-inline {
+              .cssowl-sprite-display-inline(-10px, -10px, 91px, 95px, url("/assets/img/sprite.png"));
             }
     #example-display-inline-styl.tab-pane
       = preserve do
