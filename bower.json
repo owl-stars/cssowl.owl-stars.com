@@ -3,7 +3,7 @@
   "name": "middleman-site-cssowl",
   "dependencies": {
     "jquery": "~1.9.1",
-    "cssowl": "~1.1.0",
+    "cssowl": "~1.1.1",
     "ajaxchimp": "~1.0.2",
     "modernizr": "~2.6.2",
     "sass-bootstrap": "~3.0.0"
