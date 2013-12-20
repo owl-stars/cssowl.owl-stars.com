@@ -66,7 +66,7 @@ configure :build do
     options.advpng_options    = false
   end
   # others
-  activate :asset_hash
+  activate :cache_buster
   activate :favicon_maker
   # analytics
   activate :google_analytics do |ga|
