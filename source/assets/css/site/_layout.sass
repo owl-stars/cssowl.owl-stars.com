@@ -1,4 +1,4 @@
-// --- Components ---------------------------------------------------------------------------------
+// --- components ---------------------------------------------------------------------------------
 
 .downloadButton
   display: inline-block
@@ -33,61 +33,60 @@
     +fontSpecialRegular
     font-size: $fontSizeSuperBig
 
+#topbar
+  height: 40px
+  background: $colorBadge
 
-// --- Site ---------------------------------------------------------------------------------------
+  .sitenavi
+    float: left
+    margin: 0
+    padding: 0
+    text-align: center
 
-header
-  background: $bgImg
-
-  #topbar
-    height: 40px
-    background: $colorBadge
-
-    .sitenavi
+    li
       float: left
-      margin: 0
-      padding: 0
-      text-align: center
+      margin: 0 18px
+      padding-top: 7px
+      min-height: 40px
+      list-style-type: none
+      +fontSpecialRegular
+      font-size: $fontSizeTitle
 
-      li
-        float: left
-        margin: 0 18px
-        padding-top: 7px
-        min-height: 40px
-        list-style-type: none
-        +fontSpecialRegular
-        font-size: $fontSizeTitle
-
-        &:hover
-          border-bottom: 3px solid $colorFontGreyDark
-          &.spriteowl
-            border-color: $colorSpriteowlLight
-            a
-              color: $colorSpriteowlLight
-          &.cssowl
-            border-color: $colorCssowlLight
-            a
-              color: $colorCssowlLight
-        &.active
-          border-bottom: 3px solid $colorCssowlLight
+      &:hover
+        border-bottom: 3px solid $colorFontGreyDark
+        &.spriteowl
+          border-color: $colorSpriteowlLight
+          a
+            color: $colorSpriteowlLight
+        &.cssowl
+          border-color: $colorCssowlLight
           a
             color: $colorCssowlLight
+      &.active
+        border-bottom: 3px solid $colorCssowlLight
         a
-          color: $colorFontGreyDark
-          text-decoration: none
-          > .home
-            +pagesprite-icon-home-replace-inline(-4px)
+          color: $colorCssowlLight
+      a
+        color: $colorFontGreyDark
+        text-decoration: none
+        > .home
+          +pagesprite-icon-home-replace-inline(-4px)
 
-    .madeby
-      color: $colorFontGreyDark
-      padding-top: 6px
-      line-height: 25px
-      float: right
-      > .wjds
-        margin-left: 5px
-        +pagesprite-graphic-wjds-replace-inline(-5px)
+  .madeby
+    color: $colorFontGreyDark
+    padding-top: 6px
+    line-height: 25px
+    float: right
+    > .wjds
+      margin-left: 5px
+      +pagesprite-graphic-wjds-replace-inline(-5px)
 
-  >.navbar
+// --- header -------------------------------------------------------------------------------------
+
+#header
+  background: $bgImg
+
+  > .navbar
     background: none
     border: none
     font-size: $fontSizeBase
@@ -389,7 +388,7 @@ header
 
 // --- Footer -------------------------------------------------------------------------------------
 
-footer
+#footer
   background: $colorBadge
   color: $colorFontGreyDark
 

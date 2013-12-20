@@ -8,6 +8,8 @@ gem "middlesite", "~>0.1.3"
 gem "middleman-deploy", "~>0.1.4"
 gem "middleman-syntax", "~> 1.2.1"
 gem "middleman-livereload", "~>3.1.0"
+gem "middleman-imageoptim", "~> 0.1.3"
+gem "middleman-minify-html", "~>3.1.1"
 gem "middleman-favicon-maker", "~>3.3"
 gem "middleman-google-analytics", "~>0.0.2"
 

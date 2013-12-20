@@ -59,8 +59,14 @@ end
 configure :build do
   # cache
   activate :minify_css
+  activate :minify_html
   activate :minify_javascript
+  activate :imageoptim do |options|
+    options.pngout_options    = false
+    options.advpng_options    = false
+  end
   # others
+  activate :asset_hash
   activate :cache_buster
   activate :favicon_maker
   activate :relative_assets
