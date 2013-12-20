@@ -3,8 +3,8 @@
 var source    = "bower_components/cssowl/src";
 var target    = "source/docs";
 var options = {
-  helpers: "tools/docs-helpers.js",
-  template: "tools/docs-template.hbs",
+  helpers: "resources/docs/helpers.js",
+  template: "resources/docs/template.hbs",
   filename: function(item) { return "_" + item.basename + ".haml"; }
 };
 require('librarianowl').documentation(source, target, options);

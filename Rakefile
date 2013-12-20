@@ -2,7 +2,7 @@ desc "Generate doc sources"
 task :docs do
   puts "Generating docs from cssowl sources."
   system "npm link librarianowl" unless Dir.exists?("node_modules/librarianowl")
-  system "tools/docs-bin"
+  system "resources/docs/bin"
 end
 
 desc "Generate jsfiddle source"
