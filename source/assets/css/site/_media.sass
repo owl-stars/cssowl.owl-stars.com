@@ -30,6 +30,13 @@
 
 @media screen and (min-width: 768px)
 
+  #header
+    > .navbar
+      nav
+        .nav
+          margin: 37px 0 0 0
+          border-top: none
+
   .bs-header
     .lead
       margin-top: 20px
@@ -39,6 +46,16 @@
 
     &.index
       padding-top: 50px
+
+  .bs-docs-content
+    .nav-tabs
+      font-size: $fontSizeSubTitle
+      > li
+        &.htmltab
+          margin-right: 15px
+        a
+          padding: 8px 15px
+
 
   footer
     .download
