@@ -24,7 +24,7 @@ activate :deploy do |deploy|
   deploy.method = :rsync
   deploy.clean  = true
   deploy.host   = "cssowl.owl-stars.com"
-  deploy.path   = "/var/www/cssowl.owl-stars.com/htdocs"
+  deploy.path   = "/var/www/cssowl/htdocs"
   deploy.flags  = "-avz --chmod=Dg+s,ug+w,+r -e"
 end
 
