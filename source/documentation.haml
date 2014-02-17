@@ -176,11 +176,11 @@ nav: documentation
                   -code("sass") do
                     :plain
                       // variables for the sprite's image
-                      $sprite-sheet-width: 136px
-                      $sprite-sheet-height: 111px
+                      $sprite-sheet-width: 136px !default
+                      $sprite-sheet-height: 111px !default
                       $sprite-sheet-image: url("sprite.png") !default
                       $sprite-sheet-image-2x: url("sprite@2x.png") !default
-                      $sprite-sheet: 136px 111px url("sprite.png") url("sprite@2x.png") sprite
+                      $sprite-sheet: $sprite-sheet-width $sprite-sheet-height $sprite-sheet-image $sprite-sheet-image-2x sprite !default
 
                       =sprite-element()
                         background-image: $sprite-sheet-image
@@ -192,35 +192,35 @@ nav: documentation
                         +sprite-element()
 
                       // variables for each of the sprite's elements
-                      $sprite-logo-x: 0
-                      $sprite-logo-y: 0
-                      $sprite-logo-width: 86px
-                      $sprite-logo-height: 88px
-                      $sprite-logo: 0 0 86px 88px sprite-logo
+                      $sprite-owl-up-x: -93px !default
+                      $sprite-owl-up-y: 0 !default
+                      $sprite-owl-up-width: 16px !default
+                      $sprite-owl-up-height: 16px !default
+                      $sprite-owl-up: $sprite-owl-up-x $sprite-owl-up-y $sprite-owl-up-width $sprite-owl-up-height sprite-owl-up !default
 
-                      =sprite-logo-width()
-                        width: $sprite-logo-width
-                      %sprite-logo-width
-                        +sprite-logo-width()
-                      =sprite-logo-height()
-                        height: $sprite-logo-height
-                      %sprite-logo-height
-                        +sprite-logo-height()
-                      =sprite-logo-size()
-                        +sprite-logo-width()
-                        +sprite-logo-height()
-                      %sprite-logo-size
-                        +sprite-logo-size()
-                      =sprite-logo-position()
-                        background-position: $sprite-logo-x $sprite-logo-y
-                      %sprite-logo-position
-                        +sprite-logo-position()
-                      =sprite-logo()
-                        +sprite-logo-size()
-                        +sprite-logo-position()
+                      =sprite-owl-up-width()
+                        width: $sprite-owl-up-width
+                      %sprite-owl-up-width
+                        +sprite-owl-up-width()
+                      =sprite-owl-up-height()
+                        height: $sprite-owl-up-height
+                      %sprite-owl-up-height
+                        +sprite-owl-up-height()
+                      =sprite-owl-up-size()
+                        +sprite-owl-up-width()
+                        +sprite-owl-up-height()
+                      %sprite-owl-up-size
+                        +sprite-owl-up-size()
+                      =sprite-owl-up-position()
+                        background-position: $sprite-owl-up-x $sprite-owl-up-y
+                      %sprite-owl-up-position
+                        +sprite-owl-up-position()
+                      =sprite-owl-up()
+                        +sprite-owl-up-size()
+                        +sprite-owl-up-position()
                         @extend %sprite-element
-                      %sprite-logo
-                        +sprite-logo()
+                      %sprite-owl-up
+                        +sprite-owl-up()
 
                       // ...
               #source-spritesheet-scss.tab-pane
@@ -228,11 +228,11 @@ nav: documentation
                   -code("scss") do
                     :plain
                       // variables for the sprite's image
-                      $sprite-sheet-width: 136px;
-                      $sprite-sheet-height: 111px;
+                      $sprite-sheet-width: 136px !default;
+                      $sprite-sheet-height: 111px !default;
                       $sprite-sheet-image: url("sprite.png") !default;
                       $sprite-sheet-image-2x: url("sprite@2x.png") !default;
-                      $sprite-sheet: 136px 111px url("sprite.png") url("sprite@2x.png") sprite;
+                      $sprite-sheet: $sprite-sheet-width $sprite-sheet-height $sprite-sheet-image $sprite-sheet-image-2x sprite !default;
 
                       @mixin sprite-element() {
                         background-image: $sprite-sheet-image;
@@ -246,45 +246,46 @@ nav: documentation
                         @include sprite-element();
                       }
 
-                      // variables for each of the sprite's elements
-                      $sprite-logo-x: 0;
-                      $sprite-logo-y: 0;
-                      $sprite-logo-width: 86px;
-                      $sprite-logo-height: 88px;
-                      $sprite-logo: 0 0 86px 88px sprite-logo;
 
-                      @mixin sprite-logo-width() {
-                        width: $sprite-logo-width;
+                      // variables for each of the sprite's elements
+                      $sprite-owl-up-x: -93px !default;
+                      $sprite-owl-up-y: 0 !default;
+                      $sprite-owl-up-width: 16px !default;
+                      $sprite-owl-up-height: 16px !default;
+                      $sprite-owl-up: $sprite-owl-up-x $sprite-owl-up-y $sprite-owl-up-width $sprite-owl-up-height sprite-owl-up !default;
+
+                      @mixin sprite-owl-up-width() {
+                        width: $sprite-owl-up-width;
                       }
-                      %sprite-logo-width {
-                        @include sprite-logo-width();
+                      %sprite-owl-up-width {
+                        @include sprite-owl-up-width();
                       }
-                      @mixin sprite-logo-height() {
-                        height: $sprite-logo-height;
+                      @mixin sprite-owl-up-height() {
+                        height: $sprite-owl-up-height;
                       }
-                      %sprite-logo-height {
-                        @include sprite-logo-height();
+                      %sprite-owl-up-height {
+                        @include sprite-owl-up-height();
                       }
-                      @mixin sprite-logo-size() {
-                        @include sprite-logo-width();
-                        @include sprite-logo-height();
+                      @mixin sprite-owl-up-size() {
+                        @include sprite-owl-up-width();
+                        @include sprite-owl-up-height();
                       }
-                      %sprite-logo-size {
-                        @include sprite-logo-size();
+                      %sprite-owl-up-size {
+                        @include sprite-owl-up-size();
                       }
-                      @mixin sprite-logo-position() {
-                        background-position: $sprite-logo-x $sprite-logo-y;
+                      @mixin sprite-owl-up-position() {
+                        background-position: $sprite-owl-up-x $sprite-owl-up-y;
                       }
-                      %sprite-logo-position {
-                        @include sprite-logo-position();
+                      %sprite-owl-up-position {
+                        @include sprite-owl-up-position();
                       }
-                      @mixin sprite-logo() {
-                        @include sprite-logo-size();
-                        @include sprite-logo-position();
+                      @mixin sprite-owl-up() {
+                        @include sprite-owl-up-size();
+                        @include sprite-owl-up-position();
                         @extend %sprite-element;
                       }
-                      %sprite-logo {
-                        @include sprite-logo();
+                      %sprite-owl-up {
+                        @include sprite-owl-up();
                       }
 
                       // ...
@@ -297,7 +298,7 @@ nav: documentation
                       @sprite-sheet-height: 111px;
                       @sprite-sheet-image: url("sprite.png");
                       @sprite-sheet-image-2x: url("sprite@2x.png");
-                      @sprite-sheet: 136px 111px url("sprite.png") url("sprite@2x.png") sprite;
+                      @sprite-sheet: @sprite-sheet-width @sprite-sheet-height @sprite-sheet-image @sprite-sheet-image-2x sprite;
 
                       .sprite-element() {
                         background-image: @sprite-sheet-image;
@@ -312,33 +313,33 @@ nav: documentation
                       }
 
                       // variables for each of the sprite's elements
-                      @sprite-logo-x: 0;
-                      @sprite-logo-y: 0;
-                      @sprite-logo-width: 86px;
-                      @sprite-logo-height: 88px;
-                      @sprite-logo: 0 0 86px 88px sprite-logo;
+                      @sprite-owl-up-x: -93px;
+                      @sprite-owl-up-y: 0;
+                      @sprite-owl-up-width: 16px;
+                      @sprite-owl-up-height: 16px;
+                      @sprite-owl-up: @sprite-owl-up-x @sprite-owl-up-y @sprite-owl-up-width @sprite-owl-up-height sprite-owl-up;
 
-                      .sprite-logo-width() {
-                        width: @sprite-logo-width;
+                      .sprite-owl-up-width() {
+                        width: @sprite-owl-up-width;
                       }
-                      .sprite-logo-height() {
-                        height: @sprite-logo-height;
+                      .sprite-owl-up-height() {
+                        height: @sprite-owl-up-height;
                       }
-                      .sprite-logo-size() {
-                        .sprite-logo-width();
-                        .sprite-logo-height();
+                      .sprite-owl-up-size() {
+                        .sprite-owl-up-width();
+                        .sprite-owl-up-height();
                       }
-                      .sprite-logo-position() {
-                        background-position: @sprite-logo-x @sprite-logo-y;
+                      .sprite-owl-up-position() {
+                        background-position: @sprite-owl-up-x @sprite-owl-up-y;
                       }
-                      .sprite-logo() {
-                        .sprite-logo-size();
-                        .sprite-logo-position();
+                      .sprite-owl-up() {
+                        .sprite-owl-up-size();
+                        .sprite-owl-up-position();
                         &:extend(.sprite-element);
                       }
-                      .less-sprite-element(sprite-logo) {
-                        .sprite-logo-size();
-                        .sprite-logo-position();
+                      .less-sprite-element(sprite-owl-up) {
+                        .sprite-owl-up-size();
+                        .sprite-owl-up-position();
                         &:extend(.sprite-element);
                       }
 
@@ -348,11 +349,11 @@ nav: documentation
                   -code("sass") do
                     :plain
                       // variables for the sprite's image
-                      $sprite-sheet-width = 136px
-                      $sprite-sheet-height = 111px
-                      $sprite-sheet-image = url("sprite.png")
-                      $sprite-sheet-image-2x = url("sprite@2x.png")
-                      $sprite-sheet = 136px 111px url("sprite.png") url("sprite@2x.png") sprite
+                      $sprite-sheet-width ?= 136px
+                      $sprite-sheet-height ?= 111px
+                      $sprite-sheet-image ?= url("sprite.png")
+                      $sprite-sheet-image-2x ?= url("sprite@2x.png")
+                      $sprite-sheet ?= $sprite-sheet-width $sprite-sheet-height $sprite-sheet-image-2x $sprite-sheet-image-2x sprite
 
                       sprite-element()
                         background-image: $sprite-sheet-image
@@ -364,35 +365,35 @@ nav: documentation
                         sprite-element()
 
                       // variables for each of the sprite's elements
-                      $sprite-logo-x = 0
-                      $sprite-logo-y = 0
-                      $sprite-logo-width = 86px
-                      $sprite-logo-height = 88px
-                      $sprite-logo = 0 0 86px 88px sprite-logo
+                      $sprite-owl-up-x ?= -93px
+                      $sprite-owl-up-y ?= 0
+                      $sprite-owl-up-width ?= 16px
+                      $sprite-owl-up-height ?= 16px
+                      $sprite-owl-up ?= $sprite-owl-up-x $sprite-owl-up-y $sprite-owl-up-width $sprite-owl-up-height sprite-owl-up
 
-                      sprite-logo-width()
-                        width: $sprite-logo-width
-                      $sprite-logo-width
-                        sprite-logo-width()
-                      sprite-logo-height()
-                        height: $sprite-logo-height
-                      $sprite-logo-height
-                        sprite-logo-height()
-                      sprite-logo-size()
-                        sprite-logo-width()
-                        sprite-logo-height()
-                      $sprite-logo-size
-                        sprite-logo-size()
-                      sprite-logo-position()
-                        background-position: $sprite-logo-x $sprite-logo-y
-                      $sprite-logo-position
-                        sprite-logo-position()
-                      sprite-logo()
-                        sprite-logo-size()
-                        sprite-logo-position()
+                      sprite-owl-up-width()
+                        width: $sprite-owl-up-width
+                      $sprite-owl-up-width
+                        sprite-owl-up-width()
+                      sprite-owl-up-height()
+                        height: $sprite-owl-up-height
+                      $sprite-owl-up-height
+                        sprite-owl-up-height()
+                      sprite-owl-up-size()
+                        sprite-owl-up-width()
+                        sprite-owl-up-height()
+                      $sprite-owl-up-size
+                        sprite-owl-up-size()
+                      sprite-owl-up-position()
+                        background-position: $sprite-owl-up-x $sprite-owl-up-y
+                      $sprite-owl-up-position
+                        sprite-owl-up-position()
+                      sprite-owl-up()
+                        sprite-owl-up-size()
+                        sprite-owl-up-position()
                         @extend $sprite-element
-                      $sprite-logo
-                        sprite-logo()
+                      $sprite-owl-up
+                        sprite-owl-up()
 
                       // ...
 
