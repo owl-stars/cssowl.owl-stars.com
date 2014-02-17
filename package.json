@@ -1,0 +1,10 @@
+{
+  "name": "middleman-site-cssowl",
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:owl-stars/middleman-site-cssowl.git"
+  },
+  "devDependencies": {
+    "librarianowl": "~0.2"
+  }
+}

@@ -9,15 +9,14 @@ nav: home
       .row
         .col-xs-12.col-md-8.col-md-offset-2.intro
           %h2.introTitle What is Cssowl?
-          %p.introText <strong>Cssowl is a mixin library with support for #{link_to "LESS", "http://lesscss.org"}, #{link_to "SASS/SCSS", "http://sass-lang.com"} and #{link_to "Stylus", "http://learnboost.github.io/stylus/"}.</strong> We created the mixins for working with Owl-Stars extensions like #{link_to "Spriteowl", "http://spriteowl.owl-stars.com"}, but feel free to use it on its own.
+          %p.introText <strong>Cssowl is a mixin & extendable placeholder library with support for #{link_to "LESS", "http://lesscss.org"}, #{link_to "SASS/SCSS", "http://sass-lang.com"} and #{link_to "Stylus", "http://learnboost.github.io/stylus/"}.</strong> We created the mixins for working with Owl-Stars extensions like #{link_to "Spriteowl", "http://spriteowl.owl-stars.com"}, but feel free to use it on its own.
 
       .row
         .col-xs-12.col-md-8.col-md-offset-2.info
-          %strong The library contains the following packages:
+          %strong Check out the documentation for usage & examples:
+          %br
           .box
-            #{link_to "Cssowl-sprite", "/sprite.html"}: mixins to add and place sprite elements
-          .box
-            #{link_to "Cssowl-position", "/position.html"}: mixins to place HTML elements
+            #{link_to "Cssowl documentation", "/documentation.html"}
 
   .bs-docs-section.bgDark.download
     .container
@@ -46,7 +45,6 @@ nav: home
             = preserve do
               -code("shell") do
                 $ bower install cssowl
-
 
   .bs-docs-section
     .container
@@ -105,23 +103,19 @@ nav: home
                   └── lib/
                       ├── less/
                       │   ├── cssowl/
-                      │   │   ├── position.less
-                      │   │   └── sprite.less
+                      │   │   └── ....less
                       │   └── cssowl.less
                       ├── sass/
                       │   ├── cssowl/
-                      │   │   ├── position.sass
-                      │   │   └── sprite.sass
+                      │   │   └── ....sass
                       │   └── cssowl.sass
                       ├── scss/
                       │   ├── cssowl/
-                      │   │   ├── position.scss
-                      │   │   └── sprite.scss
+                      │   │   └── ....scss
                       │   └── cssowl.scss
                       └── stylus/
                           ├── cssowl/
-                          │   ├── position.styl
-                          │   └── sprite.styl
+                          │   └── ....styl
                           └── cssowl.styl
 
   .bs-docs-section.bgDark.feedback
