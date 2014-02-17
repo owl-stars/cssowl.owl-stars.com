@@ -1,0 +1,424 @@
+---
+title: Documentation
+nav: documentation
+---
+
+%article.container.bs-docs-container{role:"main"}
+  .row
+    .col-md-3
+      .bs-sidebar.hidden-print
+        %ul.nav.bs-sidenav
+          %li
+            %a{:href => "#absolute"} Absolute
+            %ul.nav
+              %li
+                %a{:href => "#cssowl-absolute"} absolute
+              %li
+                %a{:href => "#cssowl-absolute-inside"} absolute-inside
+              %li
+                %a{:href => "#cssowl-absolute-outside"} absolute-outside
+          %li
+            %a{:href => "#after"} After
+            %ul.nav
+              %li
+                %a{:href => "#cssowl-after-float"} after-float
+              %li
+                %a{:href => "#cssowl-after-absolute"} after-absolute
+              %li
+                %a{:href => "#cssowl-after-absolute-inside"} after-absolute-inside
+              %li
+                %a{:href => "#cssowl-after-absolute-outside"} after-absolute-outside
+          %li
+            %a{:href => "#before"} Before
+            %ul.nav
+              %li
+                %a{:href => "#cssowl-before-float"} before-float
+              %li
+                %a{:href => "#cssowl-before-absolute"} before-absolute
+              %li
+                %a{:href => "#cssowl-before-absolute-inside"} before-absolute-inside
+              %li
+                %a{:href => "#cssowl-before-absolute-outside"} before-absolute-outside
+          %li
+            %a{:href => "#coords"} Coords
+            %ul.nav
+              %li
+                %a{:href => "#cssowl-coords"} coords
+              %li
+                %a{:href => "#cssowl-coords-inside"} coords-inside
+              %li
+                %a{:href => "#cssowl-coords-outside"} coords-outside
+          %li
+            %a{:href => "#relative"} Relative
+            %ul.nav
+              %li
+                %a{:href => "#cssowl-relative"} relative
+          %li
+            %a{:href => "#sprite"} Sprite
+            %ul.nav
+              %li
+                %a{:href => "#cssowl-sprite-display"} sprite-display
+              %li
+                %a{:href => "#cssowl-sprite-replace"} sprite-replace
+              %li
+                %a{:href => "#cssowl-sprite-absolute"} sprite-absolute
+              %li
+                %a{:href => "#cssowl-sprite-absolute-inside"} sprite-absolute-inside
+              %li
+                %a{:href => "#cssowl-sprite-absolute-outside"} sprite-absolute-outside
+              %li
+                %a{:href => "#cssowl-sprite-after"} sprite-after
+              %li
+                %a{:href => "#cssowl-sprite-after-float"} sprite-after-float
+              %li
+                %a{:href => "#cssowl-sprite-after-absolute"} sprite-after-absolute
+              %li
+                %a{:href => "#cssowl-sprite-after-absolute-inside"} sprite-after-absolute-inside
+              %li
+                %a{:href => "#cssowl-sprite-after-absolute-outside"} sprite-after-absolute-outside
+              %li
+                %a{:href => "#cssowl-sprite-before"} sprite-before
+              %li
+                %a{:href => "#cssowl-sprite-before-float"} sprite-before-float
+              %li
+                %a{:href => "#cssowl-sprite-before-absolute"} sprite-before-absolute
+              %li
+                %a{:href => "#cssowl-sprite-before-absolute-inside"} sprite-before-absolute-inside
+              %li
+                %a{:href => "#cssowl-sprite-before-absolute-outside"} sprite-before-absolute-outside
+          %li
+            %a{:href => "#text"} Text
+            %ul.nav
+              %li
+                %a{:href => "#cssowl-text-hide"} text-hide
+
+    .col-md-9.bs-docs-content
+
+      .bs-docs-section
+
+        .page-header
+          %h2#absolute Absolute
+
+        = partial "docs/sass/cssowl/absolute"
+        = partial "docs/sass/cssowl/absolute-inside"
+        = partial "docs/sass/cssowl/absolute-outside"
+
+      .bs-docs-section
+
+        .page-header
+          %h2#after After
+
+        = partial "docs/sass/cssowl/after-float"
+        = partial "docs/sass/cssowl/after-absolute"
+        = partial "docs/sass/cssowl/after-absolute-inside"
+        = partial "docs/sass/cssowl/after-absolute-outside"
+
+      .bs-docs-section
+
+        .page-header
+          %h2#before Before
+
+        = partial "docs/sass/cssowl/before-float"
+        = partial "docs/sass/cssowl/before-absolute"
+        = partial "docs/sass/cssowl/before-absolute-inside"
+        = partial "docs/sass/cssowl/before-absolute-outside"
+
+      .bs-docs-section
+
+        .page-header
+          %h2#coords Coords
+
+        = partial "docs/sass/cssowl/coords"
+        = partial "docs/sass/cssowl/coords-inside"
+        = partial "docs/sass/cssowl/coords-outside"
+
+      .bs-docs-section
+
+        .page-header
+          %h2#relative Relative
+
+        = partial "docs/sass/cssowl/relative"
+
+      .bs-docs-section
+
+        .page-header
+          %h2#sprite Sprite
+
+        :markdown
+          In order to use the following mixins, you need to define some variables and mixins which we usually place into a **spritesheet**.
+          Take a look at the **spritesheet** below to see which variables and mixins are required. You can, of cause, write this **spritesheet** yourself
+          but we recommend to check out our [Spriteowl Photoshop Extension](http://spriteowl.owl-stars.com) which will generate this **spritesheet** for you right out of **Photoshop**!
+
+          For the examples below we use this image as a sprite:
+
+        .bs-docs-example
+          .content
+            =image_tag "site/sprite.png", :alt => "", :class => "bs-docs-sprite"
+
+        .panel.panel-default
+          .panel-heading
+            = link_to 'Spritesheet', '#source-spritesheet', data: {toggle: 'collapse'}
+
+          #source-spritesheet.panel-body.panel-collapse.collapse
+            %ul.nav.nav-tabs
+              %li.active
+                = link_to 'SASS', '#source-spritesheet-sass'
+              %li
+                = link_to 'SCSS', '#source-spritesheet-scss'
+              %li
+                = link_to 'LESS', '#source-spritesheet-less'
+              %li
+                = link_to 'Stylus', '#source-spritesheet-styl'
+
+            .tab-content
+              #source-spritesheet-sass.tab-pane.active
+                = preserve do
+                  -code("sass") do
+                    :plain
+                      // variables for the sprite's image
+                      $sprite-sheet-width: 136px
+                      $sprite-sheet-height: 111px
+                      $sprite-sheet-image: url("sprite.png") !default
+                      $sprite-sheet-image-2x: url("sprite@2x.png") !default
+                      $sprite-sheet: 136px 111px url("sprite.png") url("sprite@2x.png") sprite
+
+                      =sprite-element()
+                        background-image: $sprite-sheet-image
+                        background-repeat: no-repeat
+                        @media only screen and (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx)
+                          background-image: $sprite-sheet-image-2x
+                          background-size: $sprite-sheet-width $sprite-sheet-height
+                      %sprite-element
+                        +sprite-element()
+
+                      // variables for each of the sprite's elements
+                      $sprite-logo-x: 0
+                      $sprite-logo-y: 0
+                      $sprite-logo-width: 86px
+                      $sprite-logo-height: 88px
+                      $sprite-logo: 0 0 86px 88px sprite-logo
+
+                      =sprite-logo-width()
+                        width: $sprite-logo-width
+                      %sprite-logo-width
+                        +sprite-logo-width()
+                      =sprite-logo-height()
+                        height: $sprite-logo-height
+                      %sprite-logo-height
+                        +sprite-logo-height()
+                      =sprite-logo-size()
+                        +sprite-logo-width()
+                        +sprite-logo-height()
+                      %sprite-logo-size
+                        +sprite-logo-size()
+                      =sprite-logo-position()
+                        background-position: $sprite-logo-x $sprite-logo-y
+                      %sprite-logo-position
+                        +sprite-logo-position()
+                      =sprite-logo()
+                        +sprite-logo-size()
+                        +sprite-logo-position()
+                        @extend %sprite-element
+                      %sprite-logo
+                        +sprite-logo()
+
+                      // ...
+              #source-spritesheet-scss.tab-pane
+                = preserve do
+                  -code("scss") do
+                    :plain
+                      // variables for the sprite's image
+                      $sprite-sheet-width: 136px;
+                      $sprite-sheet-height: 111px;
+                      $sprite-sheet-image: url("sprite.png") !default;
+                      $sprite-sheet-image-2x: url("sprite@2x.png") !default;
+                      $sprite-sheet: 136px 111px url("sprite.png") url("sprite@2x.png") sprite;
+
+                      @mixin sprite-element() {
+                        background-image: $sprite-sheet-image;
+                        background-repeat: no-repeat;
+                        @media only screen and (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+                          background-image: $sprite-sheet-image-2x;
+                          background-size: $sprite-sheet-width $sprite-sheet-height;
+                        }
+                      }
+                      %sprite-element {
+                        @include sprite-element();
+                      }
+
+                      // variables for each of the sprite's elements
+                      $sprite-logo-x: 0;
+                      $sprite-logo-y: 0;
+                      $sprite-logo-width: 86px;
+                      $sprite-logo-height: 88px;
+                      $sprite-logo: 0 0 86px 88px sprite-logo;
+
+                      @mixin sprite-logo-width() {
+                        width: $sprite-logo-width;
+                      }
+                      %sprite-logo-width {
+                        @include sprite-logo-width();
+                      }
+                      @mixin sprite-logo-height() {
+                        height: $sprite-logo-height;
+                      }
+                      %sprite-logo-height {
+                        @include sprite-logo-height();
+                      }
+                      @mixin sprite-logo-size() {
+                        @include sprite-logo-width();
+                        @include sprite-logo-height();
+                      }
+                      %sprite-logo-size {
+                        @include sprite-logo-size();
+                      }
+                      @mixin sprite-logo-position() {
+                        background-position: $sprite-logo-x $sprite-logo-y;
+                      }
+                      %sprite-logo-position {
+                        @include sprite-logo-position();
+                      }
+                      @mixin sprite-logo() {
+                        @include sprite-logo-size();
+                        @include sprite-logo-position();
+                        @extend %sprite-element;
+                      }
+                      %sprite-logo {
+                        @include sprite-logo();
+                      }
+
+                      // ...
+              #source-spritesheet-less.tab-pane
+                = preserve do
+                  -code("scss") do
+                    :plain
+                      // variables for the sprite's image
+                      @sprite-sheet-width: 136px;
+                      @sprite-sheet-height: 111px;
+                      @sprite-sheet-image: url("sprite.png");
+                      @sprite-sheet-image-2x: url("sprite@2x.png");
+                      @sprite-sheet: 136px 111px url("sprite.png") url("sprite@2x.png") sprite;
+
+                      .sprite-element() {
+                        background-image: @sprite-sheet-image;
+                        background-repeat: no-repeat;
+                        @media only screen and (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+                          background-image: @sprite-sheet-image-2x;
+                          background-size: @sprite-sheet-width @sprite-sheet-height;
+                        }
+                      }
+                      .sprite-element {
+                        .sprite-element();
+                      }
+
+                      // variables for each of the sprite's elements
+                      @sprite-logo-x: 0;
+                      @sprite-logo-y: 0;
+                      @sprite-logo-width: 86px;
+                      @sprite-logo-height: 88px;
+                      @sprite-logo: 0 0 86px 88px sprite-logo;
+
+                      .sprite-logo-width() {
+                        width: @sprite-logo-width;
+                      }
+                      .sprite-logo-height() {
+                        height: @sprite-logo-height;
+                      }
+                      .sprite-logo-size() {
+                        .sprite-logo-width();
+                        .sprite-logo-height();
+                      }
+                      .sprite-logo-position() {
+                        background-position: @sprite-logo-x @sprite-logo-y;
+                      }
+                      .sprite-logo() {
+                        .sprite-logo-size();
+                        .sprite-logo-position();
+                        &:extend(.sprite-element);
+                      }
+                      .less-sprite-element(sprite-logo) {
+                        .sprite-logo-size();
+                        .sprite-logo-position();
+                        &:extend(.sprite-element);
+                      }
+
+                      // ...
+              #source-spritesheet-styl.tab-pane
+                = preserve do
+                  -code("sass") do
+                    :plain
+                      // variables for the sprite's image
+                      $sprite-sheet-width = 136px
+                      $sprite-sheet-height = 111px
+                      $sprite-sheet-image = url("sprite.png")
+                      $sprite-sheet-image-2x = url("sprite@2x.png")
+                      $sprite-sheet = 136px 111px url("sprite.png") url("sprite@2x.png") sprite
+
+                      sprite-element()
+                        background-image: $sprite-sheet-image
+                        background-repeat: no-repeat
+                        @media only screen and (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx)
+                          background-image: $sprite-sheet-image-2x
+                          background-size: $sprite-sheet-width $sprite-sheet-height
+                      $sprite-element
+                        sprite-element()
+
+                      // variables for each of the sprite's elements
+                      $sprite-logo-x = 0
+                      $sprite-logo-y = 0
+                      $sprite-logo-width = 86px
+                      $sprite-logo-height = 88px
+                      $sprite-logo = 0 0 86px 88px sprite-logo
+
+                      sprite-logo-width()
+                        width: $sprite-logo-width
+                      $sprite-logo-width
+                        sprite-logo-width()
+                      sprite-logo-height()
+                        height: $sprite-logo-height
+                      $sprite-logo-height
+                        sprite-logo-height()
+                      sprite-logo-size()
+                        sprite-logo-width()
+                        sprite-logo-height()
+                      $sprite-logo-size
+                        sprite-logo-size()
+                      sprite-logo-position()
+                        background-position: $sprite-logo-x $sprite-logo-y
+                      $sprite-logo-position
+                        sprite-logo-position()
+                      sprite-logo()
+                        sprite-logo-size()
+                        sprite-logo-position()
+                        @extend $sprite-element
+                      $sprite-logo
+                        sprite-logo()
+
+                      // ...
+
+
+        = partial "docs/sass/cssowl/sprite-display"
+        = partial "docs/sass/cssowl/sprite-replace"
+
+        = partial "docs/sass/cssowl/sprite-absolute"
+        = partial "docs/sass/cssowl/sprite-absolute-inside"
+        = partial "docs/sass/cssowl/sprite-absolute-outside"
+
+        = partial "docs/sass/cssowl/sprite-after"
+        = partial "docs/sass/cssowl/sprite-after-float"
+        = partial "docs/sass/cssowl/sprite-after-absolute"
+        = partial "docs/sass/cssowl/sprite-after-absolute-inside"
+        = partial "docs/sass/cssowl/sprite-after-absolute-outside"
+
+        = partial "docs/sass/cssowl/sprite-before"
+        = partial "docs/sass/cssowl/sprite-before-float"
+        = partial "docs/sass/cssowl/sprite-before-absolute"
+        = partial "docs/sass/cssowl/sprite-before-absolute-inside"
+        = partial "docs/sass/cssowl/sprite-before-absolute-outside"
+
+      .bs-docs-section
+
+        .page-header
+          %h2#text Text
+
+        = partial "docs/sass/cssowl/text-hide"

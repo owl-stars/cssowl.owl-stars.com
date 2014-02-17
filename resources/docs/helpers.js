@@ -5,12 +5,14 @@ hbs.registerHelper "join", (val, delimiter) ->
   delimiter = ((if typeof delimiter is "string" then delimiter else ","))
   arry.join delimiter
 
-hbs.registerHelper "indent", (val, indent=1) ->
+hbs.registerHelper "indent", (val, indent=1, escape=false) ->
+  return val unless val
   val = val.trim().split("\n")
   for value, key in val
     continue if key is 0
     for i in [0...indent]
       val[key] = "  #{val[key]}"
+  val = val.replace(/#{/g,"\#{") if escape
   return val.join("\n")
 ---------------------------------------------------------------------------------------------------
 */
@@ -22,10 +24,16 @@ hbs.registerHelper("join", function(val, delimiter) {
   return arry.join(delimiter);
 });
 
-hbs.registerHelper("indent", function(val, indent) {
+hbs.registerHelper("indent", function(val, indent, escape) {
+  if (!val) {
+    return val;
+  }
   var i, key, value, _i, _j, _len;
   if (indent == null) {
     indent = 1;
+  }
+  if (escape == null) {
+    escape = false;
   }
   val = val.trim().split("\n");
   for (key = _i = 0, _len = val.length; _i < _len; key = ++_i) {
@@ -37,5 +45,9 @@ hbs.registerHelper("indent", function(val, indent) {
       val[key] = "  " + val[key];
     }
   }
-  return val.join("\n");
+  val = val.join("\n")
+  if (escape) {
+    val = val.replace(/\#\{/g, "\\#{");
+  }
+  return val;
 });

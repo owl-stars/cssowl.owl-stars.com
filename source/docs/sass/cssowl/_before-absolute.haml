@@ -1,0 +1,137 @@
+%h3#cssowl-before-absolute cssowl-before-absolute
+
+:markdown
+  Mixin to add content with the `:before` pseudo selector and position it absolutely.
+
+.panel.panel-default
+  .panel-heading
+    = link_to 'Source', '#source-cssowl-before-absolute', data: {toggle: 'collapse'}
+
+  #source-cssowl-before-absolute.panel-body.panel-collapse.collapse
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'SASS', '#source-cssowl-before-absolute-sass'
+      %li
+        = link_to 'SCSS', '#source-cssowl-before-absolute-scss'
+      %li
+        = link_to 'LESS', '#source-cssowl-before-absolute-less'
+      %li
+        = link_to 'Stylus', '#source-cssowl-before-absolute-styl'
+
+    .tab-content
+      #source-cssowl-before-absolute-sass.tab-pane.active
+        = preserve do
+          -code("sass") do
+            :plain
+              // mixin
+              =cssowl-before-absolute($content, $coordinates:0 false false 0)
+                @extend %cssowl-relative
+                &:before
+                  content: $content
+                  +cssowl-absolute($coordinates)
+      #source-cssowl-before-absolute-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              // mixin
+              @mixin cssowl-before-absolute($content, $coordinates:0 false false 0) {
+                @extend %cssowl-relative;
+                &:before {
+                  content: $content;
+                  @include cssowl-absolute($coordinates);
+                }
+              }
+      #source-cssowl-before-absolute-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              // mixin
+              .cssowl-before-absolute(@content, @coordinates:0 false false 0) {
+                position: relative;
+                &:before {
+                  content: @content;
+                  .cssowl-absolute(@coordinates);
+                }
+              }
+      #source-cssowl-before-absolute-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              // mixin
+              cssowl-before-absolute($content, $coordinates=0 false false 0)
+                @extend $cssowl-relative
+                &:before
+                  content: $content
+                  cssowl-absolute($coordinates)
+
+
+.panel.panel-default
+  .panel-heading
+    = link_to 'Examples', '#examples-cssowl-before-absolute', data: {toggle: 'collapse'}
+
+  #examples-cssowl-before-absolute.panel-body.panel-collapse.collapse.in.bs-docs-example
+
+    .content
+      .example-before-absolute{style: "width:50px;height:50px;border:1px solid #59371f;"}
+
+      :sass
+        $sprite-sheet-image: url("/assets/img/site/sprite.png")
+        $sprite-sheet-image-2x: url("/assets/img/site/sprite@2x.png")
+        @import "site/sprite"
+        @import "bower_components/cssowl/lib/sass/cssowl"
+        .example-before-absolute
+          +cssowl-before-absolute("*", 17px false false 20px)
+
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'HTML', '#example-cssowl-before-absolute-html'
+      %li.htmltab
+        = link_to 'CSS', '#example-cssowl-before-absolute-css'
+      %li
+        = link_to 'SASS', '#example-cssowl-before-absolute-sass'
+      %li
+        = link_to 'SCSS', '#example-cssowl-before-absolute-scss'
+      %li
+        = link_to 'LESS', '#example-cssowl-before-absolute-less'
+      %li
+        = link_to 'Stylus', '#example-cssowl-before-absolute-styl'
+
+    .tab-content
+      #example-cssowl-before-absolute-html.tab-pane.active
+        = preserve do
+          -code("html") do
+            .example-before-absolute{style: "width:50px;height:50px;border:1px solid #59371f;"}
+      #example-cssowl-before-absolute-css.tab-pane
+        = preserve do
+          -code("css") do
+            :sass
+              @import "bower_components/cssowl/lib/sass/cssowl"
+              @import "source/assets/css/site/sprite"
+              .example-before-absolute
+                +cssowl-before-absolute("*", 17px false false 20px)
+      #example-cssowl-before-absolute-sass.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              .example-before-absolute
+                +cssowl-before-absolute("*", 17px false false 20px)
+      #example-cssowl-before-absolute-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .example-before-absolute {
+                @include cssowl-before-absolute("*", 17px false false 20px);
+              }
+      #example-cssowl-before-absolute-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .example-before-absolute {
+                .cssowl-before-absolute("*", 17px false false 20px);
+              }
+      #example-cssowl-before-absolute-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              .example-before-absolute
+                cssowl-before-absolute("*", 17px false false 20px)

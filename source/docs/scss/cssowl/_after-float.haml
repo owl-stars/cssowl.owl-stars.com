@@ -1,0 +1,139 @@
+%h3#cssowl-after-float cssowl-after-float
+
+:markdown
+  Mixin to add content with the `:after` pseudo selector and position it with `float: $float`.
+
+.panel.panel-default
+  .panel-heading
+    = link_to 'Source', '#source-cssowl-after-float', data: {toggle: 'collapse'}
+
+  #source-cssowl-after-float.panel-body.panel-collapse.collapse
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'SASS', '#source-cssowl-after-float-sass'
+      %li
+        = link_to 'SCSS', '#source-cssowl-after-float-scss'
+      %li
+        = link_to 'LESS', '#source-cssowl-after-float-less'
+      %li
+        = link_to 'Stylus', '#source-cssowl-after-float-styl'
+
+    .tab-content
+      #source-cssowl-after-float-sass.tab-pane.active
+        = preserve do
+          -code("sass") do
+            :plain
+              // mixin
+              =cssowl-after-float($content, $margin:0 0 0 0, $float:right)
+                &:after
+                  float: $float
+                  margin: $margin
+                  content: $content
+      #source-cssowl-after-float-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              // mixin
+              @mixin cssowl-after-float($content, $margin:0 0 0 0, $float:right) {
+                &:after {
+                  float: $float;
+                  margin: $margin;
+                  content: $content;
+                }
+              }
+      #source-cssowl-after-float-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              // mixin
+              .cssowl-after-float(@content, @margin:0 0 0 0, @float:right) {
+                &:after {
+                  float: @float;
+                  margin: @margin;
+                  content: @content;
+                }
+              }
+      #source-cssowl-after-float-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              // mixin
+              cssowl-after-float($content, $margin=0 0 0 0, $float=right)
+                &:after
+                  float $float
+                  margin $margin
+                  content $content
+
+
+.panel.panel-default
+  .panel-heading
+    = link_to 'Examples', '#examples-cssowl-after-float', data: {toggle: 'collapse'}
+
+  #examples-cssowl-after-float.panel-body.panel-collapse.collapse.in.bs-docs-example
+
+    .content
+      .example-after-float
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+
+      :sass
+        $sprite-sheet-image: url("/assets/img/site/sprite.png")
+        $sprite-sheet-image-2x: url("/assets/img/site/sprite@2x.png")
+        @import "site/sprite"
+        @import "bower_components/cssowl/lib/sass/cssowl"
+        .example-after-float
+          +cssowl-after-float("*", 4px 0 0 10px)
+
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'HTML', '#example-cssowl-after-float-html'
+      %li.htmltab
+        = link_to 'CSS', '#example-cssowl-after-float-css'
+      %li
+        = link_to 'SASS', '#example-cssowl-after-float-sass'
+      %li
+        = link_to 'SCSS', '#example-cssowl-after-float-scss'
+      %li
+        = link_to 'LESS', '#example-cssowl-after-float-less'
+      %li
+        = link_to 'Stylus', '#example-cssowl-after-float-styl'
+
+    .tab-content
+      #example-cssowl-after-float-html.tab-pane.active
+        = preserve do
+          -code("html") do
+            .example-after-float
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+      #example-cssowl-after-float-css.tab-pane
+        = preserve do
+          -code("css") do
+            :sass
+              @import "bower_components/cssowl/lib/sass/cssowl"
+              @import "source/assets/css/site/sprite"
+              .example-after-float
+                +cssowl-after-float("*", 4px 0 0 10px)
+      #example-cssowl-after-float-sass.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              .example-after-float
+                +cssowl-after-float("*", 4px 0 0 10px)
+      #example-cssowl-after-float-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .example-after-float {
+                @include cssowl-after-float("*", 4px 0 0 10px);
+              }
+      #example-cssowl-after-float-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .example-after-float {
+                .cssowl-after-float("*", 4px 0 0 10px);
+              }
+      #example-cssowl-after-float-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              .example-after-float
+                cssowl-after-float("*", 4px 0 0 10px)

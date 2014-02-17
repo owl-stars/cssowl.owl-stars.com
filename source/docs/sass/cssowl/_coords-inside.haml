@@ -1,0 +1,266 @@
+%h3#cssowl-coords-inside cssowl-coords-inside
+
+:markdown
+  Set an element's `top`, `right`, `bottom` and `left` properties to position it *inside* the bounding box.
+
+.panel.panel-default
+  .panel-heading
+    = link_to 'Source', '#source-cssowl-coords-inside', data: {toggle: 'collapse'}
+
+  #source-cssowl-coords-inside.panel-body.panel-collapse.collapse
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'SASS', '#source-cssowl-coords-inside-sass'
+      %li
+        = link_to 'SCSS', '#source-cssowl-coords-inside-scss'
+      %li
+        = link_to 'LESS', '#source-cssowl-coords-inside-less'
+      %li
+        = link_to 'Stylus', '#source-cssowl-coords-inside-styl'
+
+    .tab-content
+      #source-cssowl-coords-inside-sass.tab-pane.active
+        = preserve do
+          -code("sass") do
+            :plain
+              =cssowl-coords-inside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
+                @if $valign == top
+                  top: $yOffset
+                @else if $valign == middle
+                  top: 50%
+                  margin-top: $yOffset - round($height / 2)
+                @else if $valign == bottom
+                  bottom: $yOffset
+                @if $halign == left
+                  left: $xOffset
+                @else if $halign == center
+                  left: 50%
+                  margin-left: $xOffset - round($width / 2)
+                @else if $halign == right
+                  right: $xOffset
+      #source-cssowl-coords-inside-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              @mixin cssowl-coords-inside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
+                @if $valign == top {
+                  top: $yOffset;
+                }
+                @else if $valign == middle {
+                  top: 50%;
+                  margin-top: $yOffset - round($height / 2);
+                }
+                @else if $valign == bottom {
+                  bottom: $yOffset;
+                }
+                @if $halign == left {
+                  left: $xOffset;
+                }
+                @else if $halign == center {
+                  left: 50%;
+                  margin-left: $xOffset - round($width / 2);
+                }
+                @else if $halign == right {
+                  right: $xOffset;
+                }
+              }
+      #source-cssowl-coords-inside-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .cssowl-coords-inside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@valign = top) {
+                top: @yOffset;
+              }
+              .cssowl-coords-inside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@valign = middle) {
+                top: 50%;
+                margin-top: @yOffset - round(@height / 2);
+              }
+              .cssowl-coords-inside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@valign = bottom) {
+                bottom: @xOffset;
+              }
+              .cssowl-coords-inside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@halign = left) {
+                left: @xOffset;
+              }
+              .cssowl-coords-inside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@halign = center) {
+                left: 50%;
+                margin-left: @xOffset - round(@width / 2);
+              }
+              .cssowl-coords-inside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) when (@halign = right) {
+                right: @xOffset;
+              }
+              .cssowl-coords-inside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+                // see conditionals
+              }
+      #source-cssowl-coords-inside-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              cssowl-coords-inside(width, height, valign=top, halign=left, xOffset=0, yOffset=0)
+                if valign == top
+                  top yOffset
+                else if valign == middle
+                  top 50%
+                  margin-top yOffset - round(height / 2)
+                else if valign == bottom
+                  bottom yOffset
+                if halign == left
+                  left xOffset
+                else if halign == center
+                  left 50%
+                  margin-left xOffset - round(width / 2)
+                else if halign == right
+                  right xOffset
+
+
+.panel.panel-default
+  .panel-heading
+    = link_to 'Examples', '#examples-cssowl-coords-inside', data: {toggle: 'collapse'}
+
+  #examples-cssowl-coords-inside.panel-body.panel-collapse.collapse.in.bs-docs-example
+
+    .content
+      .wrapper{:style => "position:relative;width:50px;height:50px;border:1px solid #59371f;"}
+        .example-coords-inside.top-center
+        .example-coords-inside.middle-right
+        .example-coords-inside.bottom-center
+        .example-coords-inside.middle-left
+
+      :sass
+        $sprite-sheet-image: url("/assets/img/site/sprite.png")
+        $sprite-sheet-image-2x: url("/assets/img/site/sprite@2x.png")
+        @import "site/sprite"
+        @import "bower_components/cssowl/lib/sass/cssowl"
+        .example-coords-inside
+          width: 10px
+          height: 10px
+          position: absolute
+          background: #59371f
+          &.top-center
+            +cssowl-coords-inside(10px, 10px, top, center)
+          &.middle-right
+            +cssowl-coords-inside(10px, 10px, middle, right)
+          &.bottom-center
+            +cssowl-coords-inside(10px, 10px, bottom, center)
+          &.middle-left
+            +cssowl-coords-inside(10px, 10px, middle, left)
+
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'HTML', '#example-cssowl-coords-inside-html'
+      %li.htmltab
+        = link_to 'CSS', '#example-cssowl-coords-inside-css'
+      %li
+        = link_to 'SASS', '#example-cssowl-coords-inside-sass'
+      %li
+        = link_to 'SCSS', '#example-cssowl-coords-inside-scss'
+      %li
+        = link_to 'LESS', '#example-cssowl-coords-inside-less'
+      %li
+        = link_to 'Stylus', '#example-cssowl-coords-inside-styl'
+
+    .tab-content
+      #example-cssowl-coords-inside-html.tab-pane.active
+        = preserve do
+          -code("html") do
+            .wrapper{:style => "position:relative;width:50px;height:50px;border:1px solid #59371f;"}
+              .example-coords-inside.top-center
+              .example-coords-inside.middle-right
+              .example-coords-inside.bottom-center
+              .example-coords-inside.middle-left
+      #example-cssowl-coords-inside-css.tab-pane
+        = preserve do
+          -code("css") do
+            :sass
+              @import "bower_components/cssowl/lib/sass/cssowl"
+              @import "source/assets/css/site/sprite"
+              .example-coords-inside
+                width: 10px
+                height: 10px
+                position: absolute
+                background: #59371f
+                &.top-center
+                  +cssowl-coords-inside(10px, 10px, top, center)
+                &.middle-right
+                  +cssowl-coords-inside(10px, 10px, middle, right)
+                &.bottom-center
+                  +cssowl-coords-inside(10px, 10px, bottom, center)
+                &.middle-left
+                  +cssowl-coords-inside(10px, 10px, middle, left)
+      #example-cssowl-coords-inside-sass.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              .example-coords-inside
+                width: 10px
+                height: 10px
+                position: absolute
+                background: #59371f
+                &.top-center
+                  +cssowl-coords-inside(10px, 10px, top, center)
+                &.middle-right
+                  +cssowl-coords-inside(10px, 10px, middle, right)
+                &.bottom-center
+                  +cssowl-coords-inside(10px, 10px, bottom, center)
+                &.middle-left
+                  +cssowl-coords-inside(10px, 10px, middle, left)
+      #example-cssowl-coords-inside-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .example-coords-inside {
+                width: 10px;
+                height: 10px;
+                position: absolute;
+                background: #59371f;
+                &.top-center {
+                  @include cssowl-coords-inside(10px, 10px, top, center);
+                }
+                &.middle-right {
+                  @include cssowl-coords-inside(10px, 10px, middle, right);
+                }
+                &.bottom-center {
+                  @include cssowl-coords-inside(10px, 10px, bottom, center);
+                }
+                &.middle-left {
+                  @include cssowl-coords-inside(10px, 10px, middle, left);
+                }
+              }
+      #example-cssowl-coords-inside-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .example-coords-inside {
+                width: 10px;
+                height: 10px;
+                position: absolute;
+                background: #59371f;
+                &.top-center {
+                  .cssowl-coords-inside(10px, 10px, top, center);
+                }
+                &.middle-right {
+                  .cssowl-coords-inside(10px, 10px, middle, right);
+                }
+                &.bottom-center {
+                  .cssowl-coords-inside(10px, 10px, bottom, center);
+                }
+                &.middle-left {
+                  .cssowl-coords-inside(10px, 10px, middle, left);
+                }
+              }
+      #example-cssowl-coords-inside-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              .example-coords-inside
+                width 10px
+                height 10px
+                position absolute
+                background #59371f
+                &.top-center
+                  cssowl-coords-inside(10px, 10px, top, center)
+                &.middle-right
+                  cssowl-coords-inside(10px, 10px, middle, right)
+                &.bottom-center
+                  cssowl-coords-inside(10px, 10px, bottom, center)
+                &.middle-left
+                  cssowl-coords-inside(10px, 10px, middle, left)

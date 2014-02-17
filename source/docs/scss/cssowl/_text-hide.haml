@@ -1,0 +1,149 @@
+%h3#cssowl-text-hide cssowl-text-hide
+
+:markdown
+  Extendable placeholder and mixin to hide an element's content.
+
+.panel.panel-default
+  .panel-heading
+    = link_to 'Source', '#source-cssowl-text-hide', data: {toggle: 'collapse'}
+
+  #source-cssowl-text-hide.panel-body.panel-collapse.collapse
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'SASS', '#source-cssowl-text-hide-sass'
+      %li
+        = link_to 'SCSS', '#source-cssowl-text-hide-scss'
+      %li
+        = link_to 'LESS', '#source-cssowl-text-hide-less'
+      %li
+        = link_to 'Stylus', '#source-cssowl-text-hide-styl'
+
+    .tab-content
+      #source-cssowl-text-hide-sass.tab-pane.active
+        = preserve do
+          -code("sass") do
+            :plain
+              // mixin
+              =cssowl-text-hide()
+                overflow: hidden
+                text-indent: 100%
+                white-space: nowrap
+                display: inline-block
+              // extendable placeholder
+              %cssowl-text-hide
+                +cssowl-text-hide()
+      #source-cssowl-text-hide-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              // mixin
+              @mixin cssowl-text-hide() {
+                overflow: hidden;
+                text-indent: 100%;
+                white-space: nowrap;
+                display: inline-block;
+              }
+              // extendable placeholder
+              %cssowl-text-hide {
+                @include cssowl-text-hide();
+              }
+      #source-cssowl-text-hide-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              // mixin
+              .cssowl-text-hide() {
+                overflow: hidden;
+                text-indent: 100%;
+                white-space: nowrap;
+                display: inline-block;
+              }
+              // disabled as less doesn't provide placeholders yet
+              //.cssowl-text-hide {
+              //  .cssowl-text-hide();
+              //}
+      #source-cssowl-text-hide-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              // mixin
+              cssowl-text-hide()
+                overflow hidden
+                text-indent 100%
+                white-space nowrap
+                display inline-block
+              // extendable placeholder
+              $cssowl-text-hide
+                cssowl-text-hide()
+
+
+.panel.panel-default
+  .panel-heading
+    = link_to 'Examples', '#examples-cssowl-text-hide', data: {toggle: 'collapse'}
+
+  #examples-cssowl-text-hide.panel-body.panel-collapse.collapse.in.bs-docs-example
+
+    .content
+      Lorem <span class="example-text-hide">ipsum</span> dolor sit atem
+
+      :sass
+        $sprite-sheet-image: url("/assets/img/site/sprite.png")
+        $sprite-sheet-image-2x: url("/assets/img/site/sprite@2x.png")
+        @import "site/sprite"
+        @import "bower_components/cssowl/lib/sass/cssowl"
+        .example-text-hide
+          @extend %cssowl-text-hide
+
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'HTML', '#example-cssowl-text-hide-html'
+      %li.htmltab
+        = link_to 'CSS', '#example-cssowl-text-hide-css'
+      %li
+        = link_to 'SASS', '#example-cssowl-text-hide-sass'
+      %li
+        = link_to 'SCSS', '#example-cssowl-text-hide-scss'
+      %li
+        = link_to 'LESS', '#example-cssowl-text-hide-less'
+      %li
+        = link_to 'Stylus', '#example-cssowl-text-hide-styl'
+
+    .tab-content
+      #example-cssowl-text-hide-html.tab-pane.active
+        = preserve do
+          -code("html") do
+            Lorem <span class="example-text-hide">ipsum</span> dolor sit atem
+      #example-cssowl-text-hide-css.tab-pane
+        = preserve do
+          -code("css") do
+            :sass
+              @import "bower_components/cssowl/lib/sass/cssowl"
+              @import "source/assets/css/site/sprite"
+              .example-text-hide
+                @extend %cssowl-text-hide
+      #example-cssowl-text-hide-sass.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              .example-text-hide
+                @extend %cssowl-text-hide
+      #example-cssowl-text-hide-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .example-text-hide {
+                @extend %cssowl-text-hide;
+              }
+      #example-cssowl-text-hide-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .example-text-hide {
+                &:extend(.cssowl-text-hide);
+              }
+      #example-cssowl-text-hide-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              .example-text-hide
+                @extend $cssowl-text-hide

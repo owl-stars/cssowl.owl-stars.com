@@ -5,6 +5,7 @@ var target    = "source/docs";
 var options = {
   helpers: "resources/docs/helpers.js",
   template: "resources/docs/template.hbs",
-  filename: function(item) { return "_" + item.basename + ".haml"; }
+  filter: function(filename) { return (filename != '_imports.yml') },
+  filename: function(item, syntax) { return "_" + item.basename + ".haml"; }
 };
-require('librarianowl').documentation(source, target, options);
+require('librarianowl').compile(source, target, options);

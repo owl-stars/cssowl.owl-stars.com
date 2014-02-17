@@ -46,6 +46,13 @@ sprockets.append_path File.join "#{root}", "bower_components"
 # Environments
 ###
 
+compass_config do |config|
+  config.sass_options = {
+    :style => :expanded,
+    :line_comments => false
+  }
+end
+
 # Development-specific configuration
 configure :development do
   activate :google_analytics do |ga|

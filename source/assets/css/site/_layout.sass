@@ -69,8 +69,10 @@
       a
         color: $colorFontGreyDark
         text-decoration: none
+
         > .home
-          +pagesprite-icon-home-replace-inline(-4px)
+          margin-bottom: -3px
+          +cssowl-sprite-replace($sprite-home)
 
   .madeby
     color: $colorFontGreyDark
@@ -79,7 +81,8 @@
     float: right
     > .wjds
       margin-left: 5px
-      +pagesprite-graphic-wjds-replace-inline(-5px)
+      margin-bottom: -3px
+      +cssowl-sprite-replace($sprite-wjds)
 
 // --- header -------------------------------------------------------------------------------------
 
@@ -96,11 +99,15 @@
       height: 120px
 
       .logo
-        font-size: $fontSizeBase
         padding-top: 33px
-        +pagesprite-logo-cssowl-before-absolute()
         text-decoration: none
         color: $colorFontDefault
+        font-size: $fontSizeBase
+        +cssowl-sprite-before-absolute($sprite-logo, false false false false)
+
+        &:before
+          z-index: 1
+
         h1
           margin: 20px 0 0 90px
         h2
@@ -355,31 +362,18 @@
       background: $colorBgLight
 
     .bs-docs-example
+      padding: 0 10px
       position: relative
-      padding: 15px 10px 0
-      border: 1px solid $colorBorder
-      border-top-left-radius: $border-radius-large
-      border-top-right-radius: $border-radius-large
 
       > .content
-        margin: 30px 10px 20px
+        margin: 20px 10px
         padding-bottom: 10px
 
       .highlight
-
         border-top: none
         border-top-left-radius: 0
         border-top-right-radius: 0
 
-      &:before
-        top: 10px
-        left: 15px
-        font-size: 13px
-        content: "EXAMPLE"
-        font-weight: bold
-        position: absolute
-        letter-spacing: 1px
-        color: $colorFontGrey
 
     .bs-docs-sprite
       display: inline-block
@@ -465,6 +459,7 @@
       margin-bottom: 40px
       > .wjds
         margin-left: 5px
-        +pagesprite-graphic-wjds-replace-inline(-5px)
+        margin-bottom: -3px
+        +cssowl-sprite-replace($sprite-wjds)
 
 

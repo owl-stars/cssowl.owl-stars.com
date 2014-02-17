@@ -1,0 +1,139 @@
+%h3#cssowl-before-float cssowl-before-float
+
+:markdown
+  Mixin to add content with the `:before` pseudo selector and position it with `float: $float`.
+
+.panel.panel-default
+  .panel-heading
+    = link_to 'Source', '#source-cssowl-before-float', data: {toggle: 'collapse'}
+
+  #source-cssowl-before-float.panel-body.panel-collapse.collapse
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'SASS', '#source-cssowl-before-float-sass'
+      %li
+        = link_to 'SCSS', '#source-cssowl-before-float-scss'
+      %li
+        = link_to 'LESS', '#source-cssowl-before-float-less'
+      %li
+        = link_to 'Stylus', '#source-cssowl-before-float-styl'
+
+    .tab-content
+      #source-cssowl-before-float-sass.tab-pane.active
+        = preserve do
+          -code("sass") do
+            :plain
+              // mixin
+              =cssowl-before-float($content, $margin:0 0 0 0, $float:left)
+                &:before
+                  float: $float
+                  margin: $margin
+                  content: $content
+      #source-cssowl-before-float-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              // mixin
+              @mixin cssowl-before-float($content, $margin:0 0 0 0, $float:left) {
+                &:before {
+                  float: $float;
+                  margin: $margin;
+                  content: $content;
+                }
+              }
+      #source-cssowl-before-float-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              // mixin
+              .cssowl-before-float(@content, @margin:0 0 0 0, @float:left) {
+                &:before {
+                  float: @float;
+                  margin: @margin;
+                  content: @content;
+                }
+              }
+      #source-cssowl-before-float-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              // mixin
+              cssowl-before-float($content, $margin=0 0 0 0, $float=left)
+                &:before
+                  float $float
+                  margin $margin
+                  content $content
+
+
+.panel.panel-default
+  .panel-heading
+    = link_to 'Examples', '#examples-cssowl-before-float', data: {toggle: 'collapse'}
+
+  #examples-cssowl-before-float.panel-body.panel-collapse.collapse.in.bs-docs-example
+
+    .content
+      .example-before-float
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+
+      :sass
+        $sprite-sheet-image: url("/assets/img/site/sprite.png")
+        $sprite-sheet-image-2x: url("/assets/img/site/sprite@2x.png")
+        @import "site/sprite"
+        @import "bower_components/cssowl/lib/sass/cssowl"
+        .example-before-float
+          +cssowl-before-float("*", 4px 10px 0 0)
+
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'HTML', '#example-cssowl-before-float-html'
+      %li.htmltab
+        = link_to 'CSS', '#example-cssowl-before-float-css'
+      %li
+        = link_to 'SASS', '#example-cssowl-before-float-sass'
+      %li
+        = link_to 'SCSS', '#example-cssowl-before-float-scss'
+      %li
+        = link_to 'LESS', '#example-cssowl-before-float-less'
+      %li
+        = link_to 'Stylus', '#example-cssowl-before-float-styl'
+
+    .tab-content
+      #example-cssowl-before-float-html.tab-pane.active
+        = preserve do
+          -code("html") do
+            .example-before-float
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+      #example-cssowl-before-float-css.tab-pane
+        = preserve do
+          -code("css") do
+            :sass
+              @import "bower_components/cssowl/lib/sass/cssowl"
+              @import "source/assets/css/site/sprite"
+              .example-before-float
+                +cssowl-before-float("*", 4px 10px 0 0)
+      #example-cssowl-before-float-sass.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              .example-before-float
+                +cssowl-before-float("*", 4px 10px 0 0)
+      #example-cssowl-before-float-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .example-before-float {
+                @include cssowl-before-float("*", 4px 10px 0 0);
+              }
+      #example-cssowl-before-float-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .example-before-float {
+                .cssowl-before-float("*", 4px 10px 0 0);
+              }
+      #example-cssowl-before-float-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              .example-before-float
+                cssowl-before-float("*", 4px 10px 0 0)

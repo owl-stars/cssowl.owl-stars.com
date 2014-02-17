@@ -5,6 +5,6 @@
     "jquery": "~1.9.1",
     "cssowl": "~1.1.1",
     "ajaxchimp": "~1.0.2",
-    "sass-bootstrap": "~3.0.0"
+    "sass-bootstrap": "~3.0"
   }
 }

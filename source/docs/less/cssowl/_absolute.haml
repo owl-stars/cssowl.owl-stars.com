@@ -1,0 +1,143 @@
+%h3#cssowl-absolute cssowl-absolute
+
+:markdown
+  Extendable placeholder and mixin to position an element absolutely.
+
+.panel.panel-default
+  .panel-heading
+    = link_to 'Source', '#source-cssowl-absolute', data: {toggle: 'collapse'}
+
+  #source-cssowl-absolute.panel-body.panel-collapse.collapse
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'SASS', '#source-cssowl-absolute-sass'
+      %li
+        = link_to 'SCSS', '#source-cssowl-absolute-scss'
+      %li
+        = link_to 'LESS', '#source-cssowl-absolute-less'
+      %li
+        = link_to 'Stylus', '#source-cssowl-absolute-styl'
+
+    .tab-content
+      #source-cssowl-absolute-sass.tab-pane.active
+        = preserve do
+          -code("sass") do
+            :plain
+              // extendable placeholder
+              %cssowl-absolute
+                position: absolute
+              // mixin
+              =cssowl-absolute($coordinates:0 false false 0)
+                +cssowl-coords($coordinates)
+                @extend %cssowl-absolute
+      #source-cssowl-absolute-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              // extendable placeholder
+              %cssowl-absolute {
+                position: absolute;
+              }
+              // mixin
+              @mixin cssowl-absolute($coordinates:0 false false 0) {
+                @include cssowl-coords($coordinates);
+                @extend %cssowl-absolute;
+              }
+      #source-cssowl-absolute-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              // disabled as less doesn't provide placeholders yet
+              //.cssowl-absolute {
+              //  position: absolute;
+              //}
+              // mixin
+              .cssowl-absolute(@coordinates:0 false false 0) {
+                .cssowl-coords(@coordinates);
+                position: absolute;
+              }
+      #source-cssowl-absolute-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              // extendable placeholder
+              $cssowl-absolute
+                position: absolute
+              // mixin
+              cssowl-absolute($coordinates=0 false false 0)
+                cssowl-coords($coordinates)
+                @extend $cssowl-absolute
+
+
+.panel.panel-default
+  .panel-heading
+    = link_to 'Examples', '#examples-cssowl-absolute', data: {toggle: 'collapse'}
+
+  #examples-cssowl-absolute.panel-body.panel-collapse.collapse.in.bs-docs-example
+
+    .content
+      .wrapper{style: "position:relative;width:50px;height:50px;border:1px solid #59371f;"}
+        .example-absolute{style: "width:10px;height:10px;background:#59371f;"}
+
+      :sass
+        $sprite-sheet-image: url("/assets/img/site/sprite.png")
+        $sprite-sheet-image-2x: url("/assets/img/site/sprite@2x.png")
+        @import "site/sprite"
+        @import "bower_components/cssowl/lib/sass/cssowl"
+        .example-absolute
+          +cssowl-absolute(20px false false 20px)
+
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'HTML', '#example-cssowl-absolute-html'
+      %li.htmltab
+        = link_to 'CSS', '#example-cssowl-absolute-css'
+      %li
+        = link_to 'SASS', '#example-cssowl-absolute-sass'
+      %li
+        = link_to 'SCSS', '#example-cssowl-absolute-scss'
+      %li
+        = link_to 'LESS', '#example-cssowl-absolute-less'
+      %li
+        = link_to 'Stylus', '#example-cssowl-absolute-styl'
+
+    .tab-content
+      #example-cssowl-absolute-html.tab-pane.active
+        = preserve do
+          -code("html") do
+            .wrapper{style: "position:relative;width:50px;height:50px;border:1px solid #59371f;"}
+              .example-absolute{style: "width:10px;height:10px;background:#59371f;"}
+      #example-cssowl-absolute-css.tab-pane
+        = preserve do
+          -code("css") do
+            :sass
+              @import "bower_components/cssowl/lib/sass/cssowl"
+              @import "source/assets/css/site/sprite"
+              .example-absolute
+                +cssowl-absolute(20px false false 20px)
+      #example-cssowl-absolute-sass.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              .example-absolute
+                +cssowl-absolute(20px false false 20px)
+      #example-cssowl-absolute-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .example-absolute {
+                @include cssowl-absolute(20px false false 20px);
+              }
+      #example-cssowl-absolute-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .example-absolute {
+                .cssowl-absolute(20px false false 20px);
+              }
+      #example-cssowl-absolute-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              .example-absolute
+                cssowl-absolute(20px false false 20px)

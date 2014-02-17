@@ -1,0 +1,193 @@
+%h3#cssowl-absolute-outside cssowl-absolute-outside
+
+:markdown
+  Mixin to position an element absolutely *outside* the bounding box.
+
+.panel.panel-default
+  .panel-heading
+    = link_to 'Source', '#source-cssowl-absolute-outside', data: {toggle: 'collapse'}
+
+  #source-cssowl-absolute-outside.panel-body.panel-collapse.collapse
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'SASS', '#source-cssowl-absolute-outside-sass'
+      %li
+        = link_to 'SCSS', '#source-cssowl-absolute-outside-scss'
+      %li
+        = link_to 'LESS', '#source-cssowl-absolute-outside-less'
+      %li
+        = link_to 'Stylus', '#source-cssowl-absolute-outside-styl'
+
+    .tab-content
+      #source-cssowl-absolute-outside-sass.tab-pane.active
+        = preserve do
+          -code("sass") do
+            :plain
+              // mixin
+              =cssowl-absolute-outside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
+                width: $width
+                height: $height
+                @extend %cssowl-absolute
+                +cssowl-coords-outside($width, $height, $valign, $halign, $xOffset, $yOffset)
+      #source-cssowl-absolute-outside-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              // mixin
+              @mixin cssowl-absolute-outside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
+                width: $width;
+                height: $height;
+                @extend %cssowl-absolute;
+                @include cssowl-coords-outside($width, $height, $valign, $halign, $xOffset, $yOffset);
+              }
+      #source-cssowl-absolute-outside-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              // mixin
+              .cssowl-absolute-outside(@width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+                width: @width;
+                height: @height;
+                position: absolute;
+                .cssowl-coords-outside(@width, @height, @valign, @halign, @xOffset, @yOffset);
+              }
+      #source-cssowl-absolute-outside-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              // mixin
+              cssowl-absolute-outside($width, $height, $valign=top, $halign=left, $xOffset=0, $yOffset=0)
+                width $width
+                height $height
+                @extend $cssowl-absolute;
+                cssowl-coords-outside($width, $height, $valign, $halign, $xOffset, $yOffset);
+
+
+.panel.panel-default
+  .panel-heading
+    = link_to 'Examples', '#examples-cssowl-absolute-outside', data: {toggle: 'collapse'}
+
+  #examples-cssowl-absolute-outside.panel-body.panel-collapse.collapse.in.bs-docs-example
+
+    .content
+      .example-absolute-outside{:style => "position:relative;width:50px;height:50px;border:1px solid #59371f;"}
+        .top-center{style: "background:#59371f;"}
+        .middle-right{style: "background:#59371f;"}
+        .bottom-center{style: "background:#59371f;"}
+        .middle-left{style: "background:#59371f;"}
+
+      :sass
+        $sprite-sheet-image: url("/assets/img/site/sprite.png")
+        $sprite-sheet-image-2x: url("/assets/img/site/sprite@2x.png")
+        @import "site/sprite"
+        @import "bower_components/cssowl/lib/sass/cssowl"
+        .example-absolute-outside
+          > .top-center
+            +cssowl-absolute-outside(10px, 10px, top, center)
+          > .middle-right
+            +cssowl-absolute-outside(10px, 10px, middle, right)
+          > .bottom-center
+            +cssowl-absolute-outside(10px, 10px, bottom, center)
+          > .middle-left
+            +cssowl-absolute-outside(10px, 10px, middle, left)
+
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'HTML', '#example-cssowl-absolute-outside-html'
+      %li.htmltab
+        = link_to 'CSS', '#example-cssowl-absolute-outside-css'
+      %li
+        = link_to 'SASS', '#example-cssowl-absolute-outside-sass'
+      %li
+        = link_to 'SCSS', '#example-cssowl-absolute-outside-scss'
+      %li
+        = link_to 'LESS', '#example-cssowl-absolute-outside-less'
+      %li
+        = link_to 'Stylus', '#example-cssowl-absolute-outside-styl'
+
+    .tab-content
+      #example-cssowl-absolute-outside-html.tab-pane.active
+        = preserve do
+          -code("html") do
+            .example-absolute-outside{:style => "position:relative;width:50px;height:50px;border:1px solid #59371f;"}
+              .top-center{style: "background:#59371f;"}
+              .middle-right{style: "background:#59371f;"}
+              .bottom-center{style: "background:#59371f;"}
+              .middle-left{style: "background:#59371f;"}
+      #example-cssowl-absolute-outside-css.tab-pane
+        = preserve do
+          -code("css") do
+            :sass
+              @import "bower_components/cssowl/lib/sass/cssowl"
+              @import "source/assets/css/site/sprite"
+              .example-absolute-outside
+                > .top-center
+                  +cssowl-absolute-outside(10px, 10px, top, center)
+                > .middle-right
+                  +cssowl-absolute-outside(10px, 10px, middle, right)
+                > .bottom-center
+                  +cssowl-absolute-outside(10px, 10px, bottom, center)
+                > .middle-left
+                  +cssowl-absolute-outside(10px, 10px, middle, left)
+      #example-cssowl-absolute-outside-sass.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              .example-absolute-outside
+                > .top-center
+                  +cssowl-absolute-outside(10px, 10px, top, center)
+                > .middle-right
+                  +cssowl-absolute-outside(10px, 10px, middle, right)
+                > .bottom-center
+                  +cssowl-absolute-outside(10px, 10px, bottom, center)
+                > .middle-left
+                  +cssowl-absolute-outside(10px, 10px, middle, left)
+      #example-cssowl-absolute-outside-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .example-absolute-outside {
+                > .top-center {
+                  @include cssowl-absolute-outside(10px, 10px, top, center);
+                }
+                > .middle-right {
+                  @include cssowl-absolute-outside(10px, 10px, middle, right);
+                }
+                > .bottom-center {
+                  @include cssowl-absolute-outside(10px, 10px, bottom, center);
+                }
+                > .middle-left {
+                  @include cssowl-absolute-outside(10px, 10px, middle, left);
+                }
+              }
+      #example-cssowl-absolute-outside-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .example-absolute-outside {
+                > .top-center {
+                  .cssowl-absolute-outside(10px, 10px, top, center);
+                }
+                > .middle-right {
+                  .cssowl-absolute-outside(10px, 10px, middle, right);
+                }
+                > .bottom-center {
+                  .cssowl-absolute-outside(10px, 10px, bottom, center);
+                }
+                > .middle-left {
+                  .cssowl-absolute-outside(10px, 10px, middle, left);
+                }
+              }
+      #example-cssowl-absolute-outside-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              .example-absolute-outside
+                > .top-center
+                  cssowl-absolute-outside(10px, 10px, top, center)
+                > .middle-right
+                  cssowl-absolute-outside(10px, 10px, middle, right)
+                > .bottom-center
+                  cssowl-absolute-outside(10px, 10px, bottom, center)
+                > .middle-left
+                  cssowl-absolute-outside(10px, 10px, middle, left)

@@ -1,0 +1,123 @@
+%h3#cssowl-sprite-replace cssowl-sprite-replace
+
+:markdown
+  Add a sprite element and hide the element's content.
+
+.panel.panel-default
+  .panel-heading
+    = link_to 'Source', '#source-cssowl-sprite-replace', data: {toggle: 'collapse'}
+
+  #source-cssowl-sprite-replace.panel-body.panel-collapse.collapse
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'SASS', '#source-cssowl-sprite-replace-sass'
+      %li
+        = link_to 'SCSS', '#source-cssowl-sprite-replace-scss'
+      %li
+        = link_to 'LESS', '#source-cssowl-sprite-replace-less'
+      %li
+        = link_to 'Stylus', '#source-cssowl-sprite-replace-styl'
+
+    .tab-content
+      #source-cssowl-sprite-replace-sass.tab-pane.active
+        = preserve do
+          -code("sass") do
+            :plain
+              @mixin cssowl-sprite-replace($element)
+                @extend %cssowl-text-hide
+                @extend %\#{nth($element, 5)}
+      #source-cssowl-sprite-replace-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              @mixin cssowl-sprite-replace($element) {
+                @extend %cssowl-text-hide;
+                @extend %\#{nth($element, 5)};
+              }
+      #source-cssowl-sprite-replace-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .cssowl-sprite-replace(@element) {
+                .cssowl-text-hide();
+                .less-sprite-element(extract(@element, 5));
+              }
+      #source-cssowl-sprite-replace-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              cssowl-sprite-replace($element)
+                @extend $cssowl-text-hide
+                @extend ${$element[4]}
+
+
+.panel.panel-default
+  .panel-heading
+    = link_to 'Examples', '#examples-cssowl-sprite-replace', data: {toggle: 'collapse'}
+
+  #examples-cssowl-sprite-replace.panel-body.panel-collapse.collapse.in.bs-docs-example
+
+    .content
+      Lorem <span class="example-replace">ipsum</span> dolor sit atem
+
+      :sass
+        $sprite-sheet-image: url("/assets/img/site/sprite.png")
+        $sprite-sheet-image-2x: url("/assets/img/site/sprite@2x.png")
+        @import "site/sprite"
+        @import "bower_components/cssowl/lib/sass/cssowl"
+        .example-replace
+          +cssowl-sprite-replace($sprite-owl-up)
+
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'HTML', '#example-cssowl-sprite-replace-html'
+      %li.htmltab
+        = link_to 'CSS', '#example-cssowl-sprite-replace-css'
+      %li
+        = link_to 'SASS', '#example-cssowl-sprite-replace-sass'
+      %li
+        = link_to 'SCSS', '#example-cssowl-sprite-replace-scss'
+      %li
+        = link_to 'LESS', '#example-cssowl-sprite-replace-less'
+      %li
+        = link_to 'Stylus', '#example-cssowl-sprite-replace-styl'
+
+    .tab-content
+      #example-cssowl-sprite-replace-html.tab-pane.active
+        = preserve do
+          -code("html") do
+            Lorem <span class="example-replace">ipsum</span> dolor sit atem
+      #example-cssowl-sprite-replace-css.tab-pane
+        = preserve do
+          -code("css") do
+            :sass
+              @import "bower_components/cssowl/lib/sass/cssowl"
+              @import "source/assets/css/site/sprite"
+              .example-replace
+                +cssowl-sprite-replace($sprite-owl-up)
+      #example-cssowl-sprite-replace-sass.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              .example-replace
+                +cssowl-sprite-replace($sprite-owl-up)
+      #example-cssowl-sprite-replace-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .example-replace {
+                @include cssowl-sprite-replace($sprite-owl-up);
+              }
+      #example-cssowl-sprite-replace-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .example-replace {
+                .cssowl-sprite-replace(@sprite-owl-up);
+              }
+      #example-cssowl-sprite-replace-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              .example-replace
+                cssowl-sprite-replace($sprite-owl-up)

@@ -1,0 +1,181 @@
+%h3#cssowl-sprite-absolute-inside cssowl-sprite-absolute-inside
+
+:markdown
+  Place a sprite element with `position: absolute;` *inside* the bounding box.
+
+.panel.panel-default
+  .panel-heading
+    = link_to 'Source', '#source-cssowl-sprite-absolute-inside', data: {toggle: 'collapse'}
+
+  #source-cssowl-sprite-absolute-inside.panel-body.panel-collapse.collapse
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'SASS', '#source-cssowl-sprite-absolute-inside-sass'
+      %li
+        = link_to 'SCSS', '#source-cssowl-sprite-absolute-inside-scss'
+      %li
+        = link_to 'LESS', '#source-cssowl-sprite-absolute-inside-less'
+      %li
+        = link_to 'Stylus', '#source-cssowl-sprite-absolute-inside-styl'
+
+    .tab-content
+      #source-cssowl-sprite-absolute-inside-sass.tab-pane.active
+        = preserve do
+          -code("sass") do
+            :plain
+              =cssowl-sprite-absolute-inside($element, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
+                +cssowl-absolute-inside(nth($element, 3), nth($element, 4), $valign, $halign, $xOffset, $yOffset)
+                @extend %\#{nth($element, 5)}
+      #source-cssowl-sprite-absolute-inside-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              @mixin cssowl-sprite-absolute-inside($element, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
+                @include cssowl-absolute-inside(nth($element, 3), nth($element, 4), $valign, $halign, $xOffset, $yOffset);
+                @extend %\#{nth($element, 5)};
+              }
+      #source-cssowl-sprite-absolute-inside-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .cssowl-sprite-absolute-inside(@element, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+                .cssowl-absolute-inside(extract(@element, 3), extract(@element, 4), @valign, @halign, @xOffset, @yOffset);
+                .less-sprite-element(extract(@element, 5));
+              }
+      #source-cssowl-sprite-absolute-inside-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              cssowl-sprite-absolute-inside($element, $valign=top, $halign=left, $xOffset=0, $yOffset=0)
+                cssowl-absolute-inside($element[2], $element[3], $valign, $halign, $xOffset, $yOffset)
+                @extend ${$element[4]}
+
+
+.panel.panel-default
+  .panel-heading
+    = link_to 'Examples', '#examples-cssowl-sprite-absolute-inside', data: {toggle: 'collapse'}
+
+  #examples-cssowl-sprite-absolute-inside.panel-body.panel-collapse.collapse.in.bs-docs-example
+
+    .content
+      .example-sprite-absolute-inside{:style => "position:relative;width:50px;height:50px;border:1px solid #59371f;"}
+        .top-center
+        .middle-right
+        .bottom-center
+        .middle-left
+
+      :sass
+        $sprite-sheet-image: url("/assets/img/site/sprite.png")
+        $sprite-sheet-image-2x: url("/assets/img/site/sprite@2x.png")
+        @import "site/sprite"
+        @import "bower_components/cssowl/lib/sass/cssowl"
+        .example-sprite-absolute-inside
+          > .top-center
+            +cssowl-sprite-absolute-inside($sprite-arrow-down, top, center)
+          > .middle-right
+            +cssowl-sprite-absolute-inside($sprite-arrow-left, middle, right)
+          > .bottom-center
+            +cssowl-sprite-absolute-inside($sprite-arrow-up, bottom, center)
+          > .middle-left
+            +cssowl-sprite-absolute-inside($sprite-arrow-right, middle, left)
+
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'HTML', '#example-cssowl-sprite-absolute-inside-html'
+      %li.htmltab
+        = link_to 'CSS', '#example-cssowl-sprite-absolute-inside-css'
+      %li
+        = link_to 'SASS', '#example-cssowl-sprite-absolute-inside-sass'
+      %li
+        = link_to 'SCSS', '#example-cssowl-sprite-absolute-inside-scss'
+      %li
+        = link_to 'LESS', '#example-cssowl-sprite-absolute-inside-less'
+      %li
+        = link_to 'Stylus', '#example-cssowl-sprite-absolute-inside-styl'
+
+    .tab-content
+      #example-cssowl-sprite-absolute-inside-html.tab-pane.active
+        = preserve do
+          -code("html") do
+            .example-sprite-absolute-inside{:style => "position:relative;width:50px;height:50px;border:1px solid #59371f;"}
+              .top-center
+              .middle-right
+              .bottom-center
+              .middle-left
+      #example-cssowl-sprite-absolute-inside-css.tab-pane
+        = preserve do
+          -code("css") do
+            :sass
+              @import "bower_components/cssowl/lib/sass/cssowl"
+              @import "source/assets/css/site/sprite"
+              .example-sprite-absolute-inside
+                > .top-center
+                  +cssowl-sprite-absolute-inside($sprite-arrow-down, top, center)
+                > .middle-right
+                  +cssowl-sprite-absolute-inside($sprite-arrow-left, middle, right)
+                > .bottom-center
+                  +cssowl-sprite-absolute-inside($sprite-arrow-up, bottom, center)
+                > .middle-left
+                  +cssowl-sprite-absolute-inside($sprite-arrow-right, middle, left)
+      #example-cssowl-sprite-absolute-inside-sass.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              .example-sprite-absolute-inside
+                > .top-center
+                  +cssowl-sprite-absolute-inside($sprite-arrow-down, top, center)
+                > .middle-right
+                  +cssowl-sprite-absolute-inside($sprite-arrow-left, middle, right)
+                > .bottom-center
+                  +cssowl-sprite-absolute-inside($sprite-arrow-up, bottom, center)
+                > .middle-left
+                  +cssowl-sprite-absolute-inside($sprite-arrow-right, middle, left)
+      #example-cssowl-sprite-absolute-inside-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .example-sprite-absolute-inside {
+                > .top-center {
+                  @include cssowl-sprite-absolute-inside($sprite-arrow-down, top, center);
+                }
+                > .middle-right {
+                  @include cssowl-sprite-absolute-inside($sprite-arrow-left, middle, right);
+                }
+                > .bottom-center {
+                  @include cssowl-sprite-absolute-inside($sprite-arrow-up, bottom, center);
+                }
+                > .middle-left {
+                  @include cssowl-sprite-absolute-inside($sprite-arrow-right, middle, left);
+                }
+              }
+      #example-cssowl-sprite-absolute-inside-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .example-sprite-absolute-inside {
+                > .top-center {
+                  .cssowl-sprite-absolute-inside(@sprite-arrow-down, top, center);
+                }
+                > .middle-right {
+                  .cssowl-sprite-absolute-inside(@sprite-arrow-left, middle, right);
+                }
+                > .bottom-center {
+                  .cssowl-sprite-absolute-inside(@sprite-arrow-up, bottom, center);
+                }
+                > .middle-left {
+                  .cssowl-sprite-absolute-inside(@sprite-arrow-right, middle, left);
+                }
+              }
+      #example-cssowl-sprite-absolute-inside-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              .example-sprite-absolute-inside
+                > .top-center
+                  cssowl-sprite-absolute-inside($sprite-arrow-down, top, center)
+                > .middle-right
+                  cssowl-sprite-absolute-inside($sprite-arrow-left, middle, right)
+                > .bottom-center
+                  cssowl-sprite-absolute-inside($sprite-arrow-up, bottom, center)
+                > .middle-left
+                  cssowl-sprite-absolute-inside($sprite-arrow-right, middle, left)

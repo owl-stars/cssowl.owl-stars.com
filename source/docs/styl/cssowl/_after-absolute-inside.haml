@@ -1,0 +1,133 @@
+%h3#cssowl-after-absolute-inside cssowl-after-absolute-inside
+
+:markdown
+  Mixin to add content with the `:after` pseudo selector and position it absolutely *inside* the bounding box.
+
+.panel.panel-default
+  .panel-heading
+    = link_to 'Source', '#source-cssowl-after-absolute-inside', data: {toggle: 'collapse'}
+
+  #source-cssowl-after-absolute-inside.panel-body.panel-collapse.collapse
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'SASS', '#source-cssowl-after-absolute-inside-sass'
+      %li
+        = link_to 'SCSS', '#source-cssowl-after-absolute-inside-scss'
+      %li
+        = link_to 'LESS', '#source-cssowl-after-absolute-inside-less'
+      %li
+        = link_to 'Stylus', '#source-cssowl-after-absolute-inside-styl'
+
+    .tab-content
+      #source-cssowl-after-absolute-inside-sass.tab-pane.active
+        = preserve do
+          -code("sass") do
+            :plain
+              =cssowl-after-absolute-inside($content, $width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
+                @extend %cssowl-relative
+                &:after
+                  content: $content
+                  +cssowl-absolute-inside($width, $height, $valign, $halign, $xOffset, $yOffset)
+      #source-cssowl-after-absolute-inside-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              @mixin cssowl-after-absolute-inside($content, $width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
+                @extend %cssowl-relative;
+                &:after {
+                  content: $content;
+                  @include cssowl-absolute-inside($width, $height, $valign, $halign, $xOffset, $yOffset);
+                }
+              }
+      #source-cssowl-after-absolute-inside-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .cssowl-after-absolute-inside(@content, @width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+                position: relative;
+                &:after {
+                  content: @content;
+                  .cssowl-absolute-inside(@width, @height, @valign, @halign, @xOffset, @yOffset);
+                }
+              }
+      #source-cssowl-after-absolute-inside-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              cssowl-after-absolute-inside($content, $width, $height, $valign=top, $halign=left, $xOffset=0, $yOffset=0)
+                @extend $cssowl-relative
+                &:after
+                  content: $content
+                  cssowl-absolute-inside($width, $height, $valign, $halign, $xOffset, $yOffset)
+
+
+.panel.panel-default
+  .panel-heading
+    = link_to 'Examples', '#examples-cssowl-after-absolute-inside', data: {toggle: 'collapse'}
+
+  #examples-cssowl-after-absolute-inside.panel-body.panel-collapse.collapse.in.bs-docs-example
+
+    .content
+      .example-after-absolute-inside{style: "width:50px;height:50px;border:1px solid #59371f;"}
+
+      :sass
+        $sprite-sheet-image: url("/assets/img/site/sprite.png")
+        $sprite-sheet-image-2x: url("/assets/img/site/sprite@2x.png")
+        @import "site/sprite"
+        @import "bower_components/cssowl/lib/sass/cssowl"
+        .example-after-absolute-inside
+          +cssowl-after-absolute-inside("*", 5px, 5px, middle, center, 0, -2px)
+
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'HTML', '#example-cssowl-after-absolute-inside-html'
+      %li.htmltab
+        = link_to 'CSS', '#example-cssowl-after-absolute-inside-css'
+      %li
+        = link_to 'SASS', '#example-cssowl-after-absolute-inside-sass'
+      %li
+        = link_to 'SCSS', '#example-cssowl-after-absolute-inside-scss'
+      %li
+        = link_to 'LESS', '#example-cssowl-after-absolute-inside-less'
+      %li
+        = link_to 'Stylus', '#example-cssowl-after-absolute-inside-styl'
+
+    .tab-content
+      #example-cssowl-after-absolute-inside-html.tab-pane.active
+        = preserve do
+          -code("html") do
+            .example-after-absolute-inside{style: "width:50px;height:50px;border:1px solid #59371f;"}
+      #example-cssowl-after-absolute-inside-css.tab-pane
+        = preserve do
+          -code("css") do
+            :sass
+              @import "bower_components/cssowl/lib/sass/cssowl"
+              @import "source/assets/css/site/sprite"
+              .example-after-absolute-inside
+                +cssowl-after-absolute-inside("*", 5px, 5px, middle, center, 0, -2px)
+      #example-cssowl-after-absolute-inside-sass.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              .example-after-absolute-inside
+                +cssowl-after-absolute-inside("*", 5px, 5px, middle, center, 0, -2px)
+      #example-cssowl-after-absolute-inside-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .example-after-absolute-inside {
+                @include cssowl-after-absolute-inside("*", 5px, 5px, middle, center, 0, -2px);
+              }
+      #example-cssowl-after-absolute-inside-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .example-after-absolute-inside {
+                .cssowl-after-absolute-inside("*", 5px, 5px, middle, center, 0, -2px);
+              }
+      #example-cssowl-after-absolute-inside-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              .example-after-absolute-inside
+                cssowl-after-absolute-inside("*", 5px, 5px, middle, center, 0, -2px)

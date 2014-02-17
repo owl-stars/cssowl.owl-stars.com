@@ -1,59 +1,105 @@
-%h3#{{mixinName}} {{mixinName}} <small>({{join mixinParams ", "}})</small>
+%h3#{{name}} {{{name}}}
 
 :markdown
-  {{{indent description}}}
+  {{{indent description 1}}}
 
-= preserve do
-  -code("sass") do
-    :plain
-      /*
-       {{#each mixin.parameters}}* @param ${{@key}} {{this}}
-       {{/each}}*/
-      {{{indent mixin.sass 3}}}
+.panel.panel-default
+  .panel-heading
+    = link_to 'Source', '#source-{{{name}}}', data: {toggle: 'collapse'}
 
-.bs-docs-example
+  #source-{{{name}}}.panel-body.panel-collapse.collapse
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'SASS', '#source-{{{name}}}-sass'
+      %li
+        = link_to 'SCSS', '#source-{{{name}}}-scss'
+      %li
+        = link_to 'LESS', '#source-{{{name}}}-less'
+      %li
+        = link_to 'Stylus', '#source-{{{name}}}-styl'
 
-  .content
-    {{{indent examples.html 2}}}
+    .tab-content
+      #source-{{{name}}}-sass.tab-pane.active
+        = preserve do
+          -code("sass") do
+            :plain
+              {{{indent styles.sass 7 true}}}
+      #source-{{{name}}}-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              {{{indent styles.scss 7 true}}}
+      #source-{{{name}}}-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              {{{indent styles.less 7 true}}}
+      #source-{{{name}}}-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              {{{indent styles.styl 7 true}}}
 
-    :sass
-      @import "bower_components/cssowl/lib/sass/cssowl"
-      {{{indent examples.sass 3}}}
 
-  %ul.nav.nav-tabs
-    %li.active.htmltab
-      = link_to 'HTML', '#example-{{{basename}}}-html'
-    %li
-      = link_to 'SASS', '#example-{{{basename}}}-sass'
-    %li
-      = link_to 'SCSS', '#example-{{{basename}}}-scss'
-    %li
-      = link_to 'LESS', '#example-{{{basename}}}-less'
-    %li
-      = link_to 'Stylus', '#example-{{{basename}}}-styl'
+.panel.panel-default
+  .panel-heading
+    = link_to 'Examples', '#examples-{{{name}}}', data: {toggle: 'collapse'}
 
-  .tab-content
-    #example-{{{basename}}}-html.tab-pane.active
-      = preserve do
-        -code("html") do
-          {{{indent examples.html 5}}}
-    #example-{{{basename}}}-sass.tab-pane
-      = preserve do
-        -code("sass") do
-          :plain
-            {{{indent examples.sass 6}}}
-    #example-{{{basename}}}-scss.tab-pane
-      = preserve do
-        -code("scss") do
-          :plain
-            {{{indent examples.scss 6}}}
-    #example-{{{basename}}}-less.tab-pane
-      = preserve do
-        -code("scss") do
-          :plain
-            {{{indent examples.less 6}}}
-    #example-{{{basename}}}-styl.tab-pane
-      = preserve do
-        -code("sass") do
-          :plain
-            {{{indent examples.styl 6}}}
+  #examples-{{{name}}}.panel-body.panel-collapse.collapse.in.bs-docs-example
+
+    .content
+      {{{indent examples.html 3}}}
+
+      :sass
+        $sprite-sheet-image: url("/assets/img/site/sprite.png")
+        $sprite-sheet-image-2x: url("/assets/img/site/sprite@2x.png")
+        @import "site/sprite"
+        @import "bower_components/cssowl/lib/sass/cssowl"
+        {{{indent examples.sass 4}}}
+
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'HTML', '#example-{{{name}}}-html'
+      %li.htmltab
+        = link_to 'CSS', '#example-{{{name}}}-css'
+      %li
+        = link_to 'SASS', '#example-{{{name}}}-sass'
+      %li
+        = link_to 'SCSS', '#example-{{{name}}}-scss'
+      %li
+        = link_to 'LESS', '#example-{{{name}}}-less'
+      %li
+        = link_to 'Stylus', '#example-{{{name}}}-styl'
+
+    .tab-content
+      #example-{{{name}}}-html.tab-pane.active
+        = preserve do
+          -code("html") do
+            {{{indent examples.html 6}}}
+      #example-{{{name}}}-css.tab-pane
+        = preserve do
+          -code("css") do
+            :sass
+              @import "bower_components/cssowl/lib/sass/cssowl"
+              @import "source/assets/css/site/sprite"
+              {{{indent examples.sass 7}}}
+      #example-{{{name}}}-sass.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              {{{indent examples.sass 7}}}
+      #example-{{{name}}}-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              {{{indent examples.scss 7}}}
+      #example-{{{name}}}-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              {{{indent examples.less 7}}}
+      #example-{{{name}}}-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              {{{indent examples.styl 7}}}

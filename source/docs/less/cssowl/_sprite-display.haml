@@ -1,0 +1,123 @@
+%h3#cssowl-sprite-display cssowl-sprite-display
+
+:markdown
+  Add a sprite element with its `width`, `height`, `background-image` and `background-position`.
+
+.panel.panel-default
+  .panel-heading
+    = link_to 'Source', '#source-cssowl-sprite-display', data: {toggle: 'collapse'}
+
+  #source-cssowl-sprite-display.panel-body.panel-collapse.collapse
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'SASS', '#source-cssowl-sprite-display-sass'
+      %li
+        = link_to 'SCSS', '#source-cssowl-sprite-display-scss'
+      %li
+        = link_to 'LESS', '#source-cssowl-sprite-display-less'
+      %li
+        = link_to 'Stylus', '#source-cssowl-sprite-display-styl'
+
+    .tab-content
+      #source-cssowl-sprite-display-sass.tab-pane.active
+        = preserve do
+          -code("sass") do
+            :plain
+              @mixin cssowl-sprite-display($element, $display:inline-block)
+                display: $display
+                @extend %\#{nth($element, 5)}
+      #source-cssowl-sprite-display-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              @mixin cssowl-sprite-display($element, $display:inline-block) {
+                display: $display;
+                @extend %\#{nth($element, 5)};
+              }
+      #source-cssowl-sprite-display-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .cssowl-sprite-display(@element, @display:inline-block) {
+                display: @display;
+                .less-sprite-element(extract(@element, 5));
+              }
+      #source-cssowl-sprite-display-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              cssowl-sprite-display($element, $display=inline-block)
+                display $display
+                @extend ${$element[4]}
+
+
+.panel.panel-default
+  .panel-heading
+    = link_to 'Examples', '#examples-cssowl-sprite-display', data: {toggle: 'collapse'}
+
+  #examples-cssowl-sprite-display.panel-body.panel-collapse.collapse.in.bs-docs-example
+
+    .content
+      Lorem <span class="example-sprite-display"></span> ipsum dolor sit atem
+
+      :sass
+        $sprite-sheet-image: url("/assets/img/site/sprite.png")
+        $sprite-sheet-image-2x: url("/assets/img/site/sprite@2x.png")
+        @import "site/sprite"
+        @import "bower_components/cssowl/lib/sass/cssowl"
+        .example-sprite-display
+          +cssowl-sprite-display($sprite-owl-up)
+
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'HTML', '#example-cssowl-sprite-display-html'
+      %li.htmltab
+        = link_to 'CSS', '#example-cssowl-sprite-display-css'
+      %li
+        = link_to 'SASS', '#example-cssowl-sprite-display-sass'
+      %li
+        = link_to 'SCSS', '#example-cssowl-sprite-display-scss'
+      %li
+        = link_to 'LESS', '#example-cssowl-sprite-display-less'
+      %li
+        = link_to 'Stylus', '#example-cssowl-sprite-display-styl'
+
+    .tab-content
+      #example-cssowl-sprite-display-html.tab-pane.active
+        = preserve do
+          -code("html") do
+            Lorem <span class="example-sprite-display"></span> ipsum dolor sit atem
+      #example-cssowl-sprite-display-css.tab-pane
+        = preserve do
+          -code("css") do
+            :sass
+              @import "bower_components/cssowl/lib/sass/cssowl"
+              @import "source/assets/css/site/sprite"
+              .example-sprite-display
+                +cssowl-sprite-display($sprite-owl-up)
+      #example-cssowl-sprite-display-sass.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              .example-sprite-display
+                +cssowl-sprite-display($sprite-owl-up)
+      #example-cssowl-sprite-display-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .example-sprite-display {
+                @include cssowl-sprite-display($sprite-owl-up);
+              }
+      #example-cssowl-sprite-display-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .example-sprite-display {
+                .cssowl-sprite-display(@sprite-owl-up);
+              }
+      #example-cssowl-sprite-display-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              .example-sprite-display
+                cssowl-sprite-display($sprite-owl-up)

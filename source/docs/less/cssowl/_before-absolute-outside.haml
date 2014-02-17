@@ -1,0 +1,133 @@
+%h3#cssowl-before-absolute-outside cssowl-before-absolute-outside
+
+:markdown
+  Mixin to add content with the `:before` pseudo selector and position it absolutely *outside* the bounding box.
+
+.panel.panel-default
+  .panel-heading
+    = link_to 'Source', '#source-cssowl-before-absolute-outside', data: {toggle: 'collapse'}
+
+  #source-cssowl-before-absolute-outside.panel-body.panel-collapse.collapse
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'SASS', '#source-cssowl-before-absolute-outside-sass'
+      %li
+        = link_to 'SCSS', '#source-cssowl-before-absolute-outside-scss'
+      %li
+        = link_to 'LESS', '#source-cssowl-before-absolute-outside-less'
+      %li
+        = link_to 'Stylus', '#source-cssowl-before-absolute-outside-styl'
+
+    .tab-content
+      #source-cssowl-before-absolute-outside-sass.tab-pane.active
+        = preserve do
+          -code("sass") do
+            :plain
+              =cssowl-before-absolute-outside($content, $width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
+                @extend %cssowl-relative
+                &:before
+                  content: $content
+                  +cssowl-absolute-outside($width, $height, $valign, $halign, $xOffset, $yOffset)
+      #source-cssowl-before-absolute-outside-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              @mixin cssowl-before-absolute-outside($content, $width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
+                @extend %cssowl-relative;
+                &:before {
+                  content: $content;
+                  @include cssowl-absolute-outside($width, $height, $valign, $halign, $xOffset, $yOffset);
+                }
+              }
+      #source-cssowl-before-absolute-outside-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .cssowl-before-absolute-outside(@content, @width, @height, @valign:top, @halign:left, @xOffset:0, @yOffset:0) {
+                position: relative;
+                &:before {
+                  content: @content;
+                  .cssowl-absolute-outside(@width, @height, @valign, @halign, @xOffset, @yOffset);
+                }
+              }
+      #source-cssowl-before-absolute-outside-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              cssowl-before-absolute-outside($content, $width, $height, $valign=top, $halign=left, $xOffset=0, $yOffset=0)
+                @extend $cssowl-relative
+                &:before
+                  content: $content
+                  cssowl-absolute-outside($width, $height, $valign, $halign, $xOffset, $yOffset)
+
+
+.panel.panel-default
+  .panel-heading
+    = link_to 'Examples', '#examples-cssowl-before-absolute-outside', data: {toggle: 'collapse'}
+
+  #examples-cssowl-before-absolute-outside.panel-body.panel-collapse.collapse.in.bs-docs-example
+
+    .content
+      .example-before-absolute-outside{style: "width:50px;height:50px;border:1px solid #59371f;"}
+
+      :sass
+        $sprite-sheet-image: url("/assets/img/site/sprite.png")
+        $sprite-sheet-image-2x: url("/assets/img/site/sprite@2x.png")
+        @import "site/sprite"
+        @import "bower_components/cssowl/lib/sass/cssowl"
+        .example-before-absolute-outside
+          +cssowl-before-absolute-outside("*", 5px, 5px, middle, right, -5px, -2px)
+
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'HTML', '#example-cssowl-before-absolute-outside-html'
+      %li.htmltab
+        = link_to 'CSS', '#example-cssowl-before-absolute-outside-css'
+      %li
+        = link_to 'SASS', '#example-cssowl-before-absolute-outside-sass'
+      %li
+        = link_to 'SCSS', '#example-cssowl-before-absolute-outside-scss'
+      %li
+        = link_to 'LESS', '#example-cssowl-before-absolute-outside-less'
+      %li
+        = link_to 'Stylus', '#example-cssowl-before-absolute-outside-styl'
+
+    .tab-content
+      #example-cssowl-before-absolute-outside-html.tab-pane.active
+        = preserve do
+          -code("html") do
+            .example-before-absolute-outside{style: "width:50px;height:50px;border:1px solid #59371f;"}
+      #example-cssowl-before-absolute-outside-css.tab-pane
+        = preserve do
+          -code("css") do
+            :sass
+              @import "bower_components/cssowl/lib/sass/cssowl"
+              @import "source/assets/css/site/sprite"
+              .example-before-absolute-outside
+                +cssowl-before-absolute-outside("*", 5px, 5px, middle, right, -5px, -2px)
+      #example-cssowl-before-absolute-outside-sass.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              .example-before-absolute-outside
+                +cssowl-before-absolute-outside("*", 5px, 5px, middle, right, -5px, -2px)
+      #example-cssowl-before-absolute-outside-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .example-before-absolute-outside {
+                @include cssowl-before-absolute-outside("*", 5px, 5px, middle, right, -5px, -2px);
+              }
+      #example-cssowl-before-absolute-outside-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .example-before-absolute-outside {
+                .cssowl-before-absolute-outside("*", 5px, 5px, middle, right, -5px, -2px);
+              }
+      #example-cssowl-before-absolute-outside-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              .example-before-absolute-outside
+                cssowl-before-absolute-outside("*", 5px, 5px, middle, right, -5px, -2px)

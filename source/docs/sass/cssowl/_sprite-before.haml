@@ -1,0 +1,137 @@
+%h3#cssowl-sprite-before cssowl-sprite-before
+
+:markdown
+  Add a sprite element with the `:before` pseudo selector.
+
+.panel.panel-default
+  .panel-heading
+    = link_to 'Source', '#source-cssowl-sprite-before', data: {toggle: 'collapse'}
+
+  #source-cssowl-sprite-before.panel-body.panel-collapse.collapse
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'SASS', '#source-cssowl-sprite-before-sass'
+      %li
+        = link_to 'SCSS', '#source-cssowl-sprite-before-scss'
+      %li
+        = link_to 'LESS', '#source-cssowl-sprite-before-less'
+      %li
+        = link_to 'Stylus', '#source-cssowl-sprite-before-styl'
+
+    .tab-content
+      #source-cssowl-sprite-before-sass.tab-pane.active
+        = preserve do
+          -code("sass") do
+            :plain
+              =cssowl-sprite-before($element, $margin:0 0 0 0, $display:inline-block)
+                &:before
+                  content: ""
+                  margin: $margin
+                  display: $display
+                  @extend %\#{nth($element, 5)}
+      #source-cssowl-sprite-before-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              @mixin cssowl-sprite-before($element, $margin:0 0 0 0, $display:inline-block) {
+                &:before {
+                  content: "";
+                  margin: $margin;
+                  display: $display;
+                  @extend %\#{nth($element, 5)};
+                }
+              }
+      #source-cssowl-sprite-before-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .cssowl-sprite-before(@element, @margin:0 0 0 0, @display:inline-block) {
+                &:before {
+                  content: "";
+                  margin: @margin;
+                  display: @display;
+                  .less-sprite-element(extract(@element, 5));
+                }
+              }
+      #source-cssowl-sprite-before-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              cssowl-sprite-before($element, $margin=0 0 0 0, $display=inline-block)
+                &:before
+                  content ""
+                  margin $margin
+                  display $display
+                  @extend ${$element[4]}
+
+
+.panel.panel-default
+  .panel-heading
+    = link_to 'Examples', '#examples-cssowl-sprite-before', data: {toggle: 'collapse'}
+
+  #examples-cssowl-sprite-before.panel-body.panel-collapse.collapse.in.bs-docs-example
+
+    .content
+      .example-sprite-before Quia sint quis nam et quia ducimus consequatur cumque.
+
+      :sass
+        $sprite-sheet-image: url("/assets/img/site/sprite.png")
+        $sprite-sheet-image-2x: url("/assets/img/site/sprite@2x.png")
+        @import "site/sprite"
+        @import "bower_components/cssowl/lib/sass/cssowl"
+        .example-sprite-before
+          +cssowl-sprite-before($sprite-owl-up, 0 10px -2px 0)
+
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'HTML', '#example-cssowl-sprite-before-html'
+      %li.htmltab
+        = link_to 'CSS', '#example-cssowl-sprite-before-css'
+      %li
+        = link_to 'SASS', '#example-cssowl-sprite-before-sass'
+      %li
+        = link_to 'SCSS', '#example-cssowl-sprite-before-scss'
+      %li
+        = link_to 'LESS', '#example-cssowl-sprite-before-less'
+      %li
+        = link_to 'Stylus', '#example-cssowl-sprite-before-styl'
+
+    .tab-content
+      #example-cssowl-sprite-before-html.tab-pane.active
+        = preserve do
+          -code("html") do
+            .example-sprite-before Quia sint quis nam et quia ducimus consequatur cumque.
+      #example-cssowl-sprite-before-css.tab-pane
+        = preserve do
+          -code("css") do
+            :sass
+              @import "bower_components/cssowl/lib/sass/cssowl"
+              @import "source/assets/css/site/sprite"
+              .example-sprite-before
+                +cssowl-sprite-before($sprite-owl-up, 0 10px -2px 0)
+      #example-cssowl-sprite-before-sass.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              .example-sprite-before
+                +cssowl-sprite-before($sprite-owl-up, 0 10px -2px 0)
+      #example-cssowl-sprite-before-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .example-sprite-before {
+                @include cssowl-sprite-before($sprite-owl-up, 0 10px -2px 0);
+              }
+      #example-cssowl-sprite-before-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .example-sprite-before {
+                .cssowl-sprite-before(@sprite-owl-up, 0 10px -2px 0);
+              }
+      #example-cssowl-sprite-before-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              .example-sprite-before
+                cssowl-sprite-before($sprite-owl-up, 0 10px -2px 0)

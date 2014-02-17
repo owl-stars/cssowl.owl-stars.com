@@ -1,0 +1,125 @@
+%h3#cssowl-sprite-absolute cssowl-sprite-absolute
+
+:markdown
+  Place a sprite element with `position: absolute;`.
+
+.panel.panel-default
+  .panel-heading
+    = link_to 'Source', '#source-cssowl-sprite-absolute', data: {toggle: 'collapse'}
+
+  #source-cssowl-sprite-absolute.panel-body.panel-collapse.collapse
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'SASS', '#source-cssowl-sprite-absolute-sass'
+      %li
+        = link_to 'SCSS', '#source-cssowl-sprite-absolute-scss'
+      %li
+        = link_to 'LESS', '#source-cssowl-sprite-absolute-less'
+      %li
+        = link_to 'Stylus', '#source-cssowl-sprite-absolute-styl'
+
+    .tab-content
+      #source-cssowl-sprite-absolute-sass.tab-pane.active
+        = preserve do
+          -code("sass") do
+            :plain
+              =cssowl-sprite-absolute($element, $coordinates:0 false false 0)
+                +cssowl-absolute($coordinates)
+                @extend %\#{nth($element, 5)}
+      #source-cssowl-sprite-absolute-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              @mixin cssowl-sprite-absolute($element, $coordinates:0 false false 0) {
+                @include cssowl-absolute($coordinates);
+                @extend %\#{nth($element, 5)};
+              }
+      #source-cssowl-sprite-absolute-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .cssowl-sprite-absolute(@element, @coordinates:0 false false 0) {
+                .cssowl-absolute(@coordinates);
+                .less-sprite-element(extract(@element, 5));
+              }
+      #source-cssowl-sprite-absolute-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              cssowl-sprite-absolute($element, $coordinates=0 false false 0)
+                cssowl-absolute($coordinates)
+                @extend ${$element[4]}
+
+
+.panel.panel-default
+  .panel-heading
+    = link_to 'Examples', '#examples-cssowl-sprite-absolute', data: {toggle: 'collapse'}
+
+  #examples-cssowl-sprite-absolute.panel-body.panel-collapse.collapse.in.bs-docs-example
+
+    .content
+      .wrapper{style: "position:relative;width:50px;height:50px;border:1px solid #59371f;"}
+        .example-sprite-absolute
+
+      :sass
+        $sprite-sheet-image: url("/assets/img/site/sprite.png")
+        $sprite-sheet-image-2x: url("/assets/img/site/sprite@2x.png")
+        @import "site/sprite"
+        @import "bower_components/cssowl/lib/sass/cssowl"
+        .example-sprite-absolute
+          +cssowl-sprite-absolute($sprite-owl-up, 10px 0 0 10px)
+
+    %ul.nav.nav-tabs
+      %li.active
+        = link_to 'HTML', '#example-cssowl-sprite-absolute-html'
+      %li.htmltab
+        = link_to 'CSS', '#example-cssowl-sprite-absolute-css'
+      %li
+        = link_to 'SASS', '#example-cssowl-sprite-absolute-sass'
+      %li
+        = link_to 'SCSS', '#example-cssowl-sprite-absolute-scss'
+      %li
+        = link_to 'LESS', '#example-cssowl-sprite-absolute-less'
+      %li
+        = link_to 'Stylus', '#example-cssowl-sprite-absolute-styl'
+
+    .tab-content
+      #example-cssowl-sprite-absolute-html.tab-pane.active
+        = preserve do
+          -code("html") do
+            .wrapper{style: "position:relative;width:50px;height:50px;border:1px solid #59371f;"}
+              .example-sprite-absolute
+      #example-cssowl-sprite-absolute-css.tab-pane
+        = preserve do
+          -code("css") do
+            :sass
+              @import "bower_components/cssowl/lib/sass/cssowl"
+              @import "source/assets/css/site/sprite"
+              .example-sprite-absolute
+                +cssowl-sprite-absolute($sprite-owl-up, 10px 0 0 10px)
+      #example-cssowl-sprite-absolute-sass.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              .example-sprite-absolute
+                +cssowl-sprite-absolute($sprite-owl-up, 10px 0 0 10px)
+      #example-cssowl-sprite-absolute-scss.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .example-sprite-absolute {
+                @include cssowl-sprite-absolute($sprite-owl-up, 10px 0 0 10px);
+              }
+      #example-cssowl-sprite-absolute-less.tab-pane
+        = preserve do
+          -code("scss") do
+            :plain
+              .example-sprite-absolute {
+                .cssowl-sprite-absolute(@sprite-owl-up, 10px 0 0 10px);
+              }
+      #example-cssowl-sprite-absolute-styl.tab-pane
+        = preserve do
+          -code("sass") do
+            :plain
+              .example-sprite-absolute
+                cssowl-sprite-absolute($sprite-owl-up, 10px 0 0 10px)
