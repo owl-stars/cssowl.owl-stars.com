@@ -31,9 +31,14 @@
     .bs-header
       .container
         - if (page_classes == 'index')
-          %p.lead Faster and easier web development!
-          %h2.title Cssowl is a mixin library with support for LESS, SASS/SCSS & Stylus
-          = partial "partials/downloadbutton"
+          .row
+            .col-sm-6.col-xs-12
+              %p.lead Faster and easier web development!
+              %h2.title Cssowl is a mixin library with support for LESS, SASS/SCSS and Stylus
+              = partial "partials/downloadbutton"
+          
+            .col-sm-6.preview.hidden-xs
+              =image_tag "cinema/cssowl-code.png", :alt => "", :class => "img-responsive"
 
         - if (page_classes == 'documentation')
           %h2.title Cssowl documentation
