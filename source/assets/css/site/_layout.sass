@@ -186,16 +186,21 @@
     background: $bghome top center no-repeat $colorBgDark
     height: 380px
 
+    .lead
+      margin-top: 5px
+
+    .downloadButton
+      margin-top: 10px
+
   .lead
     margin-top: 15px
     font-size: $fontSizeTitle
 
   .title
+    margin-top: 0
     line-height: 1.4em
     font-size: $fontSizeSuperBig
 
-  .downloadButton
-    margin-top: 20px
 
   .preview
     img
@@ -276,9 +281,10 @@
       a
         text-decoration: none
         border-radius: 5px 5px 0 0
-        padding: 5px 8px
+        padding: 5px 5px
         border: 1px solid $colorBadge
         border-bottom: 0
+        margin-right: 1px
         color: $colorFontDefault !important
 
         &:hover
@@ -419,6 +425,7 @@
       border: 1px solid $colorCssowlLight
       background: $colorBadge
       text-transform: uppercase
+      margin-top: 10px
 
       &:hover
         color: $colorFontWhite

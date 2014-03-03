@@ -1,6 +1,80 @@
-@media screen and (min-width: 992px)
+@media (min-width: $screen-tablet)
+
+  #header
+    > .navbar
+      nav
+        .nav
+          margin: 37px 0 0 0
+          border-top: none
+    &.index
+      padding-top: 50px
+
+  .bs-header
+    body.index &
+      .lead
+        margin-top: 15px
+
+      .downloadButton
+        margin-top: 20px
+
+    .title
+      margin-top: 20px
+                                     
+  .bs-docs-content
+    .nav-tabs
+      font-size: $fontSizeSubTitle
+      > li
+        &.htmltab
+          margin-right: 15px
+        a
+          padding: 8px 15px
+
+  footer
+    .download
+      text-align: left
+      .downloadButton
+        float: left
+
+    .newsletter
+      text-align: right
+      margin-top: 10px
+      margin-bottom: 0
+      .title
+        margin-right: 12px
+
+    .info
+      .bs-social-buttons
+        li
+          float: left
+      .madeby
+        float: right
+
+        
+      
+@media (min-width: $screen-desktop)
 
   .bs-sidebar
+    .nav > .active > ul
+      display: block
+
+    &.affix, &.affix-bottom
+      width: 213px
+
+    &.affix
+      position: fixed
+      // Undo the static from mobile first approach
+      top: 70px
+
+    &.affix-bottom
+      position: absolute
+      // Undo the static from mobile first approach
+      .bs-sidenav
+        margin-top: 0
+        margin-bottom: 0
+
+    &.affix .bs-sidenav
+      margin-top: 0
+      margin-bottom: 0
 
   .bs-header
     .lead
@@ -30,52 +104,9 @@
       margin-top: 0
       margin-bottom: 0
 
-@media screen and (min-width: 768px)
-
-  #header
-    > .navbar
-      nav
-        .nav
-          margin: 37px 0 0 0
-          border-top: none
 
 
-
-    &.index
-      padding-top: 50px
-
-  .bs-docs-content
-    .nav-tabs
-      font-size: $fontSizeSubTitle
-      > li
-        &.htmltab
-          margin-right: 15px
-        a
-          padding: 8px 15px
-
-
-  footer
-    .download
-      text-align: left
-      .downloadButton
-        float: left
-
-    .newsletter
-      text-align: right
-      margin-top: 10px
-      margin-bottom: 0
-      .title
-        margin-right: 12px
-
-    .info
-      .bs-social-buttons
-        li
-          float: left
-      .madeby
-        float: right
-
-
-@media screen and (min-width: 1200px)
+@media (min-width: $screen-lg-desktop)
   // Widen the fixed sidebar again
   .bs-sidebar
     &.affix-bottom, &.affix
