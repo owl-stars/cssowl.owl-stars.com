@@ -25,7 +25,7 @@ activate :deploy do |deploy|
   deploy.clean  = true
   deploy.host   = "cssowl.owl-stars.com"
   deploy.path   = "/var/www/cssowl/htdocs"
-  deploy.flags  = "-avz --chmod=Dg+s,ug+w,+r -e"
+  deploy.flags  = "-avz --chmod=Dg+s,ug+w,+r"
 end
 
 ###
