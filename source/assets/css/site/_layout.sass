@@ -457,22 +457,33 @@
       li
         display: inline-block
         line-height: 1
-        padding: 5px 5px
+        padding: 5px 0
         .twitter-follow-button
           width: 225px !important
         .twitter-share-button
-          width: 98px !important
+          width: 93px !important
         .github-btn
           border: 0
           overflow: hidden
 
-    .madeby
-      text-align: center
+    .links
       padding-top: 20px
+      text-align: center
       margin-bottom: 40px
-      > .wjds
-        margin-left: 5px
-        margin-bottom: -3px
-        +cssowl-sprite-replace($sprite-wjds)
+
+      .press-kit
+        margin: 2px 15px
+        display: inline-block
+        a
+          color: $colorFontGreyDark
+          text-decoration: none
+
+      .madeby
+        display: inline-block
+        margin: 2px 15px
+        > .wjds
+          margin-left: 5px
+          margin-bottom: -3px
+          +cssowl-sprite-replace($sprite-wjds)
 
 
