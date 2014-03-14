@@ -32,12 +32,12 @@
       .container
         - if (page_classes == 'index')
           .row
-            .col-sm-6.col-xs-12
+            .col-sm-6.col-xs-12.startslidemodule-in-left
               %p.lead Faster and easier web development!
               %h2.title Cssowl is a mixin library with support for LESS, SASS/SCSS and Stylus
               = partial "partials/downloadbutton"
           
-            .col-sm-6.preview.hidden-xs
+            .col-sm-6.preview.hidden-xs.startslidemodule-in-right
               =image_tag "cinema/cssowl-code.png", :alt => "", :class => "img-responsive"
 
         - if (page_classes == 'documentation')
@@ -63,16 +63,18 @@
               %label{for: "mc-email"}
 
         .row.info
-          .col-xs-12.col-sm-6
+          .col-xs-12.col-sm-5
             %ul.bs-social-buttons
               %li
-                %iframe.github-btn{height: "20", src: "http://ghbtns.com/github-btn.html?user=owl-stars&repo=cssowl&type=watch&count=true", title: "Star on GitHub", width: "100"}
+                %iframe.github-btn{height: "20", src: "http://ghbtns.com/github-btn.html?user=owl-stars&repo=cssowl&type=watch&count=true", title: "Star on GitHub", width: "93"}
               %li
-                %iframe.github-btn{height: "20", src: "http://ghbtns.com/github-btn.html?user=owl-stars&repo=cssowl&type=fork&count=true", title: "Fork on GitHub", width: "102"}
+                %iframe.github-btn{height: "20", src: "http://ghbtns.com/github-btn.html?user=owl-stars&repo=cssowl&type=fork&count=true", title: "Fork on GitHub", width: "93"}
               %li.tweet-btn
                 %a.twitter-share-button{:href => "https://twitter.com/share", :data => {:count => "horizontal", :text => "Cssowl", :via => "Owl_Stars", :url => "http://cssowl.owl-stars.com/"}} Tweet
 
-          .col-xs-12.col-sm-6
+          .col-xs-12.col-sm-7.links
+            .press-kit
+              %a{title: "Owl-Stars Press kit", href: "http://www.owl-stars.com/assets/download/Owl-Stars_Press-kit.zip", target: "_blank"} Press kit
             .madeby
               Owl-Stars is made by
               %a{title: "We Just Do Stuff", href: "http://www.wejustdostuff.com", target: "_blank", class: "wjds"} We Just Do Stuff

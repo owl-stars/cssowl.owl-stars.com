@@ -47,3 +47,32 @@ jQuery ->
   $(".nav.nav-tabs a").click (e) ->
     e.preventDefault()
     $(this).tab "show"
+
+
+(($) ->
+  $.fn.visible = (partial) ->
+    $t = $(this)
+    $w = $(window)
+    viewTop = $w.scrollTop()
+    viewBottom = viewTop + $w.height()
+    _top = $t.offset().top
+    _bottom = _top + $t.height()
+    compareTop = (if partial is true then _bottom else _top)
+    compareBottom = (if partial is true then _top else _bottom)
+    (compareBottom <= viewBottom) and (compareTop >= viewTop)
+  return
+) jQuery
+
+win = $(window)
+allMods = $(".slidemodule")
+allMods.each (i, el) ->
+  el = $(el)
+  el.addClass "slidemodule-already-visible"  if el.visible(true)
+  return
+
+win.scroll (event) ->
+  allMods.each (i, el) ->
+    el = $(el)
+    el.addClass "slidemodule-in"  if el.visible(true)
+    return
+  return
