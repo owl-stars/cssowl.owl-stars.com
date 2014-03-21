@@ -24,7 +24,7 @@
           -code("sass") do
             :plain
               =cssowl-before-absolute-outside($content, $width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
-                @extend %cssowl-relative
+                position: relative
                 &:before
                   content: $content
                   +cssowl-absolute-outside($width, $height, $valign, $halign, $xOffset, $yOffset)
@@ -33,7 +33,7 @@
           -code("scss") do
             :plain
               @mixin cssowl-before-absolute-outside($content, $width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
-                @extend %cssowl-relative;
+                position: relative;
                 &:before {
                   content: $content;
                   @include cssowl-absolute-outside($width, $height, $valign, $halign, $xOffset, $yOffset);
@@ -55,7 +55,7 @@
           -code("sass") do
             :plain
               cssowl-before-absolute-outside($content, $width, $height, $valign=top, $halign=left, $xOffset=0, $yOffset=0)
-                @extend $cssowl-relative
+                position: relative
                 &:before
                   content: $content
                   cssowl-absolute-outside($width, $height, $valign, $halign, $xOffset, $yOffset)

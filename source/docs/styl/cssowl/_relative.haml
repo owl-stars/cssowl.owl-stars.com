@@ -29,7 +29,7 @@
               // mixin
               =cssowl-relative($coordinates:0 false false 0)
                 +cssowl-coords($coordinates)
-                @extend %cssowl-relative
+                position: relative
       #source-cssowl-relative-scss.tab-pane
         = preserve do
           -code("scss") do
@@ -41,7 +41,7 @@
               // mixin
               @mixin cssowl-relative($coordinates:0 false false 0) {
                 @include cssowl-coords($coordinates);
-                @extend %cssowl-relative;
+                position: relative;
               }
       #source-cssowl-relative-less.tab-pane
         = preserve do
@@ -62,11 +62,11 @@
             :plain
               // extendable placeholder
               $cssowl-relative
-                position: relative;
+                position relative
               // mixin
               cssowl-relative($coordinates=0 false false 0)
                 cssowl-coords($coordinates)
-                @extend $cssowl-relative
+                position relative
 
 
 .panel.panel-default

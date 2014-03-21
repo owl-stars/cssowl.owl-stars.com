@@ -27,7 +27,7 @@
               =cssowl-absolute-inside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0)
                 width: $width
                 height: $height
-                @extend %cssowl-absolute
+                position: absolute
                 +cssowl-coords-inside($width, $height, $valign, $halign, $xOffset, $yOffset)
       #source-cssowl-absolute-inside-scss.tab-pane
         = preserve do
@@ -37,7 +37,7 @@
               @mixin cssowl-absolute-inside($width, $height, $valign:top, $halign:left, $xOffset:0, $yOffset:0) {
                 width: $width;
                 height: $height;
-                @extend %cssowl-absolute;
+                position: absolute;
                 @include cssowl-coords-inside($width, $height, $valign, $halign, $xOffset, $yOffset);
               }
       #source-cssowl-absolute-inside-less.tab-pane
@@ -57,9 +57,9 @@
             :plain
               // mixin
               cssowl-absolute-inside($width, $height, $valign=top, $halign=left, $xOffset=0, $yOffset=0)
-                width $width
-                height $height
-                @extend $cssowl-absolute;
+                width: $width
+                height: $height
+                position: absolute
                 cssowl-coords-inside($width, $height, $valign, $halign, $xOffset, $yOffset);
 
 
