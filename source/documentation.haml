@@ -215,9 +215,13 @@ nav: documentation
                         background-position: $sprite-owl-up-x $sprite-owl-up-y
                       %sprite-owl-up-position
                         +sprite-owl-up-position()
-                      =sprite-owl-up()
+                      =sprite-owl-up-adjust()
                         +sprite-owl-up-size()
                         +sprite-owl-up-position()
+                      %sprite-owl-up-adjust
+                        +sprite-owl-up-adjust()
+                      =sprite-owl-up()
+                        +sprite-owl-up-adjust()
                         @extend %sprite-element
                       %sprite-owl-up
                         +sprite-owl-up()
@@ -279,9 +283,15 @@ nav: documentation
                       %sprite-owl-up-position {
                         @include sprite-owl-up-position();
                       }
-                      @mixin sprite-owl-up() {
+                      @mixin sprite-owl-up-adjust() {
                         @include sprite-owl-up-size();
                         @include sprite-owl-up-position();
+                      }
+                      %sprite-owl-up-adjust {
+                        @include sprite-owl-up-adjust();
+                      }
+                      @mixin sprite-owl-up() {
+                        @include sprite-owl-up-adjust();
                         @extend %sprite-element;
                       }
                       %sprite-owl-up {
@@ -332,15 +342,16 @@ nav: documentation
                       .sprite-owl-up-position() {
                         background-position: @sprite-owl-up-x @sprite-owl-up-y;
                       }
-                      .sprite-owl-up() {
+                      .sprite-owl-up-adjust() {
                         .sprite-owl-up-size();
                         .sprite-owl-up-position();
+                      }
+                      .sprite-owl-up() {
+                        .sprite-owl-up-adjust();
                         &:extend(.sprite-element);
                       }
                       .less-sprite-element(sprite-owl-up) {
-                        .sprite-owl-up-size();
-                        .sprite-owl-up-position();
-                        &:extend(.sprite-element);
+                        .sprite-owl-up()
                       }
 
                       // ...
@@ -388,9 +399,13 @@ nav: documentation
                         background-position: $sprite-owl-up-x $sprite-owl-up-y
                       $sprite-owl-up-position
                         sprite-owl-up-position()
-                      sprite-owl-up()
+                      sprite-owl-up-adjust()
                         sprite-owl-up-size()
                         sprite-owl-up-position()
+                      $sprite-owl-up-adjust
+                        sprite-owl-up-adjust()
+                      sprite-owl-up()
+                        sprite-owl-up-adjust()
                         @extend $sprite-element
                       $sprite-owl-up
                         sprite-owl-up()
