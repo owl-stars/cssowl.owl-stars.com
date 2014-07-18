@@ -15,7 +15,7 @@ nav: home
         .col-xs-12.col-md-8.col-md-offset-2.info
           .box.slidemodule
             Check out the #{link_to "Cssowl documentation", "/documentation.html"} for the best usage and examples.
-            
+
 
   .bs-docs-section.bgDark.download
     .container
@@ -30,7 +30,7 @@ nav: home
           .box.slidemodule
             %h4 Download the latest release
             %p Get the latest release files by downloading directly from GitHub.
-            #{link_to "Download the latest release", "https://github.com/owl-stars/cssowl/archive/v#{data.cssowl.version}.zip", :class => "owlbtn"}
+            #{link_to "Download the latest release", "https://github.com/owl-stars/cssowl/archive/#{data.cssowl.version}.zip", :class => "owlbtn"}
         .col-md-4
           .box.slidemodule
             %h4 Clone or fork via GitHub
@@ -131,7 +131,7 @@ nav: home
       .row
         .col-xs-12.col-md-8.col-md-offset-2.info
           .box.slidemodule
-            Please open a #{link_to "new issue", "https://github.com/owl-stars/cssowl/issues"} on GitHub.
+            Please open a #{link_to "new issue", "https://github.com/owl-stars/cssowl/issues", :target => "_blank"} on GitHub.
           .box.slidemodule
-            If you need to test something, feel free to use #{link_to "JSFIDDLE", "#{data.cssowl.jsfiddle_url}"}.
+            If you need to test something, feel free to use #{link_to "JSFIDDLE", "#{data.cssowl.jsfiddle_url}", :target => "_blank"}.
 

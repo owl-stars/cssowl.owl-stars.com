@@ -25,7 +25,7 @@
             :plain
               // mixin
               =cssowl-after-absolute($content, $coordinates:0 false false 0)
-                @extend %cssowl-relative
+                position: relative
                 &:after
                   content: $content
                   +cssowl-absolute($coordinates)
@@ -35,7 +35,7 @@
             :plain
               // mixin
               @mixin cssowl-after-absolute($content, $coordinates:0 false false 0) {
-                @extend %cssowl-relative;
+                position: relative;
                 &:after {
                   content: $content;
                   @include cssowl-absolute($coordinates);
@@ -59,7 +59,7 @@
             :plain
               // mixin
               cssowl-after-absolute($content, $coordinates=0 false false 0)
-                @extend $cssowl-relative
+                position: relative
                 &:after
                   content: $content
                   cssowl-absolute($coordinates)
