@@ -1,9 +1,10 @@
-.*
-*~
-*.lock
+.idea
+.cache
+.vscode
+.bundle
+.DS_Store
+.sass-cache
 /bower_components/
 /node_modules/
 /build/
 /tmp/
-!.htaccess
-!.git*
