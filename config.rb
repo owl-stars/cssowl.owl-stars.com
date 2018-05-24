@@ -5,6 +5,8 @@ activate :sprockets
 
 activate :search_engine_sitemap
 
+activate :syntax, :line_numbers => false
+
 activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end

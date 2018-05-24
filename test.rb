@@ -7,6 +7,7 @@ HTMLProofer.check_directory('./build', {
   :check_favicon => true,
   :check_img_http => true,
   :disable_external => true,
+  :empty_alt_ignore => true,
   :internal_domains => ["https://cssowl.owl-stars.com"]
   #:http_status_ignore => [0,999,403,401]
 }).run
