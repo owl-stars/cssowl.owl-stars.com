@@ -6,9 +6,8 @@
   %head
     %meta{:charset => "utf-8"}
     %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
-    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+    %meta{:content => "width=device-width, initial-scale=1, user-scalable=no", :name => "viewport"}
     %title= page_title
-    %meta{:content => data.site.version, :name => "version"}
     %meta{:content => page_description, :name => "description"}
     %link{ rel: "apple-touch-icon-precomposed", sizes: "144x144", href: "apple-touch-icon-144x144-precomposed.png" }
     %link{ rel: "apple-touch-icon-precomposed", sizes: "120x120", href: "apple-touch-icon-120x120-precomposed.png" }
@@ -19,7 +18,7 @@
     %link{ rel: "shortcut icon", href: "favicon.png" }
     %link{ rel: "icon", type: "image/ico", href: "favicon.ico" }
 
-    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Patua+One", "site"
+    = stylesheet_link_tag "//fonts.googleapis.com/css?family=Patua+One", "site"
     = google_analytics_tag
 
   %body{:class => page_classes}
@@ -69,20 +68,20 @@
           .col-xs-12.col-sm-4
             %ul.bs-social-buttons
               %li
-                %iframe.github-btn{height: "20", src: "http://ghbtns.com/github-btn.html?user=owl-stars&repo=cssowl&type=watch&count=true", title: "Star on GitHub", width: "93"}
+                %iframe.github-btn{height: "20", src: "https://ghbtns.com/github-btn.html?user=owl-stars&repo=cssowl&type=watch&count=true", title: "Star on GitHub", width: "93"}
               %li
-                %iframe.github-btn{height: "20", src: "http://ghbtns.com/github-btn.html?user=owl-stars&repo=cssowl&type=fork&count=true", title: "Fork on GitHub", width: "93"}
+                %iframe.github-btn{height: "20", src: "https://ghbtns.com/github-btn.html?user=owl-stars&repo=cssowl&type=fork&count=true", title: "Fork on GitHub", width: "93"}
               %li.tweet-btn
-                %a.twitter-share-button{:href => "https://twitter.com/share", :data => {:count => "horizontal", :text => "Cssowl", :via => "Owl_Stars", :url => "http://cssowl.owl-stars.com/"}} Tweet
+                %a.twitter-share-button{:href => "https://twitter.com/share", :data => {:count => "horizontal", :text => "Cssowl", :via => "Owl_Stars", :url => "https://cssowl.owl-stars.com/"}} Tweet
 
           .col-xs-12.col-sm-8.links
             .changelog
               %a{title: "Cssowl changelog", href: "/changelog.html"} Changelog
             .press-kit
-              %a{title: "Owl-Stars Press kit", href: "http://www.owl-stars.com/assets/download/Owl-Stars_Press-kit.zip", target: "_blank"} Press kit
+              %a{title: "Owl-Stars Press kit", href: "https://www.owl-stars.com/assets/download/Owl-Stars_Press-kit.zip", target: "_blank"} Press kit
             .madeby
               Owl-Stars is made by
-              %a{title: "We Just Do Stuff", href: "http://www.wejustdostuff.com", target: "_blank", class: "wjds"} We Just Do Stuff
+              %a{title: "We Just Do Stuff", href: "https://www.wejustdostuff.com", target: "_blank", class: "wjds"} We Just Do Stuff
 
     = javascript_include_tag  "main"
     :javascript

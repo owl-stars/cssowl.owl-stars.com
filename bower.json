@@ -4,7 +4,6 @@
   "dependencies": {
     "jquery": "~1.9",
     "cssowl": "~1.2",
-    "ajaxchimp": "~1.0",
     "sass-bootstrap": "~3.0"
   }
 }
