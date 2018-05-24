@@ -1,3 +1,13 @@
+<a name="2.0.1"></a>
+### 2.0.1 (2018-05-24)
+
+
+#### Bug Fixes
+
+*   update ignore and add missing files ([c1f47aab](https://github.com/owl-stars/cssowl.owl-stars.com/settings/commit/c1f47aabcfe574d5aad53c1728c262334e192da3))
+
+
+
 <a name="2.0.0"></a>
 ## 2.0.0 (2018-05-24)
 

@@ -1,0 +1,4 @@
+[clog]
+changelog = "CHANGELOG.md"
+repository = "https://github.com/owl-stars/cssowl.owl-stars.com/settings"
+from-latest-tag = true
